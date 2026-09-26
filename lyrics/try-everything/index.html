@@ -175,6 +175,33 @@
   body.no-pr .pr { display: none; }
   body.no-ko .ko { display: none; }
 
+
+  /* 표현 노트 */
+  .notes { margin-top: 48px; display: grid; gap: 16px; }
+  .notes h2 {
+    font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 0; display: flex; align-items: center; gap: 10px;
+  }
+  .notes h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .term {
+    padding: 18px 20px; border: 1px solid var(--line); border-radius: 10px;
+    background: var(--surface); display: grid; gap: 10px;
+  }
+  .term h3 {
+    font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+    font-size: 19px; font-weight: 700; margin: 0; letter-spacing: -0.005em;
+  }
+  .term h3 span { font-family: "Noto Sans KR", sans-serif; font-weight: 500; font-size: 14px; color: var(--accent-ink); margin-left: 8px; }
+  .term p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+  .term .vs { display: grid; gap: 8px; }
+  .term .vs div { display: grid; grid-template-columns: 96px 1fr; gap: 10px; font-size: 14px; }
+  .term .vs b { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); }
+  .term .ex { display: grid; gap: 4px; padding-left: 12px; border-left: 2px solid var(--accent); font-size: 13.5px; }
+  .term .ex i { font-style: normal; color: var(--ink); }
+  .term .ex span { color: var(--muted); }
+  @media (max-width: 480px) { .term .vs div { grid-template-columns: 1fr; gap: 2px; } }
+
   /* 안내 */
   .note {
     margin-top: 44px;
@@ -335,7 +362,7 @@
       <div class="line">
         <div class="en">Don't beat yourself up,</div>
         <div class="pr">돈 비트 요어셀프 업</div>
-        <div class="ko">너 자신을 탓하지 마,</div>
+        <div class="ko">너무 자책하지 마,</div>
       </div>
       <div class="line">
         <div class="en">Don't need to run so fast</div>
@@ -410,6 +437,34 @@
       </div>
     </section>
 
+  </div>
+
+  <div class="notes">
+    <h2>표현 노트</h2>
+
+    <div class="term">
+      <h3>give up · give in<span>포기하다 · 굴복하다</span></h3>
+      <p>후렴의 "I won't give up, no I won't give in"은 같은 말의 반복이 아니라 두 겹의 다짐입니다. 둘 다 "그만두다"에 가깝지만 그만두는 이유가 다릅니다.</p>
+      <div class="vs">
+        <div><b>give up</b><span>스스로 힘들거나 안 될 것 같아서 시도를 그만두는 것. 상대가 없어도 쓸 수 있습니다.</span></div>
+        <div><b>give in</b><span>외부의 압박이나 상대의 요구에 밀려 결국 항복하거나 받아들이는 것. 항상 "무엇에 밀려서"라는 전제가 있습니다.</span></div>
+      </div>
+      <div class="ex">
+        <i>I gave up smoking.</i><span>담배를 끊었다.</span>
+        <i>The kids kept begging and I finally gave in.</i><span>아이들이 계속 조르자 결국 내가 졌다.</span>
+      </div>
+      <p>가사에서는 앞이 "내가 지쳐서 포기하지 않겠다", 뒤가 "세상이 밀어내도 굴복하지 않겠다"는 뜻입니다. 주변의 무시와 압박에도 경찰의 꿈을 놓지 않는 주디의 상황과 맞아떨어집니다.</p>
+    </div>
+
+    <div class="term">
+      <h3>beat yourself up<span>자책하다</span></h3>
+      <p>직역하면 "자신을 두들겨 패다"지만, 실제로는 지난 실수를 두고 스스로를 계속 나무라고 괴롭히는 것을 뜻하는 관용구입니다. 단순히 "탓하다"보다 조금 더 강한 말이라 "너무 자책하지 마", "스스로를 몰아세우지 마"가 원래 느낌에 가깝습니다.</p>
+      <div class="ex">
+        <i>Don't beat yourself up over one mistake.</i><span>실수 하나 가지고 너무 자책하지 마.</span>
+        <i>He's been beating himself up about losing the game.</i><span>그는 경기에 진 걸 두고 계속 자책하고 있다.</span>
+      </div>
+      <p>바로 앞 줄 "넌 충분히 해냈어, 깊게 숨을 쉬어봐"와 뒤 줄 "그렇게 빨리 달릴 필요 없어" 사이에 놓인 말이라, 최선을 다하고도 결과가 안 좋아 자신을 몰아붙이는 사람을 다독이는 대목입니다.</p>
+    </div>
   </div>
 
   <div class="note">
