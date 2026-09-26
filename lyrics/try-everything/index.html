@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Try Everything 가사</title>
+  <meta name="description" content="주토피아 OST 'Try Everything' 전체 가사를 영어 원문, 한글 발음, 한국어 해석으로 정리한 페이지">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+  :root {
+    --bg: #F6F7F3;
+    --surface: #FFFFFF;
+    --ink: #1B2231;
+    --ink-2: #4A5468;
+    --muted: #7C8595;
+    --line: #DDE1DA;
+    --accent: #D9781C;
+    --accent-ink: #9C520C;
+    --accent-soft: #FBEBD9;
+    --blue: #2E5C9C;
+    --blue-soft: #E3EBF7;
+    --chip-bg: #EEF0EA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151920;
+      --surface: #1D222B;
+      --ink: #EEF0F3;
+      --ink-2: #C3C9D4;
+      --muted: #8C95A5;
+      --line: #2E3541;
+      --accent: #F09A44;
+      --accent-ink: #F7B96F;
+      --accent-soft: #3A2A18;
+      --blue: #8DB2E6;
+      --blue-soft: #1F2C40;
+      --chip-bg: #262C36;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151920;
+    --surface: #1D222B;
+    --ink: #EEF0F3;
+    --ink-2: #C3C9D4;
+    --muted: #8C95A5;
+    --line: #2E3541;
+    --accent: #F09A44;
+    --accent-ink: #F7B96F;
+    --accent-soft: #3A2A18;
+    --blue: #8DB2E6;
+    --blue-soft: #1F2C40;
+    --chip-bg: #262C36;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 40px 72px;
+  }
+
+  /* 헤더 */
+  header { display: grid; gap: 14px; margin-bottom: 28px; }
+  .eyebrow {
+    font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 9vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h1 small {
+    display: block;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0;
+    color: var(--ink-2);
+    margin-top: 10px;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 18px;
+    font-size: 13px; color: var(--muted);
+  }
+  .meta b { color: var(--ink-2); font-weight: 500; }
+
+  /* 범례 + 토글 */
+  .controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    margin-bottom: 32px;
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 2;
+  }
+  .controls .label { font-size: 12px; color: var(--muted); margin-right: 4px; }
+  .toggle {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13px; color: var(--ink-2);
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--chip-bg);
+    cursor: pointer;
+    user-select: none;
+  }
+  .toggle input { accent-color: var(--accent); margin: 0; }
+  .toggle:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* 가사 본문 */
+  .song { display: grid; gap: 36px; }
+  section { display: grid; gap: 18px; }
+  .part {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .part::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .part.chorus { color: var(--accent-ink); }
+  .part.chorus::after { background: var(--accent); opacity: .45; }
+
+  .line { display: grid; gap: 2px; }
+  .en {
+    font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+    font-size: 19px; font-weight: 700; line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+  section.chorus-block .en { color: var(--accent-ink); }
+  .pr {
+    font-size: 13px; color: var(--muted);
+    padding-left: 12px;
+    border-left: 2px solid var(--line);
+    margin-top: 2px;
+  }
+  .ko { font-size: 15px; color: var(--ink-2); }
+  .refrain .en { font-weight: 800; letter-spacing: 0.02em; }
+
+  body.no-pr .pr { display: none; }
+  body.no-ko .ko { display: none; }
+
+  /* 안내 */
+  .note {
+    margin-top: 44px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: var(--blue-soft);
+    color: var(--ink-2);
+    font-size: 13.5px;
+    display: grid; gap: 6px;
+  }
+  .note strong { color: var(--blue); font-weight: 700; }
+  .note a { color: var(--blue); }
+  .note ul { margin: 0; padding-left: 18px; }
+
+  @media (max-width: 480px) {
+    .wrap { padding-block: 28px 56px; }
+    .en { font-size: 17px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .toggle { transition: background .15s; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Zootopia · Original Soundtrack · 2016</div>
+    <h1>Try Everything<small>모든 걸 시도해봐</small></h1>
+    <div class="meta">
+      <span>노래 <b>Shakira</b> (샤키라)</span>
+      <span>작곡 <b>Sia · Stargate</b></span>
+      <span>영화 속 캐릭터 <b>가젤(Gazelle)</b></span>
+    </div>
+  </header>
+
+  <div class="controls" role="group" aria-label="표시 옵션">
+    <span class="label">표시</span>
+    <label class="toggle"><input type="checkbox" id="showPr" checked> 한글 발음</label>
+    <label class="toggle"><input type="checkbox" id="showKo" checked> 한국어 해석</label>
+  </div>
+
+  <div class="song">
+
+    <section>
+      <div class="part">Intro</div>
+      <div class="line refrain">
+        <div class="en">Oh oh oh oh oh… (×4)</div>
+        <div class="pr">오 오 오 오 오</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="part">Verse 1</div>
+      <div class="line">
+        <div class="en">I messed up tonight,</div>
+        <div class="pr">아이 메스드 업 투나잇</div>
+        <div class="ko">난 오늘 밤을 망쳐버렸어,</div>
+      </div>
+      <div class="line">
+        <div class="en">I lost another fight</div>
+        <div class="pr">아이 로스트 어나더 파이트</div>
+        <div class="ko">난 또 한 번 싸움에서 졌어</div>
+      </div>
+      <div class="line">
+        <div class="en">I still mess up but I'll just start again</div>
+        <div class="pr">아이 스틸 메쓰 업 벗 아일 저스트 스타트 어게인</div>
+        <div class="ko">난 여전히 엉망이지만 그냥 다시 시작할 거야</div>
+      </div>
+      <div class="line">
+        <div class="en">I keep falling down,</div>
+        <div class="pr">아이 킵 폴링 다운</div>
+        <div class="ko">난 계속 넘어지고,</div>
+      </div>
+      <div class="line">
+        <div class="en">I keep on hitting the ground</div>
+        <div class="pr">아이 킵 온 히팅 더 그라운드</div>
+        <div class="ko">난 계속 바닥을 치고 있어</div>
+      </div>
+      <div class="line">
+        <div class="en">I always get up now to see what's next</div>
+        <div class="pr">아이 올웨이즈 겟 업 나우 투 씨 왓츠 넥스트</div>
+        <div class="ko">난 항상 다시 일어나 다음이 무엇인지 보려고 해</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="part">Pre-chorus</div>
+      <div class="line">
+        <div class="en">Birds don't just fly, they fall down and get up</div>
+        <div class="pr">벌즈 돈 저스트 플라이, 데이 폴 다운 앤 겟 업</div>
+        <div class="ko">새들은 그냥 나는 게 아냐, 떨어지고 다시 일어나는 거야</div>
+      </div>
+      <div class="line">
+        <div class="en">Nobody learns without getting it wrong</div>
+        <div class="pr">노바디 러언즈 윗아웃 겟팅 잇 뤙</div>
+        <div class="ko">누구도 틀리지 않고는 배울 수 없어</div>
+      </div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part chorus">Chorus (×2)</div>
+      <div class="line">
+        <div class="en">I won't give up, no I won't give in</div>
+        <div class="pr">아이 워운 깁 업, 노 아이 워운 깁 인</div>
+        <div class="ko">난 포기하지 않아, 아니 난 굴복하지 않아</div>
+      </div>
+      <div class="line">
+        <div class="en">Till I reach the end and then I'll start again</div>
+        <div class="pr">틸 아이 리취 디 엔드 앤 덴 아일 스타트 어게인</div>
+        <div class="ko">끝에 닿을 때까지, 그리고 나선 다시 시작할 거야</div>
+      </div>
+      <div class="line">
+        <div class="en">No I won't leave, I wanna try everything</div>
+        <div class="pr">노 아이 워운 리브, 아이 워너 트라이 에브리띵</div>
+        <div class="ko">난 떠나지 않을 거야, 난 모든 것을 해보고 싶어</div>
+      </div>
+      <div class="line">
+        <div class="en">I wanna try even though I could fail</div>
+        <div class="pr">아이 워너 트라이 이븐 도우 아이 쿠드 페일</div>
+        <div class="ko">비록 실패할 수 있다 해도 난 해보고 싶어</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="part">Post-chorus</div>
+      <div class="line refrain">
+        <div class="en">Oh oh oh oh oh (Try everything) (×3)</div>
+        <div class="pr">오 오 오 오 오 (트라이 에브리띵)</div>
+        <div class="ko">(모든 걸 시도해봐)</div>
+      </div>
+      <div class="line refrain">
+        <div class="en">Oh oh oh oh oh</div>
+        <div class="pr">오 오 오 오 오</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="part">Verse 2</div>
+      <div class="line">
+        <div class="en">Look how far you've come,</div>
+        <div class="pr">룩 하우 파 유브 컴</div>
+        <div class="ko">네가 얼마나 멀리 왔는지 봐,</div>
+      </div>
+      <div class="line">
+        <div class="en">You filled your heart with love</div>
+        <div class="pr">유 필드 요어 하트 윗 러브</div>
+        <div class="ko">넌 네 마음을 사랑으로 가득 채웠잖아</div>
+      </div>
+      <div class="line">
+        <div class="en">Baby you've done enough, take a deep breath</div>
+        <div class="pr">베이비 유브 던 이너프, 테이크 어 딥 브레쓰</div>
+        <div class="ko">넌 충분히 해냈어, 깊게 숨을 쉬어봐</div>
+      </div>
+      <div class="line">
+        <div class="en">Don't beat yourself up,</div>
+        <div class="pr">돈 비트 요어셀프 업</div>
+        <div class="ko">너 자신을 탓하지 마,</div>
+      </div>
+      <div class="line">
+        <div class="en">Don't need to run so fast</div>
+        <div class="pr">돈 니드 투 런 쏘 패스트</div>
+        <div class="ko">그렇게 빨리 달릴 필요 없어</div>
+      </div>
+      <div class="line">
+        <div class="en">Sometimes we come last, but we did our best</div>
+        <div class="pr">썸타임즈 위 컴 라스트, 벗 위 디드 아워 베스트</div>
+        <div class="ko">가끔은 꼴찌가 될 수도 있어, 하지만 우린 최선을 다했잖아</div>
+      </div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part chorus">Chorus (×2)</div>
+      <div class="line">
+        <div class="en">I won't give up, no I won't give in</div>
+        <div class="pr">아이 워운 깁 업, 노 아이 워운 깁 인</div>
+        <div class="ko">난 포기하지 않아, 아니 난 굴복하지 않아</div>
+      </div>
+      <div class="line">
+        <div class="en">Till I reach the end and then I'll start again</div>
+        <div class="pr">틸 아이 리취 디 엔드 앤 덴 아일 스타트 어게인</div>
+        <div class="ko">끝에 닿을 때까지, 그리고 나선 다시 시작할 거야</div>
+      </div>
+      <div class="line">
+        <div class="en">No I won't leave, I wanna try everything</div>
+        <div class="pr">노 아이 워운 리브, 아이 워너 트라이 에브리띵</div>
+        <div class="ko">난 떠나지 않을 거야, 난 모든 것을 해보고 싶어</div>
+      </div>
+      <div class="line">
+        <div class="en">I wanna try even though I could fail</div>
+        <div class="pr">아이 워너 트라이 이븐 도우 아이 쿠드 페일</div>
+        <div class="ko">비록 실패할 수 있다 해도 난 해보고 싶어</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="part">Bridge</div>
+      <div class="line">
+        <div class="en">I'll keep on making those new mistakes</div>
+        <div class="pr">아일 킵 온 메이킹 도우즈 뉴 미스테익스</div>
+        <div class="ko">난 그런 새로운 실수들을 계속하게 되겠지</div>
+      </div>
+      <div class="line">
+        <div class="en">I'll keep on making them every day</div>
+        <div class="pr">아일 킵 온 메이킹 뎀 에브리데이</div>
+        <div class="ko">매일매일 그 실수들을 계속하게 되겠지</div>
+      </div>
+      <div class="line">
+        <div class="en">Those new mistakes</div>
+        <div class="pr">도우즈 뉴 미스테익스</div>
+        <div class="ko">새로운 실수들을</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="part">Outro</div>
+      <div class="line refrain">
+        <div class="en">Oh oh oh oh oh (Try everything) (×3)</div>
+        <div class="pr">오 오 오 오 오 (트라이 에브리띵)</div>
+        <div class="ko">(모든 걸 시도해봐)</div>
+      </div>
+      <div class="line refrain">
+        <div class="en">Oh oh oh oh oh</div>
+        <div class="pr">오 오 오 오 오</div>
+      </div>
+      <div class="line refrain">
+        <div class="en">Try everything</div>
+        <div class="pr">트라이 에브리띵</div>
+        <div class="ko">모든 걸 시도해봐</div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="note">
+    <strong>출처와 편집 안내</strong>
+    <ul>
+      <li>한글 발음과 해석은 <a href="https://blog.naver.com/wlsghsmreo2/220645946434" target="_blank" rel="noopener">네이버 블로그 wlsghsmreo2의 2016년 3월 5일 글</a>을 바탕으로 정리했습니다.</li>
+      <li>원문 가사의 오탈자(Bird's, everyday 등)를 바로잡고, 해석은 뜻이 어긋난 곳만 일부 다듬었습니다.</li>
+      <li>발음 표기는 참고용입니다. 곡 구조(Verse, Chorus 등) 구분은 정리 과정에서 붙였습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // 표시 토글: 발음/해석 숨기기, 선택은 이 브라우저에만 기억
+  (function () {
+    var body = document.body;
+    var pr = document.getElementById('showPr');
+    var ko = document.getElementById('showKo');
+    var KEY = 'try-everything-view';
+
+    function apply() {
+      body.classList.toggle('no-pr', !pr.checked);
+      body.classList.toggle('no-ko', !ko.checked);
+      try { localStorage.setItem(KEY, JSON.stringify({ pr: pr.checked, ko: ko.checked })); } catch (e) {}
+    }
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (saved) { pr.checked = saved.pr !== false; ko.checked = saved.ko !== false; }
+    } catch (e) {}
+    pr.addEventListener('change', apply);
+    ko.addEventListener('change', apply);
+    apply();
+  })();
+</script>
+</body>
+</html>

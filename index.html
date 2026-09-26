@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Pages</title>
+  <meta name="description" content="정리한 페이지 모음">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F6F7F3; --surface: #FFFFFF; --ink: #1B2231; --ink-2: #4A5468;
+      --muted: #7C8595; --line: #DDE1DA; --accent: #D9781C; --accent-ink: #9C520C;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #151920; --surface: #1D222B; --ink: #EEF0F3; --ink-2: #C3C9D4;
+        --muted: #8C95A5; --line: #2E3541; --accent: #F09A44; --accent-ink: #F7B96F;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 15px; line-height: 1.6;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 72px; }
+    h1 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-weight: 800; font-size: clamp(32px, 7vw, 44px); letter-spacing: -0.02em;
+      line-height: 1.05; margin: 0 0 8px;
+    }
+    .sub { color: var(--muted); margin: 0 0 36px; }
+    .group { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink);
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    ul { list-style: none; margin: 0 0 36px; padding: 0; display: grid; gap: 10px; }
+    a.card {
+      display: grid; gap: 4px; padding: 16px 18px; text-decoration: none; color: inherit;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    }
+    a.card:hover, a.card:focus-visible { border-color: var(--accent); outline: none; }
+    a.card .t { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 18px; }
+    a.card .d { color: var(--ink-2); font-size: 14px; }
+    a.card .m { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Pages</h1>
+    <p class="sub">정리해 둔 페이지 모음입니다.</p>
+
+    <div class="group">Lyrics</div>
+    <ul>
+      <li>
+        <a class="card" href="lyrics/try-everything/">
+          <span class="t">Try Everything 가사</span>
+          <span class="d">주토피아 OST · Shakira. 영어 원문, 한글 발음, 한국어 해석</span>
+          <span class="m">2026-09-26</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
