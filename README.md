@@ -5,8 +5,10 @@ GitHub Pages로 배포하는 정적 페이지 모음입니다.
 ## 구조
 
 ```
-index.html                     # 페이지 목록
-lyrics/try-everything/index.html
+index.html                     # 페이지 목록 (TOEIC / Lyrics 그룹)
+lyrics/<slug>/index.html       # 팝송 가사 페이지 (lyrics-page 스킬)
+toeic/index.html               # 토익 단어 학습 앱
+toeic/data/words.json          # 단어 데이터 (toeic-words 스킬로 추가)
 ```
 
 ## 페이지 추가 방법

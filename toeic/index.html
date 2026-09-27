@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>TOEIC 단어장</title>
+  <meta name="description" content="토익 단어 학습: 단어장, 플래시카드, 퀴즈, 오답 노트">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4; --surface: #FFFFFF; --ink: #1A1F2B; --ink-2: #4B5364; --muted: #8A919F;
+      --line: #E1E3DE; --line-strong: #1A1F2B; --accent: #D0731A; --accent-ink: #9A530E; --accent-soft: #FBEBD9;
+      --good: #2E7D4F; --good-soft: #E3F2E8; --bad: #B23A3A; --bad-soft: #F9E4E4; --chip: #EEF0EA;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D; --surface: #1D222B; --ink: #EEF0F3; --ink-2: #BFC6D1; --muted: #7F8794;
+        --line: #2A2F3A; --line-strong: #EEF0F3; --accent: #EE9A46; --accent-ink: #F5B672; --accent-soft: #3A2A18;
+        --good: #6FCF97; --good-soft: #1E3327; --bad: #F08A8A; --bad-soft: #3A1F1F; --chip: #262C36;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 880px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 96px; }
+    .mono, .disp { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; }
+    .home { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); text-decoration: none; }
+    .home:hover { color: var(--accent-ink); }
+    .home svg { width: 14px; height: 14px; }
+    header { margin-top: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line-strong); display: grid; gap: 10px; }
+    .eyebrow { font-family: "Bricolage Grotesque", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-ink); }
+    h1 { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 800; font-size: clamp(36px, 8vw, 56px); line-height: 1; letter-spacing: -.03em; margin: 0; }
+    .meta { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 20px; }
+    .meta b { color: var(--ink-2); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+    /* 탭 + 필터 */
+    .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 3; background: var(--bg); padding-block: 12px; display: grid; gap: 10px; border-bottom: 1px solid var(--line); }
+    .tabs { display: flex; gap: 4px; }
+    .tab { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 14px; padding: 8px 14px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
+    .tab[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+    .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    select, input[type=search], .btn { font: inherit; font-size: 14px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
+    input[type=search] { flex: 1; min-width: 140px; }
+    .btn { cursor: pointer; }
+    .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 700; }
+    .btn.ghost { background: transparent; }
+    .btn:disabled { opacity: .45; cursor: default; }
+    .btn:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .check { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--chip); cursor: pointer; user-select: none; }
+    .check input { accent-color: var(--accent); margin: 0; }
+
+    /* 단어장 */
+    .group-h { font-family: "Bricolage Grotesque", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--muted); margin: 32px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+    .row { display: grid; grid-template-columns: 44px 170px 1fr; gap: 4px 18px; padding: 14px 0; border-bottom: 1px dashed var(--line); align-items: start; cursor: pointer; }
+    .row .n { font-family: "Bricolage Grotesque", sans-serif; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 5px; }
+    .row .w { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 19px; line-height: 1.25; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .row .ko { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+    .row .ex { font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; font-size: 15px; }
+    .row .ex mark { background: var(--accent-soft); color: var(--accent-ink); border-radius: 3px; padding: 0 3px; }
+    .row .exko { font-size: 13.5px; color: var(--ink-2); }
+    .row .der { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+    .row .der b { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; color: var(--ink-2); }
+    body.hide .row:not(.open) .ko, body.hide .row:not(.open) .exko, body.hide .row:not(.open) .der { filter: blur(6px); user-select: none; }
+    .box { font-family: "Bricolage Grotesque", sans-serif; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 999px; background: var(--chip); color: var(--muted); letter-spacing: .06em; }
+    .box.b3 { background: var(--good-soft); color: var(--good); }
+    .box.b0.seen { background: var(--bad-soft); color: var(--bad); }
+    .spk { border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 2px; display: inline-flex; }
+    .spk:hover { color: var(--accent-ink); }
+    .spk svg { width: 16px; height: 16px; }
+
+    /* 카드 */
+    .stage { margin-top: 28px; display: grid; gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 36px 28px; min-height: 260px; display: grid; align-content: center; justify-items: center; text-align: center; gap: 12px; cursor: pointer; }
+    .card .big { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(30px, 7vw, 44px); letter-spacing: -.02em; line-height: 1.1; }
+    .card .hint { font-size: 12px; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; font-family: "Bricolage Grotesque", sans-serif; }
+    .card .ko { font-size: 17px; color: var(--ink); }
+    .card .ex { font-family: "Bricolage Grotesque", sans-serif; font-size: 15px; color: var(--ink-2); }
+    .card .ex mark { background: var(--accent-soft); color: var(--accent-ink); border-radius: 3px; padding: 0 3px; }
+    .card .exko, .card .der { font-size: 13px; color: var(--muted); }
+    .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .btn.no { border-color: var(--bad); color: var(--bad); }
+    .btn.yes { border-color: var(--good); color: var(--good); }
+    .progress { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+    .progress i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s; }
+    .counter { font-family: "Bricolage Grotesque", sans-serif; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; text-align: center; }
+
+    /* 퀴즈 */
+    .q { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; display: grid; gap: 18px; }
+    .q .prompt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 24px; line-height: 1.3; letter-spacing: -.01em; }
+    .q .prompt .blank { display: inline-block; min-width: 110px; border-bottom: 2px solid var(--accent); text-align: center; color: var(--accent-ink); }
+    .q .sub { font-size: 14px; color: var(--ink-2); margin-top: -8px; }
+    .opts { display: grid; gap: 8px; }
+    .opt { font: inherit; text-align: left; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); cursor: pointer; display: flex; gap: 12px; align-items: baseline; }
+    .opt .k { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 12px; color: var(--muted); width: 14px; }
+    .opt:hover { border-color: var(--ink-2); }
+    .opt.right { border-color: var(--good); background: var(--good-soft); }
+    .opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+    .opt:disabled { cursor: default; }
+    .fill { display: flex; gap: 8px; }
+    .fill input { flex: 1; font: inherit; font-family: "Bricolage Grotesque", sans-serif; font-size: 18px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
+    .feedback { border-radius: 10px; padding: 12px 14px; font-size: 14px; display: grid; gap: 4px; }
+    .feedback.ok { background: var(--good-soft); color: var(--good); }
+    .feedback.ng { background: var(--bad-soft); color: var(--bad); }
+    .feedback b { font-family: "Bricolage Grotesque", sans-serif; }
+    .feedback .ex { color: var(--ink-2); font-family: "Bricolage Grotesque", sans-serif; }
+    .result { display: grid; gap: 16px; }
+    .score { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -.02em; line-height: 1; }
+    .score small { font-size: 16px; font-weight: 500; color: var(--muted); margin-left: 6px; }
+    .wl { display: grid; gap: 6px; }
+    .wl div { display: grid; grid-template-columns: 160px 1fr; gap: 12px; font-size: 14px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+    .wl b { font-family: "Bricolage Grotesque", sans-serif; }
+
+    /* 통계 */
+    .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
+    .tile { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 2px; }
+    .tile .v { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 28px; line-height: 1; font-variant-numeric: tabular-nums; }
+    .tile .l { font-size: 12px; color: var(--muted); }
+    h2 { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 32px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    .empty { color: var(--muted); font-size: 14px; padding: 24px 0; text-align: center; }
+    .note { font-size: 12.5px; color: var(--muted); margin-top: 20px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 640px) {
+      .row { grid-template-columns: 36px 1fr; }
+      .row .body { grid-column: 2; }
+      .tiles { grid-template-columns: repeat(2, 1fr); }
+      .wl div { grid-template-columns: 1fr; gap: 2px; }
+      .q { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .progress i { transition: none; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    페이지 목록으로
+  </a>
+  <header>
+    <div class="eyebrow">TOEIC · Vocabulary</div>
+    <h1>TOEIC 단어장</h1>
+    <div class="meta"><span>출처 <b id="mSource">-</b></span><span>단어 <b id="mCount">0</b></span><span>외운 단어 <b id="mDone">0</b></span><span>틀린 단어 <b id="mWrong">0</b></span></div>
+  </header>
+
+  <div class="bar">
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-tab="list" aria-selected="true">단어장</button>
+      <button class="tab" role="tab" data-tab="cards">플래시카드</button>
+      <button class="tab" role="tab" data-tab="quiz">퀴즈</button>
+      <button class="tab" role="tab" data-tab="stats">진도</button>
+    </div>
+    <div class="filters">
+      <select id="range" aria-label="범위"></select>
+      <input type="search" id="search" placeholder="단어·뜻 검색" aria-label="검색">
+      <label class="check"><input type="checkbox" id="hideKo"> 뜻 가리기</label>
+    </div>
+  </div>
+
+  <section id="list" data-panel></section>
+
+  <section id="cards" data-panel hidden>
+    <div class="stage">
+      <div class="progress"><i id="cardBar"></i></div>
+      <div class="counter" id="cardCounter"></div>
+      <div class="card" id="card"></div>
+      <div class="actions" id="cardActions"></div>
+      <p class="note">카드를 누르면 뒤집힙니다. "몰라요"는 다시 나오고, "알아요" 세 번이면 외운 단어로 표시됩니다.</p>
+    </div>
+  </section>
+
+  <section id="quiz" data-panel hidden>
+    <div class="stage">
+      <div class="filters" id="quizSetup">
+        <select id="qType" aria-label="문제 유형">
+          <option value="en2ko">영어 → 뜻 고르기</option>
+          <option value="ko2en">뜻 → 영어 고르기</option>
+          <option value="blank">예문 빈칸 채우기</option>
+          <option value="mix">섞어서</option>
+        </select>
+        <select id="qCount" aria-label="문제 수"><option>10</option><option>20</option><option>40</option></select>
+        <button class="btn primary" id="qStart">시작</button>
+      </div>
+      <div class="progress" id="qBarWrap" hidden><i id="qBar"></i></div>
+      <div class="counter" id="qCounter"></div>
+      <div id="qBody"></div>
+    </div>
+  </section>
+
+  <section id="stats" data-panel hidden>
+    <div class="tiles" id="tiles"></div>
+    <h2>틀린 단어</h2>
+    <div class="wl" id="wrongList"></div>
+    <h2>기타</h2>
+    <div class="filters"><button class="btn ghost" id="reset">학습 기록 초기화</button></div>
+    <p class="note">학습 기록은 이 브라우저에만 저장됩니다. 다른 기기에서는 처음부터 시작합니다.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const KEY = 'toeic-progress-v1';
+  let WORDS = [], SOURCE = '';
+  let prog = {};
+  try { prog = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { prog = {}; }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(prog)); } catch (e) {} };
+  const P = id => (prog[id] = prog[id] || { box: 0, seen: 0, wrong: 0 });
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pad = n => String(n).padStart(4, '0');
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const exHtml = (ex, blank) => esc(ex).replace(/\[\[(.+?)\]\]/, (m, w) => blank ? '<span class="blank">____</span>' : '<mark>' + w + '</mark>');
+  const exForm = ex => (ex.match(/\[\[(.+?)\]\]/) || [])[1] || '';
+
+  // 발음
+  const canSpeak = 'speechSynthesis' in window;
+  function speak(t) { if (!canSpeak) return; try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = 'en-US'; u.rate = .9; speechSynthesis.speak(u); } catch (e) {} }
+  const spkBtn = w => canSpeak ? `<button class="spk" data-say="${esc(w)}" aria-label="발음 듣기"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h2.5L8 3v10L4.5 10H2z"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M13 3.5a6 6 0 0 1 0 9"/></svg></button>` : '';
+  document.addEventListener('click', e => { const b = e.target.closest('[data-say]'); if (b) { e.stopPropagation(); speak(b.dataset.say); } });
+
+  // 범위 + 검색
+  function ranges() {
+    const out = [{ v: 'all', t: '전체' }, { v: 'wrong', t: '틀린 단어만' }, { v: 'unlearned', t: '아직 못 외운 단어' }];
+    const max = Math.max(...WORDS.map(w => w.id));
+    for (let s = 1; s <= max; s += 10) out.push({ v: `${s}-${s + 9}`, t: `${pad(s)}_${pad(s + 9)}` });
+    return out;
+  }
+  function filtered() {
+    const r = $('#range').value, q = $('#search').value.trim().toLowerCase();
+    return WORDS.filter(w => {
+      if (r === 'wrong' && !(P(w.id).wrong > 0)) return false;
+      if (r === 'unlearned' && P(w.id).box >= 3) return false;
+      if (/^\d+-\d+$/.test(r)) { const [a, b] = r.split('-').map(Number); if (w.id < a || w.id > b) return false; }
+      if (q && !(w.w.toLowerCase().includes(q) || w.ko.includes(q) || w.der.some(d => d[0].toLowerCase().includes(q) || d[1].includes(q)))) return false;
+      return true;
+    });
+  }
+
+  // 단어장
+  function renderList() {
+    const el = $('#list'); const ws = filtered();
+    if (!ws.length) { el.innerHTML = '<p class="empty">해당하는 단어가 없습니다.</p>'; return; }
+    let html = '', g = -1;
+    for (const w of ws) {
+      const gs = Math.floor((w.id - 1) / 10) * 10 + 1;
+      if (gs !== g) { g = gs; html += `<div class="group-h"><span>${pad(gs)}_${pad(gs + 9)}</span></div>`; }
+      const p = P(w.id);
+      const box = `<span class="box b${p.box} ${p.seen ? 'seen' : ''}">${p.box >= 3 ? '외움' : p.wrong ? '오답 ' + p.wrong : p.seen ? 'Lv' + p.box : '새 단어'}</span>`;
+      html += `<div class="row" data-id="${w.id}">
+        <div class="n">${pad(w.id)}</div>
+        <div><div class="w">${esc(w.w)}${spkBtn(w.w)}${box}</div><div class="ko">${esc(w.ko)}</div></div>
+        <div class="body"><div class="ex">${exHtml(w.ex)}</div><div class="exko">${esc(w.exko)}</div>
+          ${w.der.length ? '<div class="der">' + w.der.map(d => `<b>${esc(d[0])}</b> ${esc(d[1])}`).join(' &nbsp;·&nbsp; ') + '</div>' : ''}</div>
+      </div>`;
+    }
+    el.innerHTML = html;
+  }
+  $('#list').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) r.classList.toggle('open'); });
+
+  // 플래시카드
+  let deck = [], di = 0, flipped = false;
+  function startCards() { deck = shuffle(filtered()); di = 0; flipped = false; renderCard(); }
+  function renderCard() {
+    const c = $('#card'), a = $('#cardActions');
+    $('#cardBar').style.width = deck.length ? (di / deck.length * 100) + '%' : '0%';
+    if (!deck.length) { c.innerHTML = '<p class="empty">범위에 단어가 없습니다.</p>'; a.innerHTML = ''; $('#cardCounter').textContent = ''; return; }
+    if (di >= deck.length) {
+      c.innerHTML = `<div class="hint">한 바퀴 끝</div><div class="big">${deck.length}장</div><div class="ko">수고했어요. 틀린 단어는 "틀린 단어만" 범위로 다시 볼 수 있습니다.</div>`;
+      a.innerHTML = '<button class="btn primary" id="cardAgain">다시 섞기</button>';
+      $('#cardAgain').onclick = startCards; $('#cardCounter').textContent = ''; return;
+    }
+    const w = deck[di]; $('#cardCounter').textContent = `${di + 1} / ${deck.length}`;
+    if (!flipped) {
+      c.innerHTML = `<div class="hint">tap to flip</div><div class="big">${esc(w.w)}</div><div>${spkBtn(w.w)}</div>`;
+      a.innerHTML = '<button class="btn" id="flip">뒤집기</button>';
+      $('#flip').onclick = () => { flipped = true; renderCard(); };
+    } else {
+      c.innerHTML = `<div class="big">${esc(w.w)}</div><div class="ko">${esc(w.ko)}</div><div class="ex">${exHtml(w.ex)}</div><div class="exko">${esc(w.exko)}</div>${w.der.length ? '<div class="der">' + w.der.map(d => `${esc(d[0])} ${esc(d[1])}`).join(' · ') + '</div>' : ''}`;
+      a.innerHTML = '<button class="btn no" id="no">몰라요</button><button class="btn yes" id="yes">알아요</button>';
+      $('#no').onclick = () => grade(w, false); $('#yes').onclick = () => grade(w, true);
+    }
+  }
+  function grade(w, ok) {
+    const p = P(w.id); p.seen++;
+    if (ok) p.box = Math.min(3, p.box + 1); else { p.box = 0; p.wrong++; deck.push(w); }
+    save(); di++; flipped = false; renderCard(); updateMeta();
+  }
+  $('#card').addEventListener('click', e => { if (e.target.closest('button')) return; if (di < deck.length) { flipped = !flipped; renderCard(); } });
+
+  // 퀴즈
+  let Q = [], qi = 0, qScore = 0, qWrong = [];
+  function makeQ(w, type, pool) {
+    const others = shuffle(pool.filter(o => o.id !== w.id)).slice(0, 3);
+    if (type === 'en2ko') return { type, w, prompt: w.w, opts: shuffle([w, ...others]).map(o => ({ t: o.ko, ok: o.id === w.id })) };
+    if (type === 'ko2en') return { type, w, prompt: w.ko, opts: shuffle([w, ...others]).map(o => ({ t: o.w, ok: o.id === w.id })) };
+    return { type: 'blank', w, answer: exForm(w.ex) };
+  }
+  function startQuiz() {
+    const pool = filtered(); const type = $('#qType').value; const n = Math.min(+$('#qCount').value, pool.length);
+    if (pool.length < 4) { $('#qBody').innerHTML = '<p class="empty">퀴즈에는 단어가 4개 이상 필요합니다. 범위를 넓혀 주세요.</p>'; return; }
+    const types = ['en2ko', 'ko2en', 'blank'];
+    Q = shuffle(pool).slice(0, n).map((w, i) => makeQ(w, type === 'mix' ? types[i % 3] : type, WORDS.length >= 4 ? WORDS : pool));
+    qi = 0; qScore = 0; qWrong = []; $('#quizSetup').hidden = true; $('#qBarWrap').hidden = false; renderQ();
+  }
+  function renderQ() {
+    const b = $('#qBody'); $('#qBar').style.width = (qi / Q.length * 100) + '%';
+    if (qi >= Q.length) {
+      $('#qCounter').textContent = '';
+      b.innerHTML = `<div class="q result"><div class="score">${qScore}<small>/ ${Q.length}</small></div>
+        ${qWrong.length ? '<div class="wl">' + qWrong.map(w => `<div><b>${esc(w.w)}</b><span>${esc(w.ko)}</span></div>`).join('') + '</div>' : '<p class="empty">전부 맞혔습니다.</p>'}
+        <div class="actions"><button class="btn primary" id="qAgain">새 퀴즈</button>${qWrong.length ? '<button class="btn" id="qRetry">틀린 것만 다시</button>' : ''}</div></div>`;
+      $('#qAgain').onclick = () => { $('#quizSetup').hidden = false; $('#qBarWrap').hidden = true; b.innerHTML = ''; };
+      if (qWrong.length) $('#qRetry').onclick = () => { const type = $('#qType').value, types = ['en2ko', 'ko2en', 'blank']; Q = shuffle(qWrong).map((w, i) => makeQ(w, type === 'mix' ? types[i % 3] : type, WORDS)); qi = 0; qScore = 0; qWrong = []; renderQ(); };
+      updateMeta(); return;
+    }
+    const q = Q[qi]; $('#qCounter').textContent = `${qi + 1} / ${Q.length}`;
+    if (q.type === 'blank') {
+      b.innerHTML = `<div class="q"><div class="prompt">${exHtml(q.w.ex, true)}</div><div class="sub">${esc(q.w.exko)} &nbsp;·&nbsp; 첫 글자 <b class="mono">${esc(q.answer[0])}</b></div>
+        <form class="fill" id="fillForm"><input id="fillIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="영어 단어 입력"><button class="btn primary">확인</button></form><div id="fb"></div></div>`;
+      const inp = $('#fillIn'); inp.focus();
+      $('#fillForm').onsubmit = e => { e.preventDefault(); const v = inp.value.trim().toLowerCase(); if (!v) return; const ok = v === q.answer.toLowerCase() || v === q.w.w.toLowerCase(); answer(q, ok, `<b>${esc(q.answer)}</b> ${esc(q.w.ko)}`); inp.disabled = true; };
+    } else {
+      b.innerHTML = `<div class="q"><div class="hint mono" style="font-size:12px;color:var(--muted);letter-spacing:.1em">${q.type === 'en2ko' ? '뜻을 고르세요' : '영어 단어를 고르세요'}</div><div class="prompt">${esc(q.prompt)}${q.type === 'en2ko' ? ' ' + spkBtn(q.w.w) : ''}</div>
+        <div class="opts">${q.opts.map((o, i) => `<button class="opt" data-i="${i}"><span class="k">${'ABCD'[i]}</span><span>${esc(o.t)}</span></button>`).join('')}</div><div id="fb"></div></div>`;
+      b.querySelectorAll('.opt').forEach(btn => btn.onclick = () => {
+        const i = +btn.dataset.i; const ok = q.opts[i].ok;
+        b.querySelectorAll('.opt').forEach((x, j) => { x.disabled = true; if (q.opts[j].ok) x.classList.add('right'); else if (j === i && !ok) x.classList.add('wrong'); });
+        answer(q, ok, `<b>${esc(q.w.w)}</b> ${esc(q.w.ko)}`);
+      });
+    }
+    document.onkeydown = e => { if (q.type !== 'blank' && 'abcd'.includes(e.key.toLowerCase()) && !$('#fb').innerHTML) { const btn = b.querySelector(`.opt[data-i="${'abcd'.indexOf(e.key.toLowerCase())}"]`); if (btn) btn.click(); } if (e.key === 'Enter' && $('#next')) $('#next').click(); };
+  }
+  function answer(q, ok, label) {
+    const p = P(q.w.id); p.seen++; if (ok) { qScore++; p.box = Math.min(3, p.box + 1); } else { p.wrong++; p.box = 0; qWrong.push(q.w); } save();
+    $('#fb').innerHTML = `<div class="feedback ${ok ? 'ok' : 'ng'}"><div>${ok ? '정답' : '오답'} · ${label}</div><div class="ex">${exHtml(q.w.ex)} — ${esc(q.w.exko)}</div><div class="actions" style="justify-content:flex-end;margin-top:6px"><button class="btn primary" id="next">다음</button></div></div>`;
+    $('#next').onclick = () => { qi++; renderQ(); }; $('#next').focus();
+  }
+  $('#qStart').onclick = startQuiz;
+
+  // 진도
+  function renderStats() {
+    const total = WORDS.length, done = WORDS.filter(w => P(w.id).box >= 3).length, seen = WORDS.filter(w => P(w.id).seen).length, wrong = WORDS.filter(w => P(w.id).wrong).length;
+    $('#tiles').innerHTML = [[total, '전체 단어'], [seen, '학습한 단어'], [done, '외운 단어'], [wrong, '틀린 적 있는 단어']].map(([v, l]) => `<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
+    const ws = WORDS.filter(w => P(w.id).wrong).sort((a, b) => P(b.id).wrong - P(a.id).wrong);
+    $('#wrongList').innerHTML = ws.length ? ws.map(w => `<div><b>${esc(w.w)} <span class="box b0 seen">오답 ${P(w.id).wrong}</span></b><span>${esc(w.ko)}</span></div>`).join('') : '<p class="empty">아직 틀린 단어가 없습니다.</p>';
+  }
+  $('#reset').onclick = () => { if (confirm('학습 기록을 모두 지울까요?')) { prog = {}; save(); refresh(); } };
+
+  function updateMeta() {
+    $('#mSource').textContent = SOURCE; $('#mCount').textContent = WORDS.length;
+    $('#mDone').textContent = WORDS.filter(w => P(w.id).box >= 3).length; $('#mWrong').textContent = WORDS.filter(w => P(w.id).wrong).length;
+  }
+  let tab = 'list';
+  function refresh() { updateMeta(); if (tab === 'list') renderList(); if (tab === 'cards') startCards(); if (tab === 'stats') renderStats(); }
+  document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+    tab = t.dataset.tab; document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t)); document.querySelectorAll('[data-panel]').forEach(p => p.hidden = p.id !== tab);
+    try { localStorage.setItem('toeic-tab', tab); } catch (e) {} refresh();
+  });
+  $('#range').onchange = refresh; $('#search').oninput = () => { if (tab === 'list') renderList(); };
+  $('#hideKo').onchange = e => document.body.classList.toggle('hide', e.target.checked);
+
+  fetch('data/words.json').then(r => r.json()).then(d => {
+    WORDS = d.words; SOURCE = d.source || '';
+    $('#range').innerHTML = ranges().map(r => `<option value="${r.v}">${r.t}</option>`).join('');
+    let t = 'list'; try { t = localStorage.getItem('toeic-tab') || 'list'; } catch (e) {}
+    const btn = document.querySelector(`.tab[data-tab="${t}"]`); (btn || document.querySelector('.tab')).click();
+  }).catch(() => { $('#list').innerHTML = '<p class="empty">단어 데이터를 불러오지 못했습니다.</p>'; });
+})();
+</script>
+</body>
+</html>
