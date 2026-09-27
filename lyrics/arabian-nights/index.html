@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Arabian Nights 가사</title>
+  <meta name="description" content="알라딘(2019) OST 'Arabian Nights' 윌 스미스 버전 전체 가사와 한국어 해석">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4;
+      --ink: #1A1F2B;
+      --ink-2: #4B5364;
+      --muted: #8A919F;
+      --line: #E1E3DE;
+      --line-strong: #1A1F2B;
+      --accent: #D0731A;
+      --accent-ink: #9A530E;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D;
+        --ink: #EEF0F3;
+        --ink-2: #BFC6D1;
+        --muted: #7F8794;
+        --line: #2A2F3A;
+        --line-strong: #EEF0F3;
+        --accent: #EE9A46;
+        --accent-ink: #F5B672;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-inline: 24px;
+      padding-block: 36px 96px;
+    }
+
+    /* 목록 바로가기 */
+    .home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+      text-decoration: none; padding: 4px 0;
+    }
+    .home:hover, .home:focus-visible { color: var(--accent-ink); outline: none; }
+    .home svg { width: 14px; height: 14px; }
+
+    /* 헤더 */
+    header {
+      margin-top: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line-strong);
+      display: grid; gap: 18px;
+    }
+    .eyebrow {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-ink);
+    }
+    h1 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 11vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .sub {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 18px; color: var(--ink-2); margin: 0;
+    }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 6px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .meta b { color: var(--ink-2); font-weight: 500; }
+
+    /* 가사: 영어 / 해석 대역 */
+    .song { display: grid; gap: 44px; margin-top: 44px; }
+    section { display: grid; gap: 14px; }
+    .part {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .chorus-block .part { color: var(--accent-ink); border-color: var(--accent); }
+
+    .line {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 40px;
+      align-items: baseline;
+    }
+    .en {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 20px; font-weight: 700; line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .ko {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 15px; font-weight: 400; color: var(--ink-2); line-height: 1.6;
+    }
+    .en .pr {
+      display: block; margin-top: 2px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted);
+    }
+    .chorus-block .en { color: var(--accent-ink); }
+    .refrain .en { font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+    .refrain .ko { color: var(--muted); }
+
+    /* 표현 노트 */
+    .notes { margin-top: 88px; }
+    .notes h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .term {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 12px 40px;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .term h3 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .term h3 small {
+      display: block; margin-top: 6px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; font-size: 14px; font-weight: 500; color: var(--accent-ink);
+    }
+    .term .body { display: grid; gap: 14px; }
+    .term p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .term dl { margin: 0; display: grid; gap: 8px; }
+    .term dl div { display: grid; grid-template-columns: 104px 1fr; gap: 12px; font-size: 14px; }
+    .term dt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); margin: 0; }
+    .term dd { margin: 0; color: var(--ink-2); }
+    .term .ex { display: grid; gap: 6px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .term .ex div { display: grid; gap: 1px; font-size: 13.5px; }
+    .term .ex i { font-style: normal; color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; }
+    .term .ex span { color: var(--muted); }
+
+    /* 비영어 단어 풀이 */
+    .vocab { margin-top: 88px; }
+    .vocab h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .vline { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
+    .vline .src {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; align-items: baseline;
+    }
+    .vline .src .en { font-size: 20px; }
+    .vline .src .en .pr { display: block; margin-top: 2px; font-family: "Noto Sans KR", sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+    .vline .src .ko { font-size: 15px; color: var(--ink-2); }
+    .words { display: grid; gap: 0; }
+    .word {
+      display: grid; grid-template-columns: 140px 150px 1fr; gap: 6px 24px;
+      padding: 12px 0; border-top: 1px dashed var(--line); font-size: 14px;
+    }
+    .word:first-child { border-top: 0; }
+    .word .w { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); }
+    .word .w small { display: block; font-family: "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 1px; }
+    .word .m { color: var(--ink); font-weight: 500; }
+    .word .n { color: var(--ink-2); }
+    .word .n i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; color: var(--ink); }
+    .vline .idiom {
+      padding: 12px 16px; border-left: 2px solid var(--accent);
+      font-size: 14px; color: var(--ink-2); display: grid; gap: 4px;
+    }
+    .vline .idiom b { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--accent-ink); }
+
+    @media (max-width: 640px) {
+      .wrap { padding-inline: 20px; padding-block: 24px 72px; }
+      header { margin-top: 28px; }
+      .line { grid-template-columns: 1fr; gap: 2px; }
+      .line + .line { margin-top: 6px; }
+      .en { font-size: 18px; }
+      .term { grid-template-columns: 1fr; gap: 14px; }
+      .term dl div { grid-template-columns: 1fr; gap: 2px; }
+      .vline .src { grid-template-columns: 1fr; gap: 2px; }
+      .word { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../../">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    페이지 목록으로
+  </a>
+
+  <header>
+    <div class="eyebrow">Aladdin (2019) · Original Soundtrack · 2019</div>
+    <h1>Arabian Nights</h1>
+    <p class="sub">아라비안 나이트</p>
+    <div class="meta">
+      <span>노래 <b>Will Smith</b></span>
+      <span>작곡 <b>Alan Menken</b></span>
+      <span>작사 <b>Howard Ashman · Benj Pasek · Justin Paul</b></span>
+      <span>영화 속 캐릭터 <b>지니(Genie)</b></span>
+    </div>
+  </header>
+
+  <div class="song">
+
+    <section>
+      <div class="part">Verse 1</div>
+      <div class="line"><div class="en">Oh, imagine a land, it's a faraway place</div><div class="ko">오, 한 땅을 상상해 봐, 아득히 먼 곳이야</div></div>
+      <div class="line"><div class="en">Where the caravan camels roam</div><div class="ko">대상의 낙타들이 떠도는 곳</div></div>
+      <div class="line"><div class="en">Where you wander among every culture and tongue</div><div class="ko">온갖 문화와 언어 사이를 거닐게 되는 곳</div></div>
+      <div class="line"><div class="en">It's chaotic, but hey, it's home</div><div class="ko">어수선하지만, 뭐 어때, 여기가 우리 집인걸</div></div>
+    </section>
+
+    <section>
+      <div class="part">Pre-chorus</div>
+      <div class="line"><div class="en">When the wind's from the east</div><div class="ko">바람이 동쪽에서 불고</div></div>
+      <div class="line"><div class="en">And the sun's from the west</div><div class="ko">해가 서쪽에 걸리고</div></div>
+      <div class="line"><div class="en">And the sand in the glass is right</div><div class="ko">모래시계의 모래가 딱 맞아떨어질 때</div></div>
+      <div class="line"><div class="en">Come on down, stop on by</div><div class="ko">이리 내려와, 잠깐 들러 봐</div></div>
+      <div class="line"><div class="en">Hop a carpet and fly</div><div class="ko">카펫에 올라타고 날아가</div></div>
+      <div class="line"><div class="en">To another Arabian night</div><div class="ko">또 하나의 아라비안 나이트로</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 2</div>
+      <div class="line"><div class="en">As you wind through the streets at the fabled bazaars</div><div class="ko">전설 속 바자르의 골목골목을 누비다 보면</div></div>
+      <div class="line"><div class="en">With the cardamom-cluttered stalls</div><div class="ko">카다멈이 수북이 쌓인 좌판들 사이로</div></div>
+      <div class="line"><div class="en">You can smell every spice</div><div class="ko">온갖 향신료 냄새를 맡으면서</div></div>
+      <div class="line"><div class="en">While you haggle the price</div><div class="ko">값을 흥정하게 되지</div></div>
+      <div class="line"><div class="en">Of the silks and the satin shawls</div><div class="ko">비단과 새틴 숄의 값을</div></div>
+    </section>
+
+    <section>
+      <div class="part">Pre-chorus</div>
+      <div class="line"><div class="en">Oh, the music that plays as you move through a maze</div><div class="ko">오, 미로 같은 골목을 지날 때 흐르는 그 음악</div></div>
+      <div class="line"><div class="en">In the haze of your pure delight</div><div class="ko">순수한 기쁨에 취해 몽롱한 채로</div></div>
+      <div class="line"><div class="en">You are caught in a dance</div><div class="ko">넌 춤에 휩쓸리고</div></div>
+      <div class="line"><div class="en">You are lost in the trance</div><div class="ko">넌 황홀경에 빠져들지</div></div>
+      <div class="line"><div class="en">Of another Arabian night</div><div class="ko">또 하나의 아라비안 나이트의</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">Arabian nights</div><div class="ko">아라비안 나이트</div></div>
+      <div class="line"><div class="en">Like Arabian days</div><div class="ko">아라비안 데이처럼</div></div>
+      <div class="line"><div class="en">More often than not are hotter than hot</div><div class="ko">대개는 뜨겁다 못해 불타오르지</div></div>
+      <div class="line"><div class="en">In a lot of good ways</div><div class="ko">여러모로 좋은 쪽으로 말이야</div></div>
+      <div class="line"><div class="en">Arabian nights</div><div class="ko">아라비안 나이트</div></div>
+      <div class="line"><div class="en">Like Arabian dreams</div><div class="ko">아라비안 드림처럼</div></div>
+      <div class="line"><div class="en">This mystical land of magic and sand</div><div class="ko">마법과 모래로 이루어진 이 신비로운 땅은</div></div>
+      <div class="line"><div class="en">Is more than it seems</div><div class="ko">보이는 게 전부가 아니야</div></div>
+    </section>
+
+    <section>
+      <div class="part">Bridge</div>
+      <div class="line"><div class="en">There's a road that may lead you</div><div class="ko">널 이끌지도 모를 길이 하나 있어</div></div>
+      <div class="line"><div class="en">To good or to greed through</div><div class="ko">선으로 갈지 탐욕으로 갈지는</div></div>
+      <div class="line"><div class="en">The power your wishing commands</div><div class="ko">네 소원이 부리는 힘에 달렸지</div></div>
+      <div class="line"><div class="en">Let the darkness unfold or find fortunes untold</div><div class="ko">어둠을 펼쳐 놓든, 헤아릴 수 없는 보물을 찾든</div></div>
+      <div class="line"><div class="en">Well, your destiny lies in your hands</div><div class="ko">자, 네 운명은 네 손에 달려 있어</div></div>
+    </section>
+
+    <section>
+      <div class="part">Cave of Wonders</div>
+      <div class="line"><div class="en">Only one may enter here</div><div class="ko">오직 한 사람만이 이곳에 들어올 수 있다</div></div>
+      <div class="line"><div class="en">One whose worth lies far within</div><div class="ko">그 가치가 깊은 내면에 있는 자</div></div>
+      <div class="line"><div class="en">A diamond in the rough</div><div class="ko">원석 속의 다이아몬드</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">Arabian nights</div><div class="ko">아라비안 나이트</div></div>
+      <div class="line"><div class="en">Like Arabian days</div><div class="ko">아라비안 데이처럼</div></div>
+      <div class="line"><div class="en">They seem to excite, take off and take flight</div><div class="ko">흥을 돋우고, 날아올라 훨훨 나는 듯해</div></div>
+      <div class="line"><div class="en">To shock and amaze</div><div class="ko">널 놀라게 하고 경탄하게 하려고</div></div>
+      <div class="line"><div class="en">Arabian nights</div><div class="ko">아라비안 나이트</div></div>
+      <div class="line"><div class="en">'Neath Arabian moons</div><div class="ko">아라비안 달빛 아래</div></div>
+      <div class="line"><div class="en">A fool off his guard could fall and fall hard</div><div class="ko">방심한 바보는 넘어질 수 있어, 그것도 아주 세게</div></div>
+      <div class="line"><div class="en">Out there on the dunes</div><div class="ko">저 모래 언덕 너머에서</div></div>
+    </section>
+
+  </div>
+
+
+  <div class="notes">
+    <h2>표현 노트</h2>
+
+    <div class="term">
+      <h3>It's chaotic, but hey, it's home<small>어수선하지만, 뭐 어때, 여기가 집인걸</small></h3>
+      <div class="body">
+        <p>이 한 줄에는 30년 가까운 개정 역사가 있습니다. 1992년 애니메이션 원곡의 같은 자리는 "It's barbaric, but hey, it's home(야만적이지만, 뭐 어때, 여기가 집인걸)"이었고, 그 앞줄은 "마음에 안 들면 귀를 잘라 버리는 곳"이었습니다. 아랍계 단체의 항의로 1993년 비디오 출시 때 앞줄이 먼저 바뀌었고, 2019년 실사판에서는 barbaric 마저 chaotic 으로 바꾸고 "온갖 문화와 언어 사이를 거니는 곳"이라는 새 줄을 넣어 아그라바를 다문화 도시로 그렸습니다.</p>
+        <dl>
+          <div><dt>chaotic</dt><dd>혼란스러운, 어수선한. 부정적이라기보다 활기차서 정신없다는 어감으로 쓰였습니다.</dd></div>
+          <div><dt>but hey</dt><dd>"근데 뭐, 어쩌겠어" 하고 가볍게 넘기는 구어체 추임새. 뒤에 오는 말을 애정 어린 변명처럼 만듭니다.</dd></div>
+        </dl>
+        <p>그래서 이 줄은 "엉망이긴 한데, 그래도 내 고향이야"라는 애정 고백에 가깝습니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>the sand in the glass is right<small>모래시계의 모래가 딱 맞을 때</small></h3>
+      <div class="body">
+        <p>glass 는 유리잔이 아니라 hourglass(모래시계)입니다. "모래가 딱 맞다"는 시간이 딱 맞아떨어졌다, 때가 왔다는 뜻입니다. 앞의 두 줄 "바람은 동쪽에서, 해는 서쪽에서"와 함께, 마법이 일어나는 조건이 모두 갖춰진 순간을 그립니다.</p>
+        <div class="ex">
+          <div><i>The sands of time are running out.</i><span>시간의 모래가 다 떨어져 간다. (시간이 얼마 안 남았다)</span></div>
+        </div>
+        <p>1992년 원곡에도 그대로 있던 줄이라, 실사판이 원곡에서 그대로 가져온 몇 안 되는 이미지 중 하나입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>come on down · stop on by · hop a carpet<small>이리 와 · 잠깐 들러 · 카펫에 올라타</small></h3>
+      <div class="body">
+        <p>세 줄 연속으로 나오는 초대 표현인데, 모두 격식 없는 구어체입니다. 지니가 관객에게 말을 거는 사회자 같은 말투를 만들어 줍니다.</p>
+        <dl>
+          <div><dt>come on down</dt><dd>미국 TV 퀴즈쇼 "The Price Is Right"의 유명한 호출 멘트입니다. 관객 이름을 부르며 "Come on down!" 하면 무대로 뛰어 내려오죠. 지니의 쇼맨십과 딱 맞는 인용입니다.</dd></div>
+          <div><dt>stop on by</dt><dd>stop by(잠깐 들르다)에 on 을 끼워 더 느긋하고 친근하게 만든 형태. "지나는 길에 잠깐 들러".</dd></div>
+          <div><dt>hop a carpet</dt><dd>hop a bus / hop a train(버스에 훌쩍 올라타다)와 같은 꼴. 교통수단 자리에 카펫이 들어간 말장난입니다.</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>Stop on by whenever you're in town.</i><span>동네 오면 언제든 들러.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>more often than not · hotter than hot<small>대개는 · 뜨겁다 못해</small></h3>
+      <div class="body">
+        <dl>
+          <div><dt>more often than not</dt><dd>"안 그런 때보다 그런 때가 더 많다", 즉 "대개는, 십중팔구". usually 보다 살짝 구어적이고 리듬이 있습니다.</dd></div>
+          <div><dt>hotter than hot</dt><dd>"뜨거운 것보다 더 뜨거운". 같은 단어를 비교급으로 겹쳐 최상급처럼 만드는 강조법입니다. 날씨의 더위와 분위기의 열기를 동시에 뜻합니다.</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>More often than not, he's late.</i><span>그 사람은 십중팔구 늦어.</span></div>
+        </div>
+        <p>뒤이어 "in a lot of good ways(여러모로 좋은 쪽으로)"가 붙어, 더위가 고생이 아니라 매력이라고 뒤집습니다. 후렴 전체가 "이 땅은 겉보기와 다르다(more than it seems)"로 끝나는 것과 같은 방향입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>a diamond in the rough<small>원석 속의 다이아몬드</small></h3>
+      <div class="body">
+        <p>rough 는 가공하지 않은 원석 상태를 뜻합니다. 겉은 볼품없지만 다듬으면 빛나는 사람, 아직 진가를 인정받지 못한 인재를 가리키는 관용구입니다.</p>
+        <div class="ex">
+          <div><i>She's a diamond in the rough. Give her a chance.</i><span>걔는 아직 다듬어지지 않은 보석이야. 기회를 줘 봐.</span></div>
+        </div>
+        <p>알라딘 전체를 관통하는 표현입니다. 동굴이 "오직 한 사람, 가치가 깊은 내면에 있는 자"만 들어올 수 있다고 하는데 그게 거리의 좀도둑 알라딘이라는 것이 이야기의 출발점입니다. 이 세 줄은 지니가 아니라 경이의 동굴(Cave of Wonders)의 목소리로, 실사판에서는 프랭크 웰커가 맡았습니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>off his guard<small>방심한</small></h3>
+      <div class="body">
+        <p>guard 는 경계, 방어 자세. "off one's guard"는 경계를 늦춘 상태, 즉 방심한 상태입니다. 반대로 "on one's guard"는 경계하고 있는 상태입니다.</p>
+        <div class="ex">
+          <div><i>The question caught me off guard.</i><span>그 질문에 허를 찔렸다.</span></div>
+          <div><i>Stay on your guard around him.</i><span>그 사람 옆에서는 긴장 늦추지 마.</span></div>
+        </div>
+        <p>마지막 후렴의 "방심한 바보는 모래 언덕에서 세게 넘어질 수 있다"는 앞 브릿지의 "선으로 갈지 탐욕으로 갈지"와 이어지는 경고입니다. 화려한 도시 예찬으로 시작한 노래가 끝에서 자파의 탐욕을 슬쩍 예고하며 닫힙니다. "'Neath"는 beneath(아래)의 시적 축약형입니다.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
