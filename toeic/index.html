@@ -195,7 +195,7 @@
     <h2>틀린 단어</h2>
     <div class="wl" id="wrongList"></div>
     <h2>기타</h2>
-    <div class="filters"><button class="btn" id="export">기록 내보내기</button><label class="btn" for="importFile">기록 가져오기</label><input type="file" id="importFile" accept="application/json" hidden><button class="btn ghost" id="reset">학습 기록 초기화</button></div>
+    <div class="filters"><button class="btn" id="export">기록 내보내기</button><button class="btn" id="importBtn">기록 가져오기</button><input type="file" id="importFile" accept="application/json" hidden><button class="btn ghost" id="reset">학습 기록 초기화</button></div>
     <p class="note">학습 기록은 이 브라우저에만 저장됩니다. 다른 기기로 옮기려면 내보낸 파일을 그 기기에서 가져오세요.</p>
   </section>
 </div>
@@ -377,6 +377,7 @@
     const blob = new Blob([JSON.stringify({ exported: new Date().toISOString(), progress: prog })], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `toeic-progress-${new Date().toISOString().slice(0, 10)}.json`; a.click(); URL.revokeObjectURL(a.href);
   };
+  $('#importBtn').onclick = () => $('#importFile').click();
   $('#importFile').onchange = e => {
     const f = e.target.files[0]; if (!f) return;
     f.text().then(t => { const d = JSON.parse(t); const p = d.progress || d; if (typeof p !== 'object') throw 0;
