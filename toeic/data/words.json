@@ -1,45 +1,580 @@
 {
-  "source": "토익은 단어빨 Stage 01",
-  "words": [
-    {"id": 1, "w": "able", "ko": "~할 수 있는, 유능한, 재능 있는", "ex": "be [[able]] to carry out tasks with great accuracy", "exko": "매우 정확하게 작업을 수행할 수 있다", "der": [["ability", "능력, 역량, 재능"]]},
-    {"id": 2, "w": "abandoned", "ko": "버려진, 유기된", "ex": "tear down the [[abandoned]] building", "exko": "버려진 건물을 철거하다", "der": [["abandon", "버리다, 버리고 떠나다"]]},
-    {"id": 3, "w": "absence", "ko": "결근, 부재, 결석", "ex": "request a leave of [[absence]] in writing", "exko": "서면으로 휴가를 신청하다", "der": [["be absent from", "결근하다, 결석하다"], ["absenteeism", "상습적인 무단결근"]]},
-    {"id": 4, "w": "absolutely", "ko": "전적으로, 틀림없이, 물론", "ex": "be provided [[absolutely]] free of charge", "exko": "완전 무료로 제공된다", "der": []},
-    {"id": 5, "w": "abstract", "ko": "요약, 개요, 초록, 추상적인", "ex": "submit a one-page [[abstract]] of a paper", "exko": "논문의 한 페이지 요약본을 제출하다", "der": []},
-    {"id": 6, "w": "abundant", "ko": "풍부한, 많은", "ex": "be [[abundant]] in natural resources", "exko": "천연자원이 풍부하다", "der": [["abundance", "풍부, 많음"], ["abound", "아주 많다, 풍부하다"]]},
-    {"id": 7, "w": "accept", "ko": "받아들이다, 받다, 수락하다", "ex": "[[accept]] full responsibility for the accident", "exko": "사고에 대해 전적인 책임을 지다", "der": [["acceptable", "받아들일 수 있는"], ["acceptance", "수락, 받아들임"]]},
-    {"id": 8, "w": "access", "ko": "접근, 접속, 접근하다, 이용하다", "ex": "have [[access]] to the restricted areas", "exko": "제한 구역에 출입할 수 있다", "der": [["accessible", "접근할 수 있는, 이용 가능한"], ["inaccessible", "접근할 수 없는"]]},
-    {"id": 9, "w": "accidentally", "ko": "우연히, 뜻하지 않게, 실수로", "ex": "[[accidentally]] delete the personnel file", "exko": "실수로 인사 파일을 삭제하다", "der": [["accident", "사고"], ["accidental", "우연한, 돌발적인"]]},
-    {"id": 10, "w": "accommodate", "ko": "공간을 제공하다, 수용하다", "ex": "can [[accommodate]] at least 100 people", "exko": "최소 100명을 수용할 수 있다", "der": [["accommodation", "숙박 시설, 숙소"]]},
-    {"id": 11, "w": "accompany", "ko": "동행하다, 동봉하다", "ex": "must be [[accompanied]] by a guardian", "exko": "보호자를 동반해야 한다", "der": [["company", "동행, 함께 있음"]]},
-    {"id": 12, "w": "accomplished", "ko": "뛰어난, 저명한, 노련한", "ex": "have an interview with an [[accomplished]] novelist", "exko": "저명한 소설가와 인터뷰하다", "der": [["accomplishment", "성취, 업적"], ["accomplish", "성취하다, 해내다"]]},
-    {"id": 13, "w": "accordingly", "ko": "그에 따라, 그래서", "ex": "change the team's schedule [[accordingly]]", "exko": "그에 따라 팀의 일정을 변경하다", "der": [["according to", "~에 의하면"], ["in accordance with", "~에 따라서"]]},
-    {"id": 14, "w": "account", "ko": "계좌, 계정, 고객, 설명", "ex": "open an [[account]] with Lawrence Bank", "exko": "로렌스 은행에 계좌를 개설하다", "der": [["account for", "설명하다, 차지하다"], ["take into account", "고려하다"]]},
-    {"id": 15, "w": "accounting", "ko": "회계, 회계학", "ex": "have a master's degree in [[accounting]]", "exko": "회계학 석사 학위를 소지하다", "der": [["accountant", "회계사"]]},
-    {"id": 16, "w": "accurately", "ko": "정확하게, 정밀하게", "ex": "complete the form as [[accurately]] as possible", "exko": "서식을 가능한 한 정확하게 작성하다", "der": [["accurate", "정확한"]]},
-    {"id": 17, "w": "accustomed", "ko": "익숙한", "ex": "become [[accustomed]] to the cold climate", "exko": "추운 날씨에 익숙해지다", "der": []},
-    {"id": 18, "w": "achieve", "ko": "달성하다, 성취하다, 이루다", "ex": "strive to [[achieve]] sales goals", "exko": "판매 목표 달성을 위해 노력하다", "der": [["achievement", "업적, 성취, 달성"]]},
-    {"id": 19, "w": "acknowledge", "ko": "인정하다, 받았음을 알리다", "ex": "[[acknowledge]] receipt of the package", "exko": "택배를 수령했음을 알리다", "der": [["acknowledgement", "인정, 시인, 답례"]]},
-    {"id": 20, "w": "acquainted", "ko": "알고 있는, 안면이 있는, 아는", "ex": "get [[acquainted]] at the international conference", "exko": "국제회의에서 친분을 쌓다", "der": [["acquaintance", "아는 사람, 지인"]]},
-    {"id": 21, "w": "acquire", "ko": "얻다, 획득하다, 인수하다", "ex": "[[acquire]] Horizon Ventures, headquartered in Boston", "exko": "보스턴에 본사를 둔 호라이즌 벤처사를 인수하다", "der": [["acquisition", "인수, 매입, 구입"]]},
-    {"id": 22, "w": "acting", "ko": "대행의, 대리의, 연기", "ex": "serve as [[acting]] chairman until September 30", "exko": "9월 30일까지 의장 권한대행을 맡다", "der": [["act", "행동을 취하다, 법률"], ["action", "행동, 조치"], ["actually", "실제로"]]},
-    {"id": 23, "w": "activate", "ko": "작동시키다, 활성화시키다", "ex": "touch the screen to [[activate]] the security system", "exko": "화면을 터치하여 보안 시스템을 작동시키다", "der": [["active", "활동적인, 적극적인"], ["actively", "활발히"]]},
-    {"id": 24, "w": "adapt", "ko": "맞추다, 조정하다, 적응하다, 각색하다", "ex": "[[adapt]] to the new working environment", "exko": "새로운 근무 환경에 적응하다", "der": [["adaptation", "각색, 적응"]]},
-    {"id": 25, "w": "add", "ko": "첨가하다, 추가하다, 덧붙이다", "ex": "[[add]] some water and stir the mixture", "exko": "약간의 물을 넣고 반죽을 젓다", "der": [["addition", "추가"], ["in addition to", "~에 덧붙여"], ["in addition", "게다가"]]},
-    {"id": 26, "w": "additional", "ko": "추가의, 부가적인", "ex": "obtain [[additional]] information from their website", "exko": "그들의 웹사이트에서 추가 정보를 얻다", "der": [["additionally", "게다가"]]},
-    {"id": 27, "w": "address", "ko": "연설, 주소, 연설하다, 해결하다, (주소로) 보내다", "ex": "[[address]] customer complaints in a proper manner", "exko": "고객의 불만을 적절하게 처리하다", "der": [["email address", "이메일 주소"], ["mailing address", "우편 주소"]]},
-    {"id": 28, "w": "adequate", "ko": "충분한, 적절한", "ex": "order an [[adequate]] amount of food for 30 people", "exko": "30명을 위한 충분한 양의 음식을 주문하다", "der": []},
-    {"id": 29, "w": "adjacent", "ko": "인접한, 가까운", "ex": "purchase an [[adjacent]] building to expand the café", "exko": "카페 확장을 위해 인접 건물을 구입하다", "der": [["be adjacent to", "~에 인접하다, 가깝다"]]},
-    {"id": 30, "w": "adjust", "ko": "조정하다, 조절하다, 적응하다", "ex": "[[adjust]] the height of the chair", "exko": "의자 높이를 조절하다", "der": [["adjustment", "수정, 조정, 적응"], ["adjustable", "조절 가능한"]]},
-    {"id": 31, "w": "administrative", "ko": "행정의, 사무의, 관리상의", "ex": "seek an experienced [[administrative]] assistant", "exko": "숙련된 사무 행정 직원을 찾다", "der": [["administer", "관리하다, 집행하다"], ["administration", "관리, 행정"]]},
-    {"id": 32, "w": "admirable", "ko": "감탄할 만한, 훌륭한, 존경스러운", "ex": "do an [[admirable]] job in such circumstances", "exko": "그런 상황에서 훌륭하게 일을 해내다", "der": [["admire", "존경하다, 감탄하다"]]},
-    {"id": 33, "w": "admission", "ko": "입장, 입학, 가입", "ex": "purchase your tickets for [[admission]] to the museum", "exko": "박물관 입장권을 구입하다", "der": [["admit", "인정하다, 시인하다, 입장을 허락하다"]]},
-    {"id": 34, "w": "adopt", "ko": "채택하다, 취하다", "ex": "[[adopt]] further cost-cutting measures", "exko": "추가 비용 절감 조치를 취하다", "der": []},
-    {"id": 35, "w": "advance", "ko": "진보, 발전, 진보하다, 사전의", "ex": "discuss recent [[advances]] in technology", "exko": "최근의 기술 발전에 대해 논하다", "der": [["advanced", "선진의, 상급의"], ["in advance", "미리"], ["advancement", "승진, 발전"]]},
-    {"id": 36, "w": "advantage", "ko": "이점, 장점, 혜택", "ex": "have several [[advantages]] over traditional methods", "exko": "전통적인 방법보다 몇 가지 이점이 있다", "der": [["advantageous", "이로운, 유리한"]]},
-    {"id": 37, "w": "adverse", "ko": "부정적인, 불리한", "ex": "be canceled due to [[adverse]] weather conditions", "exko": "악천후로 인해 취소되다", "der": [["adversely", "불리하게, 반대로, 역으로"], ["adversity", "역경, 고난"]]},
-    {"id": 38, "w": "advertisement", "ko": "광고", "ex": "place an [[advertisement]] in the local paper", "exko": "지역 신문에 광고를 내다", "der": [["advertise", "광고하다, 알리다"], ["advertising", "광고, 광고업"]]},
-    {"id": 39, "w": "advice", "ko": "조언, 충고", "ex": "seek professional [[advice]] from a certified accountant", "exko": "공인 회계사에게 전문적인 조언을 구하다", "der": [["advise", "조언하다, 알리다"], ["advisable", "바람직한, 현명한, 권할 만한"]]},
-    {"id": 40, "w": "affect", "ko": "영향을 미치다, 영향을 주다", "ex": "[[affect]] the country's economy directly", "exko": "국가 경제에 직접적인 영향을 미치다", "der": []}
-  ]
+ "source": "토익은 단어빨 Stage 01",
+ "total": 1200,
+ "words": [
+  {
+   "id": 1,
+   "w": "able",
+   "ko": "~할 수 있는, 유능한, 재능 있는",
+   "ex": "be [[able]] to carry out tasks with great accuracy",
+   "exko": "매우 정확하게 작업을 수행할 수 있다",
+   "der": [
+    [
+     "ability",
+     "능력, 역량, 재능"
+    ]
+   ]
+  },
+  {
+   "id": 2,
+   "w": "abandoned",
+   "ko": "버려진, 유기된",
+   "ex": "tear down the [[abandoned]] building",
+   "exko": "버려진 건물을 철거하다",
+   "der": [
+    [
+     "abandon",
+     "버리다, 버리고 떠나다"
+    ]
+   ]
+  },
+  {
+   "id": 3,
+   "w": "absence",
+   "ko": "결근, 부재, 결석",
+   "ex": "request a leave of [[absence]] in writing",
+   "exko": "서면으로 휴가를 신청하다",
+   "der": [
+    [
+     "be absent from",
+     "결근하다, 결석하다"
+    ],
+    [
+     "absenteeism",
+     "상습적인 무단결근"
+    ]
+   ]
+  },
+  {
+   "id": 4,
+   "w": "absolutely",
+   "ko": "전적으로, 틀림없이, 물론",
+   "ex": "be provided [[absolutely]] free of charge",
+   "exko": "완전 무료로 제공된다",
+   "der": []
+  },
+  {
+   "id": 5,
+   "w": "abstract",
+   "ko": "요약, 개요, 초록, 추상적인",
+   "ex": "submit a one-page [[abstract]] of a paper",
+   "exko": "논문의 한 페이지 요약본을 제출하다",
+   "der": []
+  },
+  {
+   "id": 6,
+   "w": "abundant",
+   "ko": "풍부한, 많은",
+   "ex": "be [[abundant]] in natural resources",
+   "exko": "천연자원이 풍부하다",
+   "der": [
+    [
+     "abundance",
+     "풍부, 많음"
+    ],
+    [
+     "abound",
+     "아주 많다, 풍부하다"
+    ]
+   ]
+  },
+  {
+   "id": 7,
+   "w": "accept",
+   "ko": "받아들이다, 받다, 수락하다",
+   "ex": "[[accept]] full responsibility for the accident",
+   "exko": "사고에 대해 전적인 책임을 지다",
+   "der": [
+    [
+     "acceptable",
+     "받아들일 수 있는"
+    ],
+    [
+     "acceptance",
+     "수락, 받아들임"
+    ]
+   ]
+  },
+  {
+   "id": 8,
+   "w": "access",
+   "ko": "접근, 접속, 접근하다, 이용하다",
+   "ex": "have [[access]] to the restricted areas",
+   "exko": "제한 구역에 출입할 수 있다",
+   "der": [
+    [
+     "accessible",
+     "접근할 수 있는, 이용 가능한"
+    ],
+    [
+     "inaccessible",
+     "접근할 수 없는"
+    ]
+   ]
+  },
+  {
+   "id": 9,
+   "w": "accidentally",
+   "ko": "우연히, 뜻하지 않게, 실수로",
+   "ex": "[[accidentally]] delete the personnel file",
+   "exko": "실수로 인사 파일을 삭제하다",
+   "der": [
+    [
+     "accident",
+     "사고"
+    ],
+    [
+     "accidental",
+     "우연한, 돌발적인"
+    ]
+   ]
+  },
+  {
+   "id": 10,
+   "w": "accommodate",
+   "ko": "공간을 제공하다, 수용하다",
+   "ex": "can [[accommodate]] at least 100 people",
+   "exko": "최소 100명을 수용할 수 있다",
+   "der": [
+    [
+     "accommodation",
+     "숙박 시설, 숙소"
+    ]
+   ]
+  },
+  {
+   "id": 11,
+   "w": "accompany",
+   "ko": "동행하다, 동봉하다",
+   "ex": "must be [[accompanied]] by a guardian",
+   "exko": "보호자를 동반해야 한다",
+   "der": [
+    [
+     "company",
+     "동행, 함께 있음"
+    ]
+   ]
+  },
+  {
+   "id": 12,
+   "w": "accomplished",
+   "ko": "뛰어난, 저명한, 노련한",
+   "ex": "have an interview with an [[accomplished]] novelist",
+   "exko": "저명한 소설가와 인터뷰하다",
+   "der": [
+    [
+     "accomplishment",
+     "성취, 업적"
+    ],
+    [
+     "accomplish",
+     "성취하다, 해내다"
+    ]
+   ]
+  },
+  {
+   "id": 13,
+   "w": "accordingly",
+   "ko": "그에 따라, 그래서",
+   "ex": "change the team's schedule [[accordingly]]",
+   "exko": "그에 따라 팀의 일정을 변경하다",
+   "der": [
+    [
+     "according to",
+     "~에 의하면"
+    ],
+    [
+     "in accordance with",
+     "~에 따라서"
+    ]
+   ]
+  },
+  {
+   "id": 14,
+   "w": "account",
+   "ko": "계좌, 계정, 고객, 설명",
+   "ex": "open an [[account]] with Lawrence Bank",
+   "exko": "로렌스 은행에 계좌를 개설하다",
+   "der": [
+    [
+     "account for",
+     "설명하다, 차지하다"
+    ],
+    [
+     "take into account",
+     "고려하다"
+    ]
+   ]
+  },
+  {
+   "id": 15,
+   "w": "accounting",
+   "ko": "회계, 회계학",
+   "ex": "have a master's degree in [[accounting]]",
+   "exko": "회계학 석사 학위를 소지하다",
+   "der": [
+    [
+     "accountant",
+     "회계사"
+    ]
+   ]
+  },
+  {
+   "id": 16,
+   "w": "accurately",
+   "ko": "정확하게, 정밀하게",
+   "ex": "complete the form as [[accurately]] as possible",
+   "exko": "서식을 가능한 한 정확하게 작성하다",
+   "der": [
+    [
+     "accurate",
+     "정확한"
+    ]
+   ]
+  },
+  {
+   "id": 17,
+   "w": "accustomed",
+   "ko": "익숙한",
+   "ex": "become [[accustomed]] to the cold climate",
+   "exko": "추운 날씨에 익숙해지다",
+   "der": []
+  },
+  {
+   "id": 18,
+   "w": "achieve",
+   "ko": "달성하다, 성취하다, 이루다",
+   "ex": "strive to [[achieve]] sales goals",
+   "exko": "판매 목표 달성을 위해 노력하다",
+   "der": [
+    [
+     "achievement",
+     "업적, 성취, 달성"
+    ]
+   ]
+  },
+  {
+   "id": 19,
+   "w": "acknowledge",
+   "ko": "인정하다, 받았음을 알리다",
+   "ex": "[[acknowledge]] receipt of the package",
+   "exko": "택배를 수령했음을 알리다",
+   "der": [
+    [
+     "acknowledgement",
+     "인정, 시인, 답례"
+    ]
+   ]
+  },
+  {
+   "id": 20,
+   "w": "acquainted",
+   "ko": "알고 있는, 안면이 있는, 아는",
+   "ex": "get [[acquainted]] at the international conference",
+   "exko": "국제회의에서 친분을 쌓다",
+   "der": [
+    [
+     "acquaintance",
+     "아는 사람, 지인"
+    ]
+   ]
+  },
+  {
+   "id": 21,
+   "w": "acquire",
+   "ko": "얻다, 획득하다, 인수하다",
+   "ex": "[[acquire]] Horizon Ventures, headquartered in Boston",
+   "exko": "보스턴에 본사를 둔 호라이즌 벤처사를 인수하다",
+   "der": [
+    [
+     "acquisition",
+     "인수, 매입, 구입"
+    ]
+   ]
+  },
+  {
+   "id": 22,
+   "w": "acting",
+   "ko": "대행의, 대리의, 연기",
+   "ex": "serve as [[acting]] chairman until September 30",
+   "exko": "9월 30일까지 의장 권한대행을 맡다",
+   "der": [
+    [
+     "act",
+     "행동을 취하다, 법률"
+    ],
+    [
+     "action",
+     "행동, 조치"
+    ],
+    [
+     "actually",
+     "실제로"
+    ]
+   ]
+  },
+  {
+   "id": 23,
+   "w": "activate",
+   "ko": "작동시키다, 활성화시키다",
+   "ex": "touch the screen to [[activate]] the security system",
+   "exko": "화면을 터치하여 보안 시스템을 작동시키다",
+   "der": [
+    [
+     "active",
+     "활동적인, 적극적인"
+    ],
+    [
+     "actively",
+     "활발히"
+    ]
+   ]
+  },
+  {
+   "id": 24,
+   "w": "adapt",
+   "ko": "맞추다, 조정하다, 적응하다, 각색하다",
+   "ex": "[[adapt]] to the new working environment",
+   "exko": "새로운 근무 환경에 적응하다",
+   "der": [
+    [
+     "adaptation",
+     "각색, 적응"
+    ]
+   ]
+  },
+  {
+   "id": 25,
+   "w": "add",
+   "ko": "첨가하다, 추가하다, 덧붙이다",
+   "ex": "[[add]] some water and stir the mixture",
+   "exko": "약간의 물을 넣고 반죽을 젓다",
+   "der": [
+    [
+     "addition",
+     "추가"
+    ],
+    [
+     "in addition to",
+     "~에 덧붙여"
+    ],
+    [
+     "in addition",
+     "게다가"
+    ]
+   ]
+  },
+  {
+   "id": 26,
+   "w": "additional",
+   "ko": "추가의, 부가적인",
+   "ex": "obtain [[additional]] information from their website",
+   "exko": "그들의 웹사이트에서 추가 정보를 얻다",
+   "der": [
+    [
+     "additionally",
+     "게다가"
+    ]
+   ]
+  },
+  {
+   "id": 27,
+   "w": "address",
+   "ko": "연설, 주소, 연설하다, 해결하다, (주소로) 보내다",
+   "ex": "[[address]] customer complaints in a proper manner",
+   "exko": "고객의 불만을 적절하게 처리하다",
+   "der": [
+    [
+     "email address",
+     "이메일 주소"
+    ],
+    [
+     "mailing address",
+     "우편 주소"
+    ]
+   ]
+  },
+  {
+   "id": 28,
+   "w": "adequate",
+   "ko": "충분한, 적절한",
+   "ex": "order an [[adequate]] amount of food for 30 people",
+   "exko": "30명을 위한 충분한 양의 음식을 주문하다",
+   "der": []
+  },
+  {
+   "id": 29,
+   "w": "adjacent",
+   "ko": "인접한, 가까운",
+   "ex": "purchase an [[adjacent]] building to expand the café",
+   "exko": "카페 확장을 위해 인접 건물을 구입하다",
+   "der": [
+    [
+     "be adjacent to",
+     "~에 인접하다, 가깝다"
+    ]
+   ]
+  },
+  {
+   "id": 30,
+   "w": "adjust",
+   "ko": "조정하다, 조절하다, 적응하다",
+   "ex": "[[adjust]] the height of the chair",
+   "exko": "의자 높이를 조절하다",
+   "der": [
+    [
+     "adjustment",
+     "수정, 조정, 적응"
+    ],
+    [
+     "adjustable",
+     "조절 가능한"
+    ]
+   ]
+  },
+  {
+   "id": 31,
+   "w": "administrative",
+   "ko": "행정의, 사무의, 관리상의",
+   "ex": "seek an experienced [[administrative]] assistant",
+   "exko": "숙련된 사무 행정 직원을 찾다",
+   "der": [
+    [
+     "administer",
+     "관리하다, 집행하다"
+    ],
+    [
+     "administration",
+     "관리, 행정"
+    ]
+   ]
+  },
+  {
+   "id": 32,
+   "w": "admirable",
+   "ko": "감탄할 만한, 훌륭한, 존경스러운",
+   "ex": "do an [[admirable]] job in such circumstances",
+   "exko": "그런 상황에서 훌륭하게 일을 해내다",
+   "der": [
+    [
+     "admire",
+     "존경하다, 감탄하다"
+    ]
+   ]
+  },
+  {
+   "id": 33,
+   "w": "admission",
+   "ko": "입장, 입학, 가입",
+   "ex": "purchase your tickets for [[admission]] to the museum",
+   "exko": "박물관 입장권을 구입하다",
+   "der": [
+    [
+     "admit",
+     "인정하다, 시인하다, 입장을 허락하다"
+    ]
+   ]
+  },
+  {
+   "id": 34,
+   "w": "adopt",
+   "ko": "채택하다, 취하다",
+   "ex": "[[adopt]] further cost-cutting measures",
+   "exko": "추가 비용 절감 조치를 취하다",
+   "der": []
+  },
+  {
+   "id": 35,
+   "w": "advance",
+   "ko": "진보, 발전, 진보하다, 사전의",
+   "ex": "discuss recent [[advances]] in technology",
+   "exko": "최근의 기술 발전에 대해 논하다",
+   "der": [
+    [
+     "advanced",
+     "선진의, 상급의"
+    ],
+    [
+     "in advance",
+     "미리"
+    ],
+    [
+     "advancement",
+     "승진, 발전"
+    ]
+   ]
+  },
+  {
+   "id": 36,
+   "w": "advantage",
+   "ko": "이점, 장점, 혜택",
+   "ex": "have several [[advantages]] over traditional methods",
+   "exko": "전통적인 방법보다 몇 가지 이점이 있다",
+   "der": [
+    [
+     "advantageous",
+     "이로운, 유리한"
+    ]
+   ]
+  },
+  {
+   "id": 37,
+   "w": "adverse",
+   "ko": "부정적인, 불리한",
+   "ex": "be canceled due to [[adverse]] weather conditions",
+   "exko": "악천후로 인해 취소되다",
+   "der": [
+    [
+     "adversely",
+     "불리하게, 반대로, 역으로"
+    ],
+    [
+     "adversity",
+     "역경, 고난"
+    ]
+   ]
+  },
+  {
+   "id": 38,
+   "w": "advertisement",
+   "ko": "광고",
+   "ex": "place an [[advertisement]] in the local paper",
+   "exko": "지역 신문에 광고를 내다",
+   "der": [
+    [
+     "advertise",
+     "광고하다, 알리다"
+    ],
+    [
+     "advertising",
+     "광고, 광고업"
+    ]
+   ]
+  },
+  {
+   "id": 39,
+   "w": "advice",
+   "ko": "조언, 충고",
+   "ex": "seek professional [[advice]] from a certified accountant",
+   "exko": "공인 회계사에게 전문적인 조언을 구하다",
+   "der": [
+    [
+     "advise",
+     "조언하다, 알리다"
+    ],
+    [
+     "advisable",
+     "바람직한, 현명한, 권할 만한"
+    ]
+   ]
+  },
+  {
+   "id": 40,
+   "w": "affect",
+   "ko": "영향을 미치다, 영향을 주다",
+   "ex": "[[affect]] the country's economy directly",
+   "exko": "국가 경제에 직접적인 영향을 미치다",
+   "der": []
+  }
+ ]
 }

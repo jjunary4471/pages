@@ -142,7 +142,7 @@
   <header>
     <div class="eyebrow">TOEIC · Vocabulary</div>
     <h1>TOEIC 단어장</h1>
-    <div class="meta"><span>출처 <b id="mSource">-</b></span><span>단어 <b id="mCount">0</b></span><span>외운 단어 <b id="mDone">0</b></span><span>틀린 단어 <b id="mWrong">0</b></span></div>
+    <div class="meta"><span>출처 <b id="mSource">-</b></span><span>입력 <b id="mCount">0</b></span><span>외운 단어 <b id="mDone">0</b></span><span>틀린 단어 <b id="mWrong">0</b></span></div>
   </header>
 
   <div class="bar">
@@ -154,6 +154,7 @@
     </div>
     <div class="filters">
       <select id="range" aria-label="범위"></select>
+      <select id="sub" aria-label="세부 범위" hidden></select>
       <input type="search" id="search" placeholder="단어·뜻 검색" aria-label="검색">
       <label class="check"><input type="checkbox" id="hideKo"> 뜻 가리기</label>
     </div>
@@ -194,8 +195,8 @@
     <h2>틀린 단어</h2>
     <div class="wl" id="wrongList"></div>
     <h2>기타</h2>
-    <div class="filters"><button class="btn ghost" id="reset">학습 기록 초기화</button></div>
-    <p class="note">학습 기록은 이 브라우저에만 저장됩니다. 다른 기기에서는 처음부터 시작합니다.</p>
+    <div class="filters"><button class="btn" id="export">기록 내보내기</button><label class="btn" for="importFile">기록 가져오기</label><input type="file" id="importFile" accept="application/json" hidden><button class="btn ghost" id="reset">학습 기록 초기화</button></div>
+    <p class="note">학습 기록은 이 브라우저에만 저장됩니다. 다른 기기로 옮기려면 내보낸 파일을 그 기기에서 가져오세요.</p>
   </section>
 </div>
 
@@ -204,7 +205,7 @@
   'use strict';
   const $ = (s, el = document) => el.querySelector(s);
   const KEY = 'toeic-progress-v1';
-  let WORDS = [], SOURCE = '';
+  let WORDS = [], SOURCE = '', TOTAL = 0;
   let prog = {};
   try { prog = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { prog = {}; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(prog)); } catch (e) {} };
@@ -223,14 +224,28 @@
 
   // 범위 + 검색
   function ranges() {
-    const out = [{ v: 'all', t: '전체' }, { v: 'wrong', t: '틀린 단어만' }, { v: 'unlearned', t: '아직 못 외운 단어' }];
+    const out = [{ v: 'all', t: '전체' }, { v: 'wrong', t: '틀린 단어만' }, { v: 'unlearned', t: '아직 못 외운 단어' }, { v: 'recent', t: '최근 추가 (마지막 40개)' }];
     const max = Math.max(...WORDS.map(w => w.id));
-    for (let s = 1; s <= max; s += 10) out.push({ v: `${s}-${s + 9}`, t: `${pad(s)}_${pad(s + 9)}` });
+    for (let s = 1; s <= max; s += 100) out.push({ v: `${s}-${s + 99}`, t: `${pad(s)}_${pad(s + 99)}` });
     return out;
   }
+  function subRanges() {
+    const r = $('#range').value; if (!/^\d+-\d+$/.test(r)) return [];
+    const [a, b] = r.split('-').map(Number);
+    const out = [{ v: r, t: '이 블록 전체' }];
+    for (let s = a; s <= b; s += 10) if (WORDS.some(w => w.id >= s && w.id <= s + 9)) out.push({ v: `${s}-${s + 9}`, t: `${pad(s)}_${pad(s + 9)}` });
+    return out;
+  }
+  function syncSub() {
+    const subs = subRanges(); const sel = $('#sub');
+    sel.hidden = subs.length <= 1; sel.innerHTML = subs.map(r => `<option value="${r.v}">${r.t}</option>`).join('');
+  }
   function filtered() {
-    const r = $('#range').value, q = $('#search').value.trim().toLowerCase();
+    let r = $('#range').value; const q = $('#search').value.trim().toLowerCase();
+    if (!$('#sub').hidden && $('#sub').value) r = $('#sub').value;
+    const recentMin = WORDS.length ? WORDS[WORDS.length - 1].id - 39 : 0;
     return WORDS.filter(w => {
+      if (r === 'recent' && w.id < recentMin) return false;
       if (r === 'wrong' && !(P(w.id).wrong > 0)) return false;
       if (r === 'unlearned' && P(w.id).box >= 3) return false;
       if (/^\d+-\d+$/.test(r)) { const [a, b] = r.split('-').map(Number); if (w.id < a || w.id > b) return false; }
@@ -293,16 +308,27 @@
   // 퀴즈
   let Q = [], qi = 0, qScore = 0, qWrong = [];
   function makeQ(w, type, pool) {
-    const others = shuffle(pool.filter(o => o.id !== w.id)).slice(0, 3);
+    const near = pool.filter(o => o.id !== w.id && Math.abs(o.id - w.id) <= 50);
+    const others = shuffle(near.length >= 3 ? near : pool.filter(o => o.id !== w.id)).slice(0, 3);
     if (type === 'en2ko') return { type, w, prompt: w.w, opts: shuffle([w, ...others]).map(o => ({ t: o.ko, ok: o.id === w.id })) };
     if (type === 'ko2en') return { type, w, prompt: w.ko, opts: shuffle([w, ...others]).map(o => ({ t: o.w, ok: o.id === w.id })) };
     return { type: 'blank', w, answer: exForm(w.ex) };
+  }
+  function weightOf(w) { const p = P(w.id); if (p.wrong) return 3 + Math.min(p.wrong, 3); if (p.seen && p.box < 3) return 2; if (!p.seen) return 1.5; return .5; }
+  function weightedPick(pool, n) {
+    const rest = pool.slice(); const out = [];
+    while (out.length < n && rest.length) {
+      let total = rest.reduce((s, w) => s + weightOf(w), 0), r = Math.random() * total, i = 0;
+      for (; i < rest.length; i++) { r -= weightOf(rest[i]); if (r <= 0) break; }
+      out.push(rest.splice(Math.min(i, rest.length - 1), 1)[0]);
+    }
+    return out;
   }
   function startQuiz() {
     const pool = filtered(); const type = $('#qType').value; const n = Math.min(+$('#qCount').value, pool.length);
     if (pool.length < 4) { $('#qBody').innerHTML = '<p class="empty">퀴즈에는 단어가 4개 이상 필요합니다. 범위를 넓혀 주세요.</p>'; return; }
     const types = ['en2ko', 'ko2en', 'blank'];
-    Q = shuffle(pool).slice(0, n).map((w, i) => makeQ(w, type === 'mix' ? types[i % 3] : type, WORDS.length >= 4 ? WORDS : pool));
+    Q = weightedPick(pool, n).map((w, i) => makeQ(w, type === 'mix' ? types[i % 3] : type, WORDS.length >= 4 ? WORDS : pool));
     qi = 0; qScore = 0; qWrong = []; $('#quizSetup').hidden = true; $('#qBarWrap').hidden = false; renderQ();
   }
   function renderQ() {
@@ -347,10 +373,21 @@
     const ws = WORDS.filter(w => P(w.id).wrong).sort((a, b) => P(b.id).wrong - P(a.id).wrong);
     $('#wrongList').innerHTML = ws.length ? ws.map(w => `<div><b>${esc(w.w)} <span class="box b0 seen">오답 ${P(w.id).wrong}</span></b><span>${esc(w.ko)}</span></div>`).join('') : '<p class="empty">아직 틀린 단어가 없습니다.</p>';
   }
+  $('#export').onclick = () => {
+    const blob = new Blob([JSON.stringify({ exported: new Date().toISOString(), progress: prog })], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `toeic-progress-${new Date().toISOString().slice(0, 10)}.json`; a.click(); URL.revokeObjectURL(a.href);
+  };
+  $('#importFile').onchange = e => {
+    const f = e.target.files[0]; if (!f) return;
+    f.text().then(t => { const d = JSON.parse(t); const p = d.progress || d; if (typeof p !== 'object') throw 0;
+      const merged = { ...prog }; for (const [id, v] of Object.entries(p)) { const o = merged[id]; merged[id] = !o ? v : { box: Math.max(o.box, v.box), seen: o.seen + v.seen, wrong: o.wrong + v.wrong }; }
+      prog = merged; save(); refresh(); alert('기록을 합쳤습니다.'); }).catch(() => alert('가져올 수 없는 파일입니다.'));
+    e.target.value = '';
+  };
   $('#reset').onclick = () => { if (confirm('학습 기록을 모두 지울까요?')) { prog = {}; save(); refresh(); } };
 
   function updateMeta() {
-    $('#mSource').textContent = SOURCE; $('#mCount').textContent = WORDS.length;
+    $('#mSource').textContent = SOURCE; $('#mCount').textContent = TOTAL ? `${WORDS.length} / ${TOTAL}` : WORDS.length;
     $('#mDone').textContent = WORDS.filter(w => P(w.id).box >= 3).length; $('#mWrong').textContent = WORDS.filter(w => P(w.id).wrong).length;
   }
   let tab = 'list';
@@ -359,12 +396,12 @@
     tab = t.dataset.tab; document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t)); document.querySelectorAll('[data-panel]').forEach(p => p.hidden = p.id !== tab);
     try { localStorage.setItem('toeic-tab', tab); } catch (e) {} refresh();
   });
-  $('#range').onchange = refresh; $('#search').oninput = () => { if (tab === 'list') renderList(); };
+  $('#range').onchange = () => { syncSub(); refresh(); }; $('#sub').onchange = refresh; $('#search').oninput = () => { if (tab === 'list') renderList(); };
   $('#hideKo').onchange = e => document.body.classList.toggle('hide', e.target.checked);
 
   fetch('data/words.json').then(r => r.json()).then(d => {
-    WORDS = d.words; SOURCE = d.source || '';
-    $('#range').innerHTML = ranges().map(r => `<option value="${r.v}">${r.t}</option>`).join('');
+    WORDS = d.words; SOURCE = d.source || ''; TOTAL = d.total || 0;
+    $('#range').innerHTML = ranges().map(r => `<option value="${r.v}">${r.t}</option>`).join(''); syncSub();
     let t = 'list'; try { t = localStorage.getItem('toeic-tab') || 'list'; } catch (e) {}
     const btn = document.querySelector(`.tab[data-tab="${t}"]`); (btn || document.querySelector('.tab')).click();
   }).catch(() => { $('#list').innerHTML = '<p class="empty">단어 데이터를 불러오지 못했습니다.</p>'; });
