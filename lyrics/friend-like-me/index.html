@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Friend Like Me 가사</title>
+  <meta name="description" content="알라딘(2019) OST 'Friend Like Me' 윌 스미스 버전 전체 가사와 한국어 해석">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4;
+      --ink: #1A1F2B;
+      --ink-2: #4B5364;
+      --muted: #8A919F;
+      --line: #E1E3DE;
+      --line-strong: #1A1F2B;
+      --accent: #D0731A;
+      --accent-ink: #9A530E;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D;
+        --ink: #EEF0F3;
+        --ink-2: #BFC6D1;
+        --muted: #7F8794;
+        --line: #2A2F3A;
+        --line-strong: #EEF0F3;
+        --accent: #EE9A46;
+        --accent-ink: #F5B672;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-inline: 24px;
+      padding-block: 36px 96px;
+    }
+
+    /* 목록 바로가기 */
+    .home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+      text-decoration: none; padding: 4px 0;
+    }
+    .home:hover, .home:focus-visible { color: var(--accent-ink); outline: none; }
+    .home svg { width: 14px; height: 14px; }
+
+    /* 헤더 */
+    header {
+      margin-top: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line-strong);
+      display: grid; gap: 18px;
+    }
+    .eyebrow {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-ink);
+    }
+    h1 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 11vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .sub {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 18px; color: var(--ink-2); margin: 0;
+    }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 6px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .meta b { color: var(--ink-2); font-weight: 500; }
+
+    /* 가사: 영어 / 해석 대역 */
+    .song { display: grid; gap: 44px; margin-top: 44px; }
+    section { display: grid; gap: 14px; }
+    .part {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .chorus-block .part { color: var(--accent-ink); border-color: var(--accent); }
+
+    .line {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 40px;
+      align-items: baseline;
+    }
+    .en {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 20px; font-weight: 700; line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .ko {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 15px; font-weight: 400; color: var(--ink-2); line-height: 1.6;
+    }
+    .en .pr {
+      display: block; margin-top: 2px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted);
+    }
+    .chorus-block .en { color: var(--accent-ink); }
+    .refrain .en { font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+    .refrain .ko { color: var(--muted); }
+
+    /* 표현 노트 */
+    .notes { margin-top: 88px; }
+    .notes h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .term {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 12px 40px;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .term h3 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .term h3 small {
+      display: block; margin-top: 6px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; font-size: 14px; font-weight: 500; color: var(--accent-ink);
+    }
+    .term .body { display: grid; gap: 14px; }
+    .term p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .term dl { margin: 0; display: grid; gap: 8px; }
+    .term dl div { display: grid; grid-template-columns: 104px 1fr; gap: 12px; font-size: 14px; }
+    .term dt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); margin: 0; }
+    .term dd { margin: 0; color: var(--ink-2); }
+    .term .ex { display: grid; gap: 6px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .term .ex div { display: grid; gap: 1px; font-size: 13.5px; }
+    .term .ex i { font-style: normal; color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; }
+    .term .ex span { color: var(--muted); }
+
+    /* 비영어 단어 풀이 */
+    .vocab { margin-top: 88px; }
+    .vocab h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .vline { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
+    .vline .src {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; align-items: baseline;
+    }
+    .vline .src .en { font-size: 20px; }
+    .vline .src .en .pr { display: block; margin-top: 2px; font-family: "Noto Sans KR", sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+    .vline .src .ko { font-size: 15px; color: var(--ink-2); }
+    .words { display: grid; gap: 0; }
+    .word {
+      display: grid; grid-template-columns: 140px 150px 1fr; gap: 6px 24px;
+      padding: 12px 0; border-top: 1px dashed var(--line); font-size: 14px;
+    }
+    .word:first-child { border-top: 0; }
+    .word .w { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); }
+    .word .w small { display: block; font-family: "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 1px; }
+    .word .m { color: var(--ink); font-weight: 500; }
+    .word .n { color: var(--ink-2); }
+    .word .n i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; color: var(--ink); }
+    .vline .idiom {
+      padding: 12px 16px; border-left: 2px solid var(--accent);
+      font-size: 14px; color: var(--ink-2); display: grid; gap: 4px;
+    }
+    .vline .idiom b { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--accent-ink); }
+
+    @media (max-width: 640px) {
+      .wrap { padding-inline: 20px; padding-block: 24px 72px; }
+      header { margin-top: 28px; }
+      .line { grid-template-columns: 1fr; gap: 2px; }
+      .line + .line { margin-top: 6px; }
+      .en { font-size: 18px; }
+      .term { grid-template-columns: 1fr; gap: 14px; }
+      .term dl div { grid-template-columns: 1fr; gap: 2px; }
+      .vline .src { grid-template-columns: 1fr; gap: 2px; }
+      .word { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../../">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    페이지 목록으로
+  </a>
+
+  <header>
+    <div class="eyebrow">Aladdin (2019) · Original Soundtrack · 2019</div>
+    <h1>Friend Like Me</h1>
+    <p class="sub">나 같은 친구</p>
+    <div class="meta">
+      <span>노래 <b>Will Smith</b></span>
+      <span>작곡 <b>Alan Menken</b></span>
+      <span>작사 <b>Howard Ashman</b></span>
+      <span>영화 속 캐릭터 <b>지니(Genie)</b></span>
+    </div>
+  </header>
+
+  <div class="song">
+
+    <section>
+      <div class="part">Intro</div>
+      <div class="line"><div class="en">Here I go</div><div class="ko">자, 간다</div></div>
+      <div class="line refrain"><div class="en">Uh, ooh, woo!</div><div class="ko"></div></div>
+      <div class="line"><div class="en">Back up! Uh-oh! Watch out! Uh</div><div class="ko">물러서! 어이쿠! 조심해!</div></div>
+      <div class="line"><div class="en">You done wound me up!</div><div class="ko">네가 내 태엽을 제대로 감아 놨어!</div></div>
+      <div class="line"><div class="en">'Bout to show you what I'm workin' with, uh</div><div class="ko">내가 뭘 갖고 있는지 지금 보여 줄게</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 1</div>
+      <div class="line"><div class="en">Well, Ali Baba, he had them forty thieves</div><div class="ko">알리바바한텐 도둑이 마흔 명 있었고</div></div>
+      <div class="line"><div class="en">Scheherazade had a thousand tales</div><div class="ko">셰에라자드한텐 이야기가 천 개 있었지</div></div>
+      <div class="line"><div class="en">But, master, you in luck 'cause up your sleeves</div><div class="ko">근데 주인님, 넌 운이 좋아, 네 소매 속엔</div></div>
+      <div class="line"><div class="en">You got a brand of magic never fails</div><div class="ko">절대 실패하지 않는 마법이 들어 있으니까</div></div>
+      <div class="line"><div class="en">You got some power in your corner now</div><div class="ko">이제 네 편엔 힘이 붙었어</div></div>
+      <div class="line"><div class="en">Heavy ammunition in your camp</div><div class="ko">네 진영엔 중화기가 들어왔고</div></div>
+      <div class="line"><div class="en">You got some punch, pizzazz, yahoo and how</div><div class="ko">한 방에, 화려함에, 신남까지, 그것도 제대로</div></div>
+      <div class="line"><div class="en">All you gotta do is rub that lamp</div><div class="ko">넌 그 램프만 문지르면 돼</div></div>
+      <div class="line"><div class="en">And then I'll say</div><div class="ko">그럼 내가 이렇게 말할 거야</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">Mister, man, what's your name? Whatever</div><div class="ko">미스터, 이봐, 이름이 뭐지? 아무렴 어때</div></div>
+      <div class="line"><div class="en">What will your pleasure be?</div><div class="ko">뭘 드릴까요?</div></div>
+      <div class="line"><div class="en">Let me take your order, jot it down</div><div class="ko">주문 받을게, 받아 적을게</div></div>
+      <div class="line"><div class="en">You ain't never had a friend like me</div><div class="ko">넌 나 같은 친구는 가져 본 적 없을걸</div></div>
+      <div class="line"><div class="en">Life is your restaurant</div><div class="ko">인생은 네 레스토랑이고</div></div>
+      <div class="line"><div class="en">And I'm your maître d'</div><div class="ko">난 네 전담 지배인이야</div></div>
+      <div class="line"><div class="en">Come, whisper to me whatever it is you want</div><div class="ko">자, 원하는 게 뭐든 내게 속삭여 봐</div></div>
+      <div class="line"><div class="en">You ain't never had a friend like me</div><div class="ko">넌 나 같은 친구는 가져 본 적 없을걸</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 2</div>
+      <div class="line"><div class="en">We pride ourselves on service</div><div class="ko">우린 서비스가 자랑이거든</div></div>
+      <div class="line"><div class="en">You the boss, the king, the shah!</div><div class="ko">네가 보스고, 왕이고, 샤야!</div></div>
+      <div class="line"><div class="en">Say what you wish, it's yours! True dish</div><div class="ko">원하는 걸 말만 해, 다 네 거야! 진짜배기 요리지</div></div>
+      <div class="line"><div class="en">How about a little more baklava?</div><div class="ko">바클라바 좀 더 어때?</div></div>
+      <div class="line"><div class="en">Have some of column A</div><div class="ko">A 코스에서 몇 개 골라 봐</div></div>
+      <div class="line"><div class="en">Try all of column B</div><div class="ko">B 코스는 전부 맛보고</div></div>
+      <div class="line"><div class="en">I'm in the mood to help you, dude</div><div class="ko">난 지금 널 도와주고 싶어 죽겠어, 친구</div></div>
+      <div class="line"><div class="en">You ain't never had a friend like me</div><div class="ko">넌 나 같은 친구는 가져 본 적 없을걸</div></div>
+    </section>
+
+    <section>
+      <div class="part">Bridge</div>
+      <div class="line refrain"><div class="en">Oh! Unh!</div><div class="ko"></div></div>
+      <div class="line"><div class="en">It's the big part, watch out!</div><div class="ko">이제 하이라이트야, 조심해!</div></div>
+      <div class="line"><div class="en">It's the big part, oh!</div><div class="ko">하이라이트라고, 오!</div></div>
+      <div class="line"><div class="en">Can your friends do this?</div><div class="ko">네 친구들은 이런 거 할 수 있어?</div></div>
+      <div class="line"><div class="en">Can your friends do that?</div><div class="ko">네 친구들은 저런 건?</div></div>
+      <div class="line"><div class="en">Can your friends pull this outta they little hat?</div><div class="ko">네 친구들은 그 조그만 모자에서 이런 걸 꺼낼 수 있어?</div></div>
+      <div class="line"><div class="en">Can your friends go…?</div><div class="ko">네 친구들은 이렇게…?</div></div>
+      <div class="line"><div class="en">I'm the genie of the lamp</div><div class="ko">난 램프의 지니</div></div>
+      <div class="line"><div class="en">I can sing, rap, dance, if you give me a chance, oh!</div><div class="ko">기회만 주면 노래도, 랩도, 춤도 되지, 오!</div></div>
+      <div class="line"><div class="en">Don't sit there buggy-eyed</div><div class="ko">눈만 휘둥그레 뜨고 앉아 있지 마</div></div>
+      <div class="line"><div class="en">I'm here to answer all your midday prayers</div><div class="ko">난 네 한낮의 기도에 전부 응답하러 왔으니까</div></div>
+      <div class="line"><div class="en">You got me bona fide, certified</div><div class="ko">난 진짜배기에, 공인까지 받은 몸이야</div></div>
+      <div class="line"><div class="en">You got a genie for your chargé d'affaires</div><div class="ko">네 전권 대리인으로 지니가 붙은 거라고</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 3</div>
+      <div class="line"><div class="en">I got a powerful urge to help you out</div><div class="ko">널 도와주고 싶어서 못 견디겠어</div></div>
+      <div class="line"><div class="en">So whatcha wish? I really wanna know</div><div class="ko">그래서 소원이 뭐야? 정말 궁금하다고</div></div>
+      <div class="line"><div class="en">You got a list that's three miles long, no doubt</div><div class="ko">분명 3마일은 되는 소원 목록이 있겠지</div></div>
+      <div class="line"><div class="en">All you gotta do is rub like so</div><div class="ko">넌 이렇게 문지르기만 하면 돼</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Outro</div>
+      <div class="line"><div class="en">Mister… (Aladdin) Yes!</div><div class="ko">미스터… (알라딘) 그래!</div></div>
+      <div class="line"><div class="en">Have a wish or two or three</div><div class="ko">소원 하나, 둘, 셋 빌어 봐</div></div>
+      <div class="line"><div class="en">Well, I'm on the job, you big nabob</div><div class="ko">자, 내가 맡았어, 이 거물 나리</div></div>
+      <div class="line"><div class="en">You ain't never had a friend, never had a friend</div><div class="ko">넌 그런 친구 없었어, 그런 친구 없었어</div></div>
+      <div class="line"><div class="en">You ain't never had a friend, never had a friend</div><div class="ko">넌 그런 친구 없었어, 그런 친구 없었어</div></div>
+      <div class="line"><div class="en">You ain't never (never) had a (had a) friend (friend) like (like) me</div><div class="ko">넌 (넌) 나 (나) 같은 (같은) 친구는 (친구는) 없었어</div></div>
+      <div class="line"><div class="en">You ain't never had a friend like me!</div><div class="ko">넌 나 같은 친구는 가져 본 적 없을걸!</div></div>
+    </section>
+
+  </div>
+
+
+  <div class="notes">
+    <h2>표현 노트</h2>
+
+    <div class="term">
+      <h3>You ain't never had a friend like me<small>넌 나 같은 친구 없었을걸</small></h3>
+      <div class="body">
+        <p>문법책대로면 "You have never had a friend like me"입니다. ain't(= haven't)에 never 까지 붙어 부정이 두 번 겹쳤는데, 이건 긍정으로 뒤집히는 게 아니라 부정을 더 세게 미는 구어체 강조입니다. 흑인 영어(AAVE)와 미국 남부 구어에서 흔한 어법이고, 노래 전체에 같은 말투가 깔려 있습니다.</p>
+        <dl>
+          <div><dt>you in luck</dt><dd>you're in luck 에서 be 동사를 뺀 형태.</dd></div>
+          <div><dt>You the boss</dt><dd>You're the boss. 같은 어법.</dd></div>
+          <div><dt>outta they little hat</dt><dd>out of their little hat. their 를 they 로 발음하는 구어.</dd></div>
+        </dl>
+        <p>1992년 원곡의 로빈 윌리엄스도 같은 가사를 불렀지만, 2019년 윌 스미스는 힙합 리듬과 이 말투를 더 밀어붙여 지니를 자기 스타일로 만들었습니다. 해석에서 "~없을걸"로 끝낸 것은 이 자신만만한 구어체를 살리기 위해서입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>wound me up<small>태엽을 감아 놓다</small></h3>
+      <div class="body">
+        <p>wind up 은 원래 시계나 장난감의 태엽을 감는다는 뜻입니다. 거기서 "사람을 잔뜩 흥분시키다, 발동 걸다"라는 뜻이 나왔습니다. wound 는 wind 의 과거분사이고, "You done wound me up"의 done 은 have 대신 쓰는 구어체 완료형입니다.</p>
+        <div class="ex">
+          <div><i>Don't wind him up, he's already stressed.</i><span>걔 건드리지 마, 안 그래도 예민해.</span></div>
+          <div><i>The kids are all wound up before the trip.</i><span>애들이 여행 앞두고 완전히 들떠 있어.</span></div>
+        </div>
+        <p>램프를 문질러 막 튀어나온 지니가 "네가 날 발동 걸었으니 이제 뭘 할 수 있는지 보여 주겠다"고 시작하는 첫 마디입니다. 태엽 장난감 이미지라 해석도 그대로 살렸습니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>up your sleeves · in your corner · in your camp<small>비장의 수 · 네 편 · 네 진영</small></h3>
+      <div class="body">
+        <p>1절에서 세 줄 연속으로 "네 편에 든든한 게 생겼다"는 뜻의 관용구가 이어집니다. 출처가 제각각이라 하나씩 보면 재미있습니다.</p>
+        <dl>
+          <div><dt>up your sleeve</dt><dd>소매 속에 숨긴 카드. 마술사나 도박사가 소매에 카드를 감추던 데서 나온 "비장의 수".</dd></div>
+          <div><dt>in your corner</dt><dd>권투에서 선수의 코너에 서 있는 세컨드. "네 편에서 널 밀어주는 사람".</dd></div>
+          <div><dt>in your camp</dt><dd>군사 용어. 네 진영, 네 쪽 사람들. 바로 뒤에 heavy ammunition(중화기)이 붙어 비유가 이어집니다.</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>She's got a few tricks up her sleeve.</i><span>그 사람한텐 비장의 수가 몇 개 있어.</span></div>
+        </div>
+        <p>마술, 권투, 전쟁 비유를 한 줄씩 갈아타며 "넌 이제 무적"이라고 부풀리는 대목입니다. 지니가 자기 능력을 과장 광고하는 방식 그 자체입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>maître d' · column A, column B · chargé d'affaires<small>지배인 · 메뉴 A/B · 대리 대사</small></h3>
+      <div class="body">
+        <p>후렴은 인생을 레스토랑에, 지니를 종업원에 빗댑니다. 여기 나오는 낯선 단어들은 대부분 프랑스어에서 온 영어 차용어입니다.</p>
+        <dl>
+          <div><dt>maître d'</dt><dd>maître d'hôtel 의 줄임. 고급 식당에서 손님을 맞고 자리를 안내하는 지배인. "메트르 디"라고 읽습니다.</dd></div>
+          <div><dt>column A / column B</dt><dd>미국 중식당의 옛 메뉴 관행. 세트 메뉴를 A열, B열로 나누고 "A에서 하나, B에서 하나" 고르게 했습니다. "골라잡아"라는 뜻으로 굳어진 표현입니다.</dd></div>
+          <div><dt>chargé d'affaires</dt><dd>대사가 없을 때 그 일을 대신 보는 외교관, 대리 대사. "샤르제 다페르". 지니가 자기를 "네 일을 전담해 처리하는 사람"으로 격상시키는 말입니다.</dd></div>
+          <div><dt>bona fide</dt><dd>라틴어로 "선의로, 진짜의". certified(공인된)와 짝을 이뤄 "정품 인증" 느낌을 냅니다.</dd></div>
+        </dl>
+        <p>고급 식당 지배인에서 외교관까지, 지니는 자기 직함을 점점 높여 부릅니다. 원곡 작사가 하워드 애시먼의 말장난이 그대로 살아 있는 부분입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>pull this outta they little hat<small>모자에서 꺼내다</small></h3>
+      <div class="body">
+        <p>마술사가 모자에서 토끼를 꺼내는 pull a rabbit out of a hat 에서 온 표현입니다. "기대하지 못한 해결책을 척 내놓다"라는 관용구로도 씁니다.</p>
+        <div class="ex">
+          <div><i>Unless we pull a rabbit out of the hat, we'll miss the deadline.</i><span>무슨 묘수를 내지 않는 한 마감을 놓칠 거야.</span></div>
+        </div>
+        <p>"Can your friends do this? Can your friends do that?"로 이어지는 브릿지는 지니가 눈앞에서 마술을 부리며 "네 친구들은 못 하지?" 하고 뽐내는 장면입니다. 영화에서도 이 대목에 시각 효과가 집중됩니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>Ali Baba · Scheherazade · nabob<small>천일야화의 세계</small></h3>
+      <div class="body">
+        <p>노래가 여는 첫 두 줄과 마지막 줄은 모두 아라비안 나이트(천일야화)의 세계에서 가져왔습니다.</p>
+        <dl>
+          <div><dt>Ali Baba</dt><dd>"알리바바와 40인의 도둑"의 주인공. 지니는 "걔는 도둑 마흔 명뿐"이라며 자기가 더 낫다고 합니다.</dd></div>
+          <div><dt>Scheherazade</dt><dd>천일 밤 동안 이야기를 들려주어 목숨을 건진 왕비. 천일야화의 화자.</dd></div>
+          <div><dt>nabob</dt><dd>무굴 제국의 지방 총독 나와브(nawab)에서 온 말. 영국에서 인도에서 큰돈을 번 사람을 비꼬는 말로 쓰이다가 "거물, 부자"라는 뜻이 됐습니다. 노래에선 알라딘을 "거물 나리"라고 치켜세우는 농담입니다.</dd></div>
+        </dl>
+        <p>"알리바바보다, 셰에라자드보다 내가 더 대단하다"로 시작해 "넌 거물이야"로 끝나는 구조입니다. 지니와 알라딘을 번갈아 띄우며 둘의 관계를 세우는 노래입니다.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
