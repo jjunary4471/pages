@@ -65,6 +65,9 @@
     .row .der { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
     .row .der b { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; color: var(--ink-2); }
     body.hide .row:not(.open) .ko, body.hide .row:not(.open) .exko, body.hide .row:not(.open) .der { filter: blur(6px); user-select: none; }
+    .pager { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 0; }
+    .pager .pos { font-family: "Bricolage Grotesque", sans-serif; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .pager .btns { display: flex; gap: 6px; }
     .box { font-family: "Bricolage Grotesque", sans-serif; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 999px; background: var(--chip); color: var(--muted); letter-spacing: .06em; }
     .box.b3 { background: var(--good-soft); color: var(--good); }
     .box.b0.seen { background: var(--bad-soft); color: var(--bad); }
@@ -255,10 +258,19 @@
   }
 
   // 단어장
+  const PAGE = 40; let page = 0;
+  function pager(pos, pages, from, to, total) {
+    return `<div class="pager"><span class="pos">${from}–${to} / ${total}</span><div class="btns">
+      <button class="btn" data-pg="-1" ${page <= 0 ? 'disabled' : ''}>이전 40개</button>
+      <button class="btn" data-pg="1" ${page >= pages - 1 ? 'disabled' : ''}>다음 40개</button></div></div>`;
+  }
   function renderList() {
-    const el = $('#list'); const ws = filtered();
-    if (!ws.length) { el.innerHTML = '<p class="empty">해당하는 단어가 없습니다.</p>'; return; }
-    let html = '', g = -1;
+    const el = $('#list'); const all = filtered();
+    if (!all.length) { el.innerHTML = '<p class="empty">해당하는 단어가 없습니다.</p>'; return; }
+    const pages = Math.ceil(all.length / PAGE); page = Math.min(Math.max(0, page), pages - 1);
+    const ws = all.slice(page * PAGE, page * PAGE + PAGE);
+    const from = page * PAGE + 1, to = page * PAGE + ws.length;
+    let html = pages > 1 ? pager('top', pages, from, to, all.length) : '', g = -1;
     for (const w of ws) {
       const gs = Math.floor((w.id - 1) / 10) * 10 + 1;
       if (gs !== g) { g = gs; html += `<div class="group-h"><span>${pad(gs)}_${pad(gs + 9)}</span></div>`; }
@@ -271,9 +283,15 @@
           ${w.der.length ? '<div class="der">' + w.der.map(d => `<b>${esc(d[0])}</b> ${esc(d[1])}`).join(' &nbsp;·&nbsp; ') + '</div>' : ''}</div>
       </div>`;
     }
-    el.innerHTML = html;
+    if (pages > 1) html += pager('bottom', pages, from, to, all.length);
+    el.innerHTML = html; saveView();
   }
-  $('#list').addEventListener('click', e => { const r = e.target.closest('.row'); if (r) r.classList.toggle('open'); });
+  $('#list').addEventListener('click', e => {
+    const pg = e.target.closest('[data-pg]');
+    if (pg) { page += +pg.dataset.pg; renderList(); window.scrollTo({ top: $('#list').offsetTop - 120, behavior: 'smooth' }); return; }
+    const r = e.target.closest('.row'); if (r) r.classList.toggle('open');
+  });
+  function saveView() { try { localStorage.setItem('toeic-view', JSON.stringify({ range: $('#range').value, sub: $('#sub').value, page })); } catch (e) {} }
 
   // 플래시카드
   let deck = [], di = 0, flipped = false;
@@ -397,12 +415,14 @@
     tab = t.dataset.tab; document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t)); document.querySelectorAll('[data-panel]').forEach(p => p.hidden = p.id !== tab);
     try { localStorage.setItem('toeic-tab', tab); } catch (e) {} refresh();
   });
-  $('#range').onchange = () => { syncSub(); refresh(); }; $('#sub').onchange = refresh; $('#search').oninput = () => { if (tab === 'list') renderList(); };
+  $('#range').onchange = () => { syncSub(); page = 0; refresh(); }; $('#sub').onchange = () => { page = 0; refresh(); }; $('#search').oninput = () => { page = 0; if (tab === 'list') renderList(); };
   $('#hideKo').onchange = e => document.body.classList.toggle('hide', e.target.checked);
 
   fetch('data/words.json').then(r => r.json()).then(d => {
     WORDS = d.words; SOURCE = d.source || ''; TOTAL = d.total || 0;
     $('#range').innerHTML = ranges().map(r => `<option value="${r.v}">${r.t}</option>`).join(''); syncSub();
+    try { const v = JSON.parse(localStorage.getItem('toeic-view') || 'null');
+      if (v && [...$('#range').options].some(o => o.value === v.range)) { $('#range').value = v.range; syncSub(); if (v.sub && [...$('#sub').options].some(o => o.value === v.sub)) $('#sub').value = v.sub; page = v.page || 0; } } catch (e) {}
     let t = 'list'; try { t = localStorage.getItem('toeic-tab') || 'list'; } catch (e) {}
     const btn = document.querySelector(`.tab[data-tab="${t}"]`); (btn || document.querySelector('.tab')).click();
   }).catch(() => { $('#list').innerHTML = '<p class="empty">단어 데이터를 불러오지 못했습니다.</p>'; });
