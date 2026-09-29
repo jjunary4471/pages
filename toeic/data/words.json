@@ -575,6 +575,521 @@
    "ex": "[[affect]] the country's economy directly",
    "exko": "국가 경제에 직접적인 영향을 미치다",
    "der": []
+  },
+  {
+   "id": 41,
+   "w": "affordable",
+   "ko": "가격이 알맞은, 저렴한",
+   "ex": "offer a top-quality product at an [[affordable]] price",
+   "exko": "최고 품질의 제품을 합리적인 가격으로 제공하다",
+   "der": [
+    [
+     "afford",
+     "(경제적, 시간적으로) ~할 여유가 되다"
+    ]
+   ]
+  },
+  {
+   "id": 42,
+   "w": "agency",
+   "ko": "대행사, 대리점",
+   "ex": "run a real estate [[agency]] in Canterbury",
+   "exko": "캔터베리에서 부동산을 운영하다",
+   "der": [
+    [
+     "agent",
+     "대리인, 중개상"
+    ]
+   ]
+  },
+  {
+   "id": 43,
+   "w": "agenda",
+   "ko": "의제, 안건",
+   "ex": "download a revised meeting [[agenda]]",
+   "exko": "수정된 회의 안건을 다운로드하다",
+   "der": []
+  },
+  {
+   "id": 44,
+   "w": "aggressively",
+   "ko": "적극적으로, 공격적으로",
+   "ex": "market a new product [[aggressively]]",
+   "exko": "신제품을 공격적으로 마케팅하다",
+   "der": [
+    [
+     "aggressive",
+     "적극적인, 공격적인"
+    ]
+   ]
+  },
+  {
+   "id": 45,
+   "w": "agreement",
+   "ko": "계약(서), 합의, 동의",
+   "ex": "decide not to renew the lease [[agreement]]",
+   "exko": "임대차 계약을 갱신하지 않기로 결정하다",
+   "der": [
+    [
+     "agree",
+     "동의하다"
+    ],
+    [
+     "agreeable",
+     "기분 좋은, 동의할 만한"
+    ]
+   ]
+  },
+  {
+   "id": 46,
+   "w": "aisle",
+   "ko": "통로, 복도",
+   "ex": "request an [[aisle]] seat on the plane",
+   "exko": "비행기에서 통로 좌석을 요청하다",
+   "der": []
+  },
+  {
+   "id": 47,
+   "w": "alleviate",
+   "ko": "완화하다, 덜다, 경감하다",
+   "ex": "[[alleviate]] traffic congestion in the city center",
+   "exko": "도심의 교통체증을 완화하다",
+   "der": [
+    [
+     "alleviation",
+     "경감, 완화"
+    ]
+   ]
+  },
+  {
+   "id": 48,
+   "w": "alliance",
+   "ko": "연합, 제휴, 동맹",
+   "ex": "form an [[alliance]] to offer a wider range of services",
+   "exko": "폭넓은 서비스를 제공하기 위해 제휴를 맺다",
+   "der": [
+    [
+     "strategic alliance",
+     "전략적 제휴"
+    ]
+   ]
+  },
+  {
+   "id": 49,
+   "w": "allocate",
+   "ko": "할당하다, 배분하다",
+   "ex": "[[allocate]] additional funds for a renovation project",
+   "exko": "리노베이션 프로젝트에 추가 자금을 배정하다",
+   "der": [
+    [
+     "allocation",
+     "할당, 할당량, 배분"
+    ]
+   ]
+  },
+  {
+   "id": 50,
+   "w": "allowance",
+   "ko": "허용량, 수당, 비용",
+   "ex": "exceed the airline's free baggage [[allowance]]",
+   "exko": "항공사 무료 수하물 허용 기준을 초과하다",
+   "der": [
+    [
+     "allow",
+     "허락하다, 용납하다"
+    ],
+    [
+     "allow for",
+     "감안하다, 고려하다"
+    ]
+   ]
+  },
+  {
+   "id": 51,
+   "w": "alter",
+   "ko": "바꾸다, 변경하다, 고치다",
+   "ex": "[[alter]] some of the plans due to a lack of interest",
+   "exko": "관심 부족으로 계획을 일부 변경하다",
+   "der": [
+    [
+     "alteration",
+     "변화, 개조, 변경"
+    ]
+   ]
+  },
+  {
+   "id": 52,
+   "w": "alternative",
+   "ko": "대안, 대체 가능한, 다른",
+   "ex": "look for an [[alternative]] venue",
+   "exko": "대체 장소를 물색하다",
+   "der": [
+    [
+     "alternatively",
+     "그 대신에, 혹은"
+    ],
+    [
+     "alternate",
+     "번갈아 하다, 교대의"
+    ]
+   ]
+  },
+  {
+   "id": 53,
+   "w": "amazed",
+   "ko": "놀란",
+   "ex": "be [[amazed]] at the firm's rapid progress",
+   "exko": "회사의 빠른 발전에 놀라다",
+   "der": [
+    [
+     "amazing",
+     "놀라운"
+    ]
+   ]
+  },
+  {
+   "id": 54,
+   "w": "ambitious",
+   "ko": "야심 찬, 야망 있는, 포부가 큰",
+   "ex": "set an [[ambitious]] goal",
+   "exko": "야심 찬 목표를 세우다",
+   "der": [
+    [
+     "ambition",
+     "야망, 포부, 의욕"
+    ]
+   ]
+  },
+  {
+   "id": 55,
+   "w": "amendment",
+   "ko": "수정, 개정",
+   "ex": "make several last-minute [[amendments]]",
+   "exko": "막판에 몇 번 수정하다",
+   "der": [
+    [
+     "amend",
+     "개정하다, 수정하다"
+    ]
+   ]
+  },
+  {
+   "id": 56,
+   "w": "amenities",
+   "ko": "편의 시설",
+   "ex": "have full access to the hotel [[amenities]]",
+   "exko": "호텔 편의시설을 전부 이용할 수 있다",
+   "der": []
+  },
+  {
+   "id": 57,
+   "w": "amount",
+   "ko": "양, 액수, 총계, 합계가 ~에 달하다",
+   "ex": "require a substantial [[amount]] of resources",
+   "exko": "상당한 자원이 필요하다",
+   "der": []
+  },
+  {
+   "id": 58,
+   "w": "ample",
+   "ko": "충분한, 풍부한, 넓은",
+   "ex": "have [[ample]] opportunity to interact with others",
+   "exko": "다른 사람들과 교류할 충분한 기회를 갖다",
+   "der": []
+  },
+  {
+   "id": 59,
+   "w": "analyze",
+   "ko": "분석하다",
+   "ex": "[[analyze]] the data collected from the interview",
+   "exko": "면접에서 수집된 데이터를 분석하다",
+   "der": [
+    [
+     "analysis",
+     "분석"
+    ],
+    [
+     "analyst",
+     "분석가"
+    ]
+   ]
+  },
+  {
+   "id": 60,
+   "w": "anniversary",
+   "ko": "기념일",
+   "ex": "hold a reception to celebrate its 5th [[anniversary]]",
+   "exko": "창립 5주년 기념 리셉션을 열다",
+   "der": [
+    [
+     "mark the anniversary",
+     "기념일을 축하하다"
+    ]
+   ]
+  },
+  {
+   "id": 61,
+   "w": "announce",
+   "ko": "발표하다, 알리다",
+   "ex": "[[announce]] her resignation to staff members",
+   "exko": "직원들에게 사임을 발표하다",
+   "der": [
+    [
+     "announcement",
+     "안내 방송, 발표, 알림"
+    ]
+   ]
+  },
+  {
+   "id": 62,
+   "w": "annual",
+   "ko": "연례의, 매년의, 연간의",
+   "ex": "attend the [[annual]] shareholder's meeting",
+   "exko": "연례 주주 총회에 참석하다",
+   "der": [
+    [
+     "annually",
+     "해마다, 매년, 일 년에 한 번"
+    ],
+    [
+     "biannual",
+     "연 2회의"
+    ]
+   ]
+  },
+  {
+   "id": 63,
+   "w": "anonymous",
+   "ko": "익명의, 저자 미상의",
+   "ex": "make an [[anonymous]] donation of $20,000",
+   "exko": "익명으로 2만 달러를 기부하다",
+   "der": [
+    [
+     "anonymously",
+     "익명으로"
+    ]
+   ]
+  },
+  {
+   "id": 64,
+   "w": "anticipate",
+   "ko": "예상하다, 예측하다, 기대하다",
+   "ex": "turn out to be even better than [[anticipated]]",
+   "exko": "예상보다 훨씬 더 나은 것으로 판명되다",
+   "der": [
+    [
+     "anticipation",
+     "예상, 예측, 기대, 고대"
+    ]
+   ]
+  },
+  {
+   "id": 65,
+   "w": "apologize",
+   "ko": "사과하다",
+   "ex": "sincerely [[apologize]] for the inconvenience",
+   "exko": "불편에 대해 진심으로 사과하다",
+   "der": [
+    [
+     "apology",
+     "사과"
+    ]
+   ]
+  },
+  {
+   "id": 66,
+   "w": "apparent",
+   "ko": "분명한, 명백한, 누가 봐도 알 수 있는",
+   "ex": "become [[apparent]] that they have a financial problem",
+   "exko": "재정적인 문제가 있음이 분명해지다",
+   "der": [
+    [
+     "apparently",
+     "보기에, 듣자 하니"
+    ]
+   ]
+  },
+  {
+   "id": 67,
+   "w": "appeal",
+   "ko": "관심을 끌다, 호소하다, 간청, 항소",
+   "ex": "[[appeal]] to tourists and residents alike",
+   "exko": "관광객과 주민 모두에게 어필하다",
+   "der": [
+    [
+     "appealing",
+     "매력적인, 흥미로운"
+    ]
+   ]
+  },
+  {
+   "id": 68,
+   "w": "appearance",
+   "ko": "겉모습, 외모, 외형, 출현, 등장",
+   "ex": "enhance the [[appearance]] of the building",
+   "exko": "건물 외관을 개선하다",
+   "der": [
+    [
+     "appear",
+     "~인 것 같다, 나타나다, 출연하다"
+    ],
+    [
+     "disappear",
+     "사라지다, 없어지다"
+    ]
+   ]
+  },
+  {
+   "id": 69,
+   "w": "applause",
+   "ko": "박수",
+   "ex": "give a round of [[applause]]",
+   "exko": "박수갈채를 보내다",
+   "der": [
+    [
+     "applaud",
+     "박수치다, 갈채를 보내다"
+    ]
+   ]
+  },
+  {
+   "id": 70,
+   "w": "appliance",
+   "ko": "기기, 기구",
+   "ex": "manufacture a wide range of kitchen [[appliances]]",
+   "exko": "다양한 주방용품을 제조하다",
+   "der": []
+  },
+  {
+   "id": 71,
+   "w": "application",
+   "ko": "지원(서), 적용, 응용",
+   "ex": "fill out an [[application]] form",
+   "exko": "신청서를 작성하다",
+   "der": [
+    [
+     "applicable",
+     "해당되는, 적용되는"
+    ],
+    [
+     "applicant",
+     "지원자, 신청자"
+    ]
+   ]
+  },
+  {
+   "id": 72,
+   "w": "appointment",
+   "ko": "약속, 임명, 지명",
+   "ex": "be unable to keep the [[appointment]]",
+   "exko": "약속을 지키지 못하다",
+   "der": [
+    [
+     "appoint",
+     "임명하다, 지명하다, 정하다"
+    ],
+    [
+     "appointed",
+     "정해진, 임명된"
+    ]
+   ]
+  },
+  {
+   "id": 73,
+   "w": "appraise",
+   "ko": "평가하다, 감정하다",
+   "ex": "[[appraise]] the performance of their employees",
+   "exko": "직원의 성과를 평가하다",
+   "der": [
+    [
+     "appraisal",
+     "평가, 감정, 판단"
+    ]
+   ]
+  },
+  {
+   "id": 74,
+   "w": "appreciate",
+   "ko": "고마워하다, 진가를 알아보다, 감상하다",
+   "ex": "[[appreciate]] your continued support",
+   "exko": "지속적인 지지에 감사드린다",
+   "der": [
+    [
+     "appreciative",
+     "고마워하는"
+    ],
+    [
+     "in appreciation of",
+     "~에 감사하여"
+    ]
+   ]
+  },
+  {
+   "id": 75,
+   "w": "apprentice",
+   "ko": "견습생, 수습생, 도제",
+   "ex": "work as an [[apprentice]] to a plumber",
+   "exko": "배관공의 견습생으로 일하다",
+   "der": []
+  },
+  {
+   "id": 76,
+   "w": "approach",
+   "ko": "접근(법), 접근하다, 다가오다",
+   "ex": "be praised for taking a creative [[approach]]",
+   "exko": "창의적 접근에 대해 칭찬받다",
+   "der": [
+    [
+     "approaching",
+     "다가오는"
+    ]
+   ]
+  },
+  {
+   "id": 77,
+   "w": "appropriate",
+   "ko": "적절한, 적합한",
+   "ex": "select the [[appropriate]] attire for a job interview",
+   "exko": "면접에 적합한 복장을 선택하다",
+   "der": []
+  },
+  {
+   "id": 78,
+   "w": "approval",
+   "ko": "승인, 인정, 찬성",
+   "ex": "receive prior [[approval]] from a division head",
+   "exko": "부서장의 사전 승인을 받다",
+   "der": [
+    [
+     "approve",
+     "승인하다, 허가하다, 찬성하다"
+    ]
+   ]
+  },
+  {
+   "id": 79,
+   "w": "approximately",
+   "ko": "대략, 거의",
+   "ex": "plan to invest [[approximately]] 2 million dollars",
+   "exko": "약 2백만 달러를 투자할 계획이다",
+   "der": []
+  },
+  {
+   "id": 80,
+   "w": "arbitrate",
+   "ko": "중재하다, 조정하다",
+   "ex": "[[arbitrate]] between the opposing sides",
+   "exko": "양측을 중재하다",
+   "der": [
+    [
+     "arbitration",
+     "중재, 조정"
+    ],
+    [
+     "arbitrator",
+     "중재자"
+    ]
+   ]
   }
  ]
 }
