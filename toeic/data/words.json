@@ -1,5 +1,5 @@
 {
- "source": "토익은 단어빨 Stage 01",
+ "source": "토익은 단어빨",
  "total": 1200,
  "words": [
   {
@@ -1365,6 +1365,555 @@
     [
      "in an attempt to do",
      "~하려는 시도로, ~하기 위해"
+    ]
+   ]
+  },
+  {
+   "id": 101,
+   "w": "attendance",
+   "ko": "참석, 출석",
+   "ex": "encourage [[attendance]] at an awards ceremony",
+   "exko": "시상식 참석을 장려하다",
+   "der": [
+    [
+     "attend",
+     "참석하다"
+    ],
+    [
+     "attendee",
+     "참석자"
+    ],
+    [
+     "unattended",
+     "방치된, 주인 없는"
+    ]
+   ]
+  },
+  {
+   "id": 102,
+   "w": "attention",
+   "ko": "주의, 집중, 주목, 관심",
+   "ex": "pay more [[attention]] to financial matters",
+   "exko": "재정 문제에 더 많은 관심을 기울이다",
+   "der": [
+    [
+     "attend",
+     "주의를 기울이다"
+    ],
+    [
+     "attentive",
+     "주의를 기울이는, 세심한"
+    ]
+   ]
+  },
+  {
+   "id": 103,
+   "w": "attitude",
+   "ko": "태도, 자세",
+   "ex": "have a favorable [[attitude]] toward the change",
+   "exko": "변화에 대해 우호적인 태도를 취하다",
+   "der": []
+  },
+  {
+   "id": 104,
+   "w": "attract",
+   "ko": "끌어들이다, 유치하다, (마음을) 끌다",
+   "ex": "[[attract]] international customers",
+   "exko": "해외 고객을 유치하다",
+   "der": [
+    [
+     "attraction",
+     "명소, 명물"
+    ],
+    [
+     "attractive",
+     "매력적인, 멋진"
+    ]
+   ]
+  },
+  {
+   "id": 105,
+   "w": "attribute",
+   "ko": "특성, 속성, 자질, ~의 덕분으로 여기다",
+   "ex": "possess an essential [[attribute]] for a good leader",
+   "exko": "훌륭한 지도자의 자질을 지니다",
+   "der": [
+    [
+     "attribute A to B",
+     "A를 B 때문이라 여기다"
+    ]
+   ]
+  },
+  {
+   "id": 106,
+   "w": "auction",
+   "ko": "경매, 경매에 부치다",
+   "ex": "hold an [[auction]] of antiques",
+   "exko": "골동품 경매를 열다",
+   "der": [
+    [
+     "charity auction",
+     "자선 경매"
+    ]
+   ]
+  },
+  {
+   "id": 107,
+   "w": "audience",
+   "ko": "청중, 관중",
+   "ex": "address a large [[audience]]",
+   "exko": "많은 청중에게 연설하다",
+   "der": [
+    [
+     "target audience",
+     "(광고) 주 시청자, 대상"
+    ]
+   ]
+  },
+  {
+   "id": 108,
+   "w": "audit",
+   "ko": "회계 감사, 회계 감사하다",
+   "ex": "complete its internal [[audit]] in June",
+   "exko": "6월에 내부 감사를 완료하다",
+   "der": [
+    [
+     "auditor",
+     "회계 감사관"
+    ]
+   ]
+  },
+  {
+   "id": 109,
+   "w": "authentic",
+   "ko": "진품인, 진짜인, 정통의",
+   "ex": "be confirmed as an [[authentic]] work by Monet",
+   "exko": "모네의 진품으로 확인되다",
+   "der": []
+  },
+  {
+   "id": 110,
+   "w": "authority",
+   "ko": "권한, 당국, 권위자",
+   "ex": "have the [[authority]] to change the supplier",
+   "exko": "공급업체를 변경할 권한이 있다",
+   "der": [
+    [
+     "transit authority",
+     "교통 당국"
+    ]
+   ]
+  },
+  {
+   "id": 111,
+   "w": "authorized",
+   "ko": "권한이 부여된, 공인된, 허가 받은",
+   "ex": "purchase their car from an [[authorized]] dealer",
+   "exko": "공인 딜러로부터 차를 구입하다",
+   "der": [
+    [
+     "authorize",
+     "인가하다, 권한을 주다"
+    ],
+    [
+     "authorization",
+     "허가, 인가"
+    ]
+   ]
+  },
+  {
+   "id": 112,
+   "w": "automatically",
+   "ko": "자동으로",
+   "ex": "be turned off [[automatically]]",
+   "exko": "자동으로 꺼진다",
+   "der": [
+    [
+     "automatic",
+     "자동의"
+    ],
+    [
+     "Automated Teller Machine",
+     "현금 자동 입출금기"
+    ]
+   ]
+  },
+  {
+   "id": 113,
+   "w": "available",
+   "ko": "이용할 수 있는, 시간이 되는",
+   "ex": "be [[available]] in many different colors and sizes",
+   "exko": "다양한 색상과 크기로 이용 가능하다",
+   "der": [
+    [
+     "availability",
+     "이용 가능성"
+    ],
+    [
+     "unavailable",
+     "구할 수 없는, 만날 수 없는"
+    ]
+   ]
+  },
+  {
+   "id": 114,
+   "w": "avoid",
+   "ko": "피하다, 막다",
+   "ex": "[[avoid]] excessive exposure to ultraviolet rays",
+   "exko": "자외선에 과도한 노출을 피하다",
+   "der": [
+    [
+     "avoidable",
+     "막을 수 있는"
+    ],
+    [
+     "unavoidable",
+     "불가피한, 피할 수 없는"
+    ]
+   ]
+  },
+  {
+   "id": 115,
+   "w": "aware",
+   "ko": "알고 있는, 인식하는, 의식하는",
+   "ex": "be [[aware]] of the environmental issues",
+   "exko": "환경 문제를 인식하다",
+   "der": [
+    [
+     "awareness",
+     "의식, 관심"
+    ],
+    [
+     "unaware",
+     "모르는, 알지 못하는"
+    ]
+   ]
+  },
+  {
+   "id": 116,
+   "w": "background",
+   "ko": "배경",
+   "ex": "examine the applicant's educational [[background]]",
+   "exko": "지원자의 학력을 조사하다",
+   "der": [
+    [
+     "background check",
+     "신원 조사, 신원 조회"
+    ]
+   ]
+  },
+  {
+   "id": 117,
+   "w": "balance",
+   "ko": "잔액, 잔고, 잔금, 균형, 균형을 잡다",
+   "ex": "pay the remaining [[balance]] by the due date",
+   "exko": "기한 내에 잔금을 치르다",
+   "der": [
+    [
+     "account balance",
+     "잔고, 계좌 잔액"
+    ]
+   ]
+  },
+  {
+   "id": 118,
+   "w": "bankruptcy",
+   "ko": "파산, 부도",
+   "ex": "file for [[bankruptcy]]",
+   "exko": "파산 신청을 하다",
+   "der": [
+    [
+     "bankrupt",
+     "파산한"
+    ],
+    [
+     "go bankrupt",
+     "파산하다"
+    ]
+   ]
+  },
+  {
+   "id": 119,
+   "w": "banquet",
+   "ko": "연회, 만찬, 축하연",
+   "ex": "hold an annual awards [[banquet]]",
+   "exko": "연례 시상식 만찬을 개최하다",
+   "der": []
+  },
+  {
+   "id": 120,
+   "w": "barely",
+   "ko": "거의 ~아니게, 간신히, 가까스로",
+   "ex": "be [[barely]] audible at the back of the room",
+   "exko": "방 뒤에서 거의 들리지 않는다",
+   "der": []
+  },
+  {
+   "id": 121,
+   "w": "basis",
+   "ko": "기준, 근거, 기반, 기초",
+   "ex": "inspect the facility on a regular [[basis]]",
+   "exko": "시설을 정기적으로 점검하다",
+   "der": [
+    [
+     "basic",
+     "기본적인, 기초적인"
+    ],
+    [
+     "be based on",
+     "~에 기초하다, 근거하다"
+    ]
+   ]
+  },
+  {
+   "id": 122,
+   "w": "behavior",
+   "ko": "행동, 처신",
+   "ex": "try to understand consumer [[behavior]]",
+   "exko": "소비자 행동을 이해하려고 노력하다",
+   "der": [
+    [
+     "behave",
+     "처신하다, 행동하다"
+    ]
+   ]
+  },
+  {
+   "id": 123,
+   "w": "belongings",
+   "ko": "소지품, 소유물",
+   "ex": "put personal [[belongings]] in the locker",
+   "exko": "개인 소지품을 사물함에 넣다",
+   "der": [
+    [
+     "belong to",
+     "~에 속하다, ~의 소유이다"
+    ]
+   ]
+  },
+  {
+   "id": 124,
+   "w": "beneficial",
+   "ko": "유익한, 이로운, 도움이 되는",
+   "ex": "be extremely [[beneficial]] to our clients",
+   "exko": "고객에게 매우 유익하다",
+   "der": [
+    [
+     "benefit",
+     "혜택, 혜택을 보다, 도움이 되다"
+    ],
+    [
+     "beneficiary",
+     "수혜자, 수령인"
+    ]
+   ]
+  },
+  {
+   "id": 125,
+   "w": "bid",
+   "ko": "입찰, 입찰하다",
+   "ex": "win the [[bid]] to construct a new shopping mall",
+   "exko": "새로운 쇼핑몰 공사 입찰을 따내다",
+   "der": [
+    [
+     "successful bidder",
+     "낙찰자"
+    ]
+   ]
+  },
+  {
+   "id": 126,
+   "w": "bill",
+   "ko": "고지서, 계산서, 지폐, 법안, 청구서를 보내다",
+   "ex": "receive an itemized [[bill]] of hotel charges",
+   "exko": "호텔 요금의 상세 명세서를 받다",
+   "der": [
+    [
+     "a ten-dollar bill",
+     "10달러짜리 지폐"
+    ]
+   ]
+  },
+  {
+   "id": 127,
+   "w": "board",
+   "ko": "이사회, 위원회, 게시판, 탑승하다",
+   "ex": "check for further details on the bulletin [[board]]",
+   "exko": "게시판에서 자세한 내용을 확인하다",
+   "der": [
+    [
+     "board an airplane",
+     "비행기에 탑승하다"
+    ]
+   ]
+  },
+  {
+   "id": 128,
+   "w": "boost",
+   "ko": "늘리다, 북돋우다, 부양하다, 활성화하다",
+   "ex": "talk about how to [[boost]] tourism",
+   "exko": "관광 활성화 방안에 대해 이야기하다",
+   "der": []
+  },
+  {
+   "id": 129,
+   "w": "bound",
+   "ko": "~할 것 같은, ~해야 하는, ~로 향하는",
+   "ex": "be [[bound]] to happen sooner or later",
+   "exko": "조만간 일어날 가능성이 크다",
+   "der": [
+    [
+     "eastbound",
+     "동쪽으로 향하는"
+    ],
+    [
+     "westbound",
+     "서쪽으로 가는"
+    ]
+   ]
+  },
+  {
+   "id": 130,
+   "w": "brainstorming",
+   "ko": "브레인스토밍, 아이디어 회의",
+   "ex": "have a [[brainstorming]] session",
+   "exko": "아이디어 회의를 하다",
+   "der": []
+  },
+  {
+   "id": 131,
+   "w": "branch",
+   "ko": "지사, 분점, 나뭇가지",
+   "ex": "request a transfer to the New Orleans [[branch]]",
+   "exko": "뉴올리언스 지사로 전근을 요청하다",
+   "der": [
+    [
+     "branch manager",
+     "지점장, 지사장"
+    ]
+   ]
+  },
+  {
+   "id": 132,
+   "w": "breakage",
+   "ko": "파손, 파손된 물건",
+   "ex": "must be wrapped individually to prevent [[breakage]]",
+   "exko": "파손 방지를 위해 개별 포장돼야 한다",
+   "der": [
+    [
+     "break",
+     "깨다, 부수다, 고장 내다, 휴식, 중단"
+    ],
+    [
+     "broken",
+     "고장 난, 깨진"
+    ]
+   ]
+  },
+  {
+   "id": 133,
+   "w": "brief",
+   "ko": "간단한, 짧은, 잠깐의, 간단히 알려주다",
+   "ex": "cause a [[brief]] interruption in service",
+   "exko": "잠깐의 서비스 중단을 초래하다",
+   "der": [
+    [
+     "briefly",
+     "잠시, 간략하게"
+    ]
+   ]
+  },
+  {
+   "id": 134,
+   "w": "brilliantly",
+   "ko": "뛰어나게, 훌륭히",
+   "ex": "try to do everything [[brilliantly]]",
+   "exko": "모든 것을 훌륭하게 하려고 노력하다",
+   "der": [
+    [
+     "brilliant",
+     "훌륭한, 멋진, 뛰어난"
+    ]
+   ]
+  },
+  {
+   "id": 135,
+   "w": "broad",
+   "ko": "폭넓은",
+   "ex": "offer a [[broad]] array of items at low prices",
+   "exko": "다양한 물건을 저렴한 가격에 제공하다",
+   "der": [
+    [
+     "broaden",
+     "넓히다, 확대하다"
+    ],
+    [
+     "breadth",
+     "폭, 너비"
+    ]
+   ]
+  },
+  {
+   "id": 136,
+   "w": "browse",
+   "ko": "둘러보다, 대강 읽다",
+   "ex": "[[browse]] in a museum gift shop",
+   "exko": "박물관 선물 가게를 둘러보다",
+   "der": [
+    [
+     "browse through a magazine",
+     "잡지를 훑어보다"
+    ]
+   ]
+  },
+  {
+   "id": 137,
+   "w": "budget",
+   "ko": "예산, 예산을 세우다, 저가의",
+   "ex": "draw up a [[budget]] for the coming fiscal year",
+   "exko": "다음 회계연도의 예산을 짜다",
+   "der": []
+  },
+  {
+   "id": 138,
+   "w": "bulk",
+   "ko": "많은 양, 큰 규모",
+   "ex": "purchase paper in [[bulk]] to keep costs down",
+   "exko": "비용을 낮추기 위해 종이를 대량으로 구입하다",
+   "der": [
+    [
+     "in bulk",
+     "대량으로"
+    ]
+   ]
+  },
+  {
+   "id": 139,
+   "w": "calculate",
+   "ko": "계산하다, 산출하다, 추정하다",
+   "ex": "[[calculate]] how much time we need",
+   "exko": "시간이 얼마나 필요한지 계산해 보다",
+   "der": [
+    [
+     "calculation",
+     "계산, 추정, 추산"
+    ],
+    [
+     "calculator",
+     "계산기"
+    ]
+   ]
+  },
+  {
+   "id": 140,
+   "w": "cancel",
+   "ko": "취소하다",
+   "ex": "[[cancel]] the event at the last minute",
+   "exko": "막판에 이벤트를 취소하다",
+   "der": [
+    [
+     "cancellation",
+     "취소"
     ]
    ]
   }
