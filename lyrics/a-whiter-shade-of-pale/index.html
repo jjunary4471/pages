@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>A Whiter Shade of Pale 가사</title>
+  <meta name="description" content="프로콜 하럼 'A Whiter Shade of Pale' 전체 가사와 한국어 해석, 미수록 3·4절 포함">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4;
+      --ink: #1A1F2B;
+      --ink-2: #4B5364;
+      --muted: #8A919F;
+      --line: #E1E3DE;
+      --line-strong: #1A1F2B;
+      --accent: #D0731A;
+      --accent-ink: #9A530E;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D;
+        --ink: #EEF0F3;
+        --ink-2: #BFC6D1;
+        --muted: #7F8794;
+        --line: #2A2F3A;
+        --line-strong: #EEF0F3;
+        --accent: #EE9A46;
+        --accent-ink: #F5B672;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-inline: 24px;
+      padding-block: 36px 96px;
+    }
+
+    /* 목록 바로가기 */
+    .home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+      text-decoration: none; padding: 4px 0;
+    }
+    .home:hover, .home:focus-visible { color: var(--accent-ink); outline: none; }
+    .home svg { width: 14px; height: 14px; }
+
+    /* 헤더 */
+    header {
+      margin-top: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line-strong);
+      display: grid; gap: 18px;
+    }
+    .eyebrow {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-ink);
+    }
+    h1 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 11vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .sub {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 18px; color: var(--ink-2); margin: 0;
+    }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 6px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .meta b { color: var(--ink-2); font-weight: 500; }
+
+    /* 가사: 영어 / 해석 대역 */
+    .song { display: grid; gap: 44px; margin-top: 44px; }
+    section { display: grid; gap: 14px; }
+    .part {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .chorus-block .part { color: var(--accent-ink); border-color: var(--accent); }
+
+    .line {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 40px;
+      align-items: baseline;
+    }
+    .en {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 20px; font-weight: 700; line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .ko {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 15px; font-weight: 400; color: var(--ink-2); line-height: 1.6;
+    }
+    .en .pr {
+      display: block; margin-top: 2px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted);
+    }
+    .chorus-block .en { color: var(--accent-ink); }
+    .refrain .en { font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+    .refrain .ko { color: var(--muted); }
+
+    /* 표현 노트 */
+    .notes { margin-top: 88px; }
+    .notes h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .term {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 12px 40px;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .term h3 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .term h3 small {
+      display: block; margin-top: 6px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; font-size: 14px; font-weight: 500; color: var(--accent-ink);
+    }
+    .term .body { display: grid; gap: 14px; }
+    .term p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .term dl { margin: 0; display: grid; gap: 8px; }
+    .term dl div { display: grid; grid-template-columns: 104px 1fr; gap: 12px; font-size: 14px; }
+    .term dt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); margin: 0; }
+    .term dd { margin: 0; color: var(--ink-2); }
+    .term .ex { display: grid; gap: 6px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .term .ex div { display: grid; gap: 1px; font-size: 13.5px; }
+    .term .ex i { font-style: normal; color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; }
+    .term .ex span { color: var(--muted); }
+
+    /* 비영어 단어 풀이 */
+    .vocab { margin-top: 88px; }
+    .vocab h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .vline { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
+    .vline .src {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; align-items: baseline;
+    }
+    .vline .src .en { font-size: 20px; }
+    .vline .src .en .pr { display: block; margin-top: 2px; font-family: "Noto Sans KR", sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+    .vline .src .ko { font-size: 15px; color: var(--ink-2); }
+    .words { display: grid; gap: 0; }
+    .word {
+      display: grid; grid-template-columns: 140px 150px 1fr; gap: 6px 24px;
+      padding: 12px 0; border-top: 1px dashed var(--line); font-size: 14px;
+    }
+    .word:first-child { border-top: 0; }
+    .word .w { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); }
+    .word .w small { display: block; font-family: "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 1px; }
+    .word .m { color: var(--ink); font-weight: 500; }
+    .word .n { color: var(--ink-2); }
+    .word .n i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; color: var(--ink); }
+    .vline .idiom {
+      padding: 12px 16px; border-left: 2px solid var(--accent);
+      font-size: 14px; color: var(--ink-2); display: grid; gap: 4px;
+    }
+    .vline .idiom b { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--accent-ink); }
+
+    @media (max-width: 640px) {
+      .wrap { padding-inline: 20px; padding-block: 24px 72px; }
+      header { margin-top: 28px; }
+      .line { grid-template-columns: 1fr; gap: 2px; }
+      .line + .line { margin-top: 6px; }
+      .en { font-size: 18px; }
+      .term { grid-template-columns: 1fr; gap: 14px; }
+      .term dl div { grid-template-columns: 1fr; gap: 2px; }
+      .vline .src { grid-template-columns: 1fr; gap: 2px; }
+      .word { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../../">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    페이지 목록으로
+  </a>
+
+  <header>
+    <div class="eyebrow">Procol Harum · Single · 1967</div>
+    <h1>A Whiter Shade of Pale</h1>
+    <p class="sub">창백함보다 더 하얀</p>
+    <div class="meta">
+      <span>노래 <b>Procol Harum (보컬 Gary Brooker)</b></span>
+      <span>작곡 <b>Gary Brooker · Matthew Fisher</b></span>
+      <span>작사 <b>Keith Reid</b></span>
+      <span>발매 <b>1967년 5월 · Deram</b></span>
+    </div>
+  </header>
+
+  <div class="song">
+
+    <section>
+      <div class="part">Verse 1</div>
+      <div class="line"><div class="en">We skipped the light fandango</div><div class="ko">우린 가볍게 판당고를 추며 뛰놀았지</div></div>
+      <div class="line"><div class="en">Turned cartwheels 'cross the floor</div><div class="ko">바닥을 가로질러 옆으로 재주를 넘었어</div></div>
+      <div class="line"><div class="en">I was feeling kinda seasick</div><div class="ko">난 좀 뱃멀미하는 기분이었는데</div></div>
+      <div class="line"><div class="en">But the crowd called out for more</div><div class="ko">사람들은 더 하라고 소리쳤어</div></div>
+      <div class="line"><div class="en">The room was humming harder</div><div class="ko">방 안은 점점 더 윙윙거렸고</div></div>
+      <div class="line"><div class="en">As the ceiling flew away</div><div class="ko">천장은 날아가 버렸지</div></div>
+      <div class="line"><div class="en">When we called out for another drink</div><div class="ko">우리가 한 잔 더 달라고 외치자</div></div>
+      <div class="line"><div class="en">The waiter brought a tray</div><div class="ko">웨이터가 쟁반을 들고 왔어</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">And so it was that later</div><div class="ko">그리고 그렇게 시간이 흘러</div></div>
+      <div class="line"><div class="en">As the miller told his tale</div><div class="ko">방앗간 주인이 제 이야기를 늘어놓을 때</div></div>
+      <div class="line"><div class="en">That her face, at first just ghostly</div><div class="ko">처음엔 그저 창백하기만 하던 그녀의 얼굴이</div></div>
+      <div class="line"><div class="en">Turned a whiter shade of pale</div><div class="ko">창백함보다 더 하얗게 질려 갔어</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 2</div>
+      <div class="line"><div class="en">She said, 'There is no reason</div><div class="ko">그녀가 말했지, "이유 같은 건 없어</div></div>
+      <div class="line"><div class="en">And the truth is plain to see'</div><div class="ko">진실은 뻔히 보이잖아"</div></div>
+      <div class="line"><div class="en">But I wandered through my playing cards</div><div class="ko">하지만 난 손에 든 카드들 사이를 헤매며</div></div>
+      <div class="line"><div class="en">And would not let her be</div><div class="ko">그녀를 그냥 두려 하지 않았어</div></div>
+      <div class="line"><div class="en">One of sixteen vestal virgins</div><div class="ko">열여섯 베스타 처녀 중 하나가 되도록</div></div>
+      <div class="line"><div class="en">Who were leaving for the coast</div><div class="ko">해안으로 떠나가던 그 처녀들 말이야</div></div>
+      <div class="line"><div class="en">And although my eyes were open</div><div class="ko">내 눈은 뜨여 있었지만</div></div>
+      <div class="line"><div class="en">They might have just as well've been closed</div><div class="ko">감고 있는 거나 다름없었지</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">And so it was that later</div><div class="ko">그리고 그렇게 시간이 흘러</div></div>
+      <div class="line"><div class="en">As the miller told his tale</div><div class="ko">방앗간 주인이 제 이야기를 늘어놓을 때</div></div>
+      <div class="line"><div class="en">That her face, at first just ghostly</div><div class="ko">처음엔 그저 창백하기만 하던 그녀의 얼굴이</div></div>
+      <div class="line"><div class="en">Turned a whiter shade of pale</div><div class="ko">창백함보다 더 하얗게 질려 갔어</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 3 · 음반 미수록, 라이브에서만</div>
+      <div class="line"><div class="en">She said, 'I'm home on shore leave'</div><div class="ko">그녀가 말했어, "난 상륙 휴가로 집에 온 거야"</div></div>
+      <div class="line"><div class="en">Though in truth we were at sea</div><div class="ko">사실 우린 바다 위에 있었는데도</div></div>
+      <div class="line"><div class="en">So I took her by the looking glass</div><div class="ko">그래서 난 그녀를 거울 앞으로 데려가</div></div>
+      <div class="line"><div class="en">And forced her to agree</div><div class="ko">억지로 인정하게 만들었지</div></div>
+      <div class="line"><div class="en">Saying, 'You must be the mermaid</div><div class="ko">"넌 분명 넵튠을 홀려 태우고 다닌</div></div>
+      <div class="line"><div class="en">Who took Neptune for a ride'</div><div class="ko">그 인어일 거야" 하면서</div></div>
+      <div class="line"><div class="en">But she smiled at me so sadly</div><div class="ko">하지만 그녀가 너무 슬프게 웃어서</div></div>
+      <div class="line"><div class="en">That my anger straightway died</div><div class="ko">내 화는 그 자리에서 사그라들었어</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 4 · 음반 미수록</div>
+      <div class="line"><div class="en">If music be the food of love</div><div class="ko">음악이 사랑의 양식이라면</div></div>
+      <div class="line"><div class="en">Then laughter is its queen</div><div class="ko">웃음은 그 여왕이지</div></div>
+      <div class="line"><div class="en">And likewise if behind is in front</div><div class="ko">마찬가지로 뒤가 앞이라면</div></div>
+      <div class="line"><div class="en">Then dirt in truth is clean</div><div class="ko">더러움은 사실 깨끗한 거고</div></div>
+      <div class="line"><div class="en">My mouth by then like cardboard</div><div class="ko">그때쯤 내 입은 마분지처럼 굳어서</div></div>
+      <div class="line"><div class="en">Seemed to slip straight through my head</div><div class="ko">머리를 그대로 통과해 빠져나가는 것 같았어</div></div>
+      <div class="line"><div class="en">So we crash-dived straightway quickly</div><div class="ko">그래서 우린 곧장 급강하해서</div></div>
+      <div class="line"><div class="en">And attacked the ocean bed</div><div class="ko">바다 밑바닥을 덮쳤지</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">And so it was that later</div><div class="ko">그리고 그렇게 시간이 흘러</div></div>
+      <div class="line"><div class="en">As the miller told his tale</div><div class="ko">방앗간 주인이 제 이야기를 늘어놓을 때</div></div>
+      <div class="line"><div class="en">That her face, at first just ghostly</div><div class="ko">처음엔 그저 창백하기만 하던 그녀의 얼굴이</div></div>
+      <div class="line"><div class="en">Turned a whiter shade of pale</div><div class="ko">창백함보다 더 하얗게 질려 갔어</div></div>
+    </section>
+
+  </div>
+
+
+  <div class="notes">
+    <h2>표현 노트</h2>
+
+    <div class="term">
+      <h3>a whiter shade of pale<small>창백함보다 더 하얀</small></h3>
+      <div class="body">
+        <p>pale 은 핏기가 가셔 창백하다는 뜻이고, shade 는 색의 단계입니다. "창백한 색 중에서도 더 하얀 단계"라는 말이니, 이미 창백하던 얼굴이 한 번 더 질리는 순간을 그립니다. 영어에서 turn pale 은 충격이나 두려움, 술기운으로 얼굴이 하얘지는 걸 뜻하는 흔한 표현인데, 작사가 키스 리드는 이걸 한 단계 더 밀어 제목으로 만들었습니다.</p>
+        <div class="ex">
+          <div><i>She turned pale when she heard the news.</i><span>그 소식을 듣고 그녀는 얼굴이 하얗게 질렸다.</span></div>
+          <div><i>You've turned a whiter shade of pale.</i><span>너 얼굴이 창백하다 못해 하얘졌어.</span></div>
+        </div>
+        <p>리드는 어느 파티에서 누군가 "You've turned a whiter shade of pale"이라고 말하는 걸 듣고 이 구절을 먼저 챙겼고, 거기에 맞춰 나머지 가사를 퍼즐처럼 채웠다고 했습니다. 후렴의 "at first just ghostly(처음엔 유령처럼 창백하다가)"에서 한 단계 더 하얘지는 흐름이 제목의 뜻 그대로입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>skip the light fandango<small>가볍게 춤추며 뛰놀다</small></h3>
+      <div class="body">
+        <p>영어에는 trip the light fantastic(가볍게 춤추다)이라는 오래된 관용구가 있습니다. 17세기 시인 밀턴의 시 L'Allegro 에 나오는 "trip it ... on the light fantastic toe"에서 온 말입니다. 리드는 이 관용구에서 fantastic 을 스페인 춤 이름 fandango 로, trip 을 skip 으로 바꿔 "가볍게 판당고를 추며 뛰놀았다"는 새 표현을 만들었습니다.</p>
+        <dl>
+          <div><dt>trip the light fantastic</dt><dd>(격식·익살) 춤을 추다. 지금은 농담조로 씁니다.</dd></div>
+          <div><dt>fandango</dt><dd>스페인·포르투갈의 빠른 3박자 춤. 원래 관용구에 없던 단어라 듣는 사람이 낯설게 느끼도록 만든 장치입니다.</dd></div>
+          <div><dt>turn cartwheels</dt><dd>옆으로 재주를 넘다. 기뻐서 날뛴다는 뜻으로도 씁니다.</dd></div>
+        </dl>
+        <p>첫 두 줄은 흥겹게 춤추는 장면인데, 바로 세 번째 줄에서 "뱃멀미"가 나옵니다. 신나는 파티가 술기운으로 울렁이는 상태로 넘어가는 전환이며, 이 뱃멀미가 곡 전체의 바다 이미지(shore leave, at sea, mermaid, Neptune, ocean bed)를 여는 첫 단어입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>as the miller told his tale<small>방앗간 주인이 이야기를 늘어놓을 때</small></h3>
+      <div class="body">
+        <p>영국 중세 문학의 고전인 초서의 "캔터베리 이야기"에 "방앗간 주인의 이야기(The Miller's Tale)"가 있습니다. 술 취한 방앗간 주인이 들려주는 노골적인 음담패설이라, 이 줄은 오랫동안 "술자리에서 야한 이야기가 오가는 사이에"라는 뜻으로 읽혀 왔습니다.</p>
+        <p>정작 리드는 "나는 그 작품을 읽은 적이 없다"고 했습니다. 그래도 노래를 듣는 영어권 청자에게는 miller 와 tale 이 붙는 순간 초서가 떠오르기 때문에, 의도와 상관없이 이 연상이 노래의 분위기를 만듭니다. 그래서 해석에서는 "방앗간 주인이 제 이야기를 늘어놓을 때"로 두어 그 느낌을 남겼습니다. 후렴은 이 이야기가 오가는 동안 그녀의 얼굴이 하얗게 질려 간다는 구조입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>sixteen vestal virgins<small>열여섯 베스타 처녀</small></h3>
+      <div class="body">
+        <p>vestal virgin 은 고대 로마에서 화로의 여신 베스타를 모시던 처녀 사제입니다. 순결 서약을 지키며 신전의 불을 돌봤고, 실제 인원은 여섯 명이었습니다. 열여섯이라는 숫자는 역사와 상관없는 과장이자 운율입니다.</p>
+        <p>앞줄과 이어 읽으면 "나는 그녀가 해안으로 떠나는 열여섯 베스타 처녀 중 하나가 되도록 두지 않았다"가 됩니다. 순결한 처녀들의 무리에 그녀를 보내지 않았다는 말이라, 이 노래를 "술 취한 밤의 연애담"으로 읽는 근거가 되는 대목입니다. 바로 뒤 "눈은 떴지만 감은 거나 마찬가지였다"가 그 밤의 상태를 마무리합니다.</p>
+        <dl>
+          <div><dt>playing cards</dt><dd>손에 쥔 카드 패. "카드 사이를 헤맸다"는 말은 다음 수를 궁리하며 망설였다는 뜻으로 읽힙니다.</dd></div>
+          <div><dt>let her be</dt><dd>그녀를 가만두다, 내버려 두다. 여기서는 뒤에 one of ... 가 붙어 "~가 되게 두다"로 이어집니다.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>might (just) as well have been closed<small>감은 거나 마찬가지였다</small></h3>
+      <div class="body">
+        <p>might as well 은 "~하는 편이 낫다" 또는 "~한 거나 다름없다"는 뜻이고, 뒤에 have + 과거분사가 오면 지나간 일에 대해 "~한 거나 마찬가지였다"가 됩니다. 가사의 "might have just as well've been closed"는 구어에서 어순이 흐트러진 형태인데, 표준 어순은 "might just as well have been closed"입니다.</p>
+        <div class="ex">
+          <div><i>We might as well go home. Nobody's coming.</i><span>그냥 집에 가는 게 낫겠다. 아무도 안 와.</span></div>
+          <div><i>I might as well have stayed in bed.</i><span>그냥 침대에 있는 거나 마찬가지였어. (나와 봤자 소용없었다)</span></div>
+        </div>
+        <p>"눈을 뜨고 있었지만 감은 거나 마찬가지"라는 말은 보고도 아무것도 알아보지 못하는 상태, 즉 술에 취해 판단이 흐려진 화자를 그대로 보여 줍니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>If music be the food of love<small>음악이 사랑의 양식이라면</small></h3>
+      <div class="body">
+        <p>셰익스피어 희극 "십이야"의 첫 대사 "If music be the food of love, play on(음악이 사랑의 양식이라면 계속 연주하라)"을 그대로 가져온 줄입니다. is 가 아니라 be 인 것은 옛 영어의 가정법으로, 지금은 격식 있는 글이나 인용에서만 봅니다. 1절의 밀턴, 후렴의 초서에 이어 4절에서는 셰익스피어까지, 영문학의 큰 이름 셋이 한 노래에 숨어 있습니다.</p>
+        <dl>
+          <div><dt>shore leave</dt><dd>선원이 항구에 내려 쉬는 상륙 휴가. 3절에서 그녀는 "집에 왔다"고 하지만 화자는 "사실 우린 바다에 있었다"고 뒤집습니다.</dd></div>
+          <div><dt>take someone for a ride</dt><dd>글자 그대로는 태우고 다니다, 관용구로는 속이다·이용하다. 바다의 신 넵튠을 태우고 다닌 인어라는 말에 두 뜻이 겹칩니다.</dd></div>
+          <div><dt>crash-dive</dt><dd>잠수함이 급히 잠수하다. 4절 마지막에서 두 사람이 바다 밑바닥으로 돌진하는 이미지로 끝납니다.</dd></div>
+        </dl>
+        <p>3절과 4절은 싱글 길이를 맞추느라 잘려 나갔고 공식 음반에는 실린 적이 없습니다. 3절(인어)은 라이브 음반과 영상에서 가끔 들을 수 있고, 4절은 거의 불리지 않습니다. 이 페이지는 작사가의 원고 순서에 따라 실었습니다.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
