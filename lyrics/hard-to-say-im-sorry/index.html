@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Hard to Say I'm Sorry 가사</title>
+  <meta name="description" content="시카고 'Hard to Say I'm Sorry' 전체 가사와 한국어 해석">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4;
+      --ink: #1A1F2B;
+      --ink-2: #4B5364;
+      --muted: #8A919F;
+      --line: #E1E3DE;
+      --line-strong: #1A1F2B;
+      --accent: #D0731A;
+      --accent-ink: #9A530E;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D;
+        --ink: #EEF0F3;
+        --ink-2: #BFC6D1;
+        --muted: #7F8794;
+        --line: #2A2F3A;
+        --line-strong: #EEF0F3;
+        --accent: #EE9A46;
+        --accent-ink: #F5B672;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding-inline: 24px;
+      padding-block: 36px 96px;
+    }
+
+    /* 목록 바로가기 */
+    .home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+      text-decoration: none; padding: 4px 0;
+    }
+    .home:hover, .home:focus-visible { color: var(--accent-ink); outline: none; }
+    .home svg { width: 14px; height: 14px; }
+
+    /* 헤더 */
+    header {
+      margin-top: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line-strong);
+      display: grid; gap: 18px;
+    }
+    .eyebrow {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-ink);
+    }
+    h1 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 11vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .sub {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 18px; color: var(--ink-2); margin: 0;
+    }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 6px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .meta b { color: var(--ink-2); font-weight: 500; }
+
+    /* 가사: 영어 / 해석 대역 */
+    .song { display: grid; gap: 44px; margin-top: 44px; }
+    section { display: grid; gap: 14px; }
+    .part {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .chorus-block .part { color: var(--accent-ink); border-color: var(--accent); }
+
+    .line {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 40px;
+      align-items: baseline;
+    }
+    .en {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 20px; font-weight: 700; line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .ko {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 15px; font-weight: 400; color: var(--ink-2); line-height: 1.6;
+    }
+    .en .pr {
+      display: block; margin-top: 2px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted);
+    }
+    .chorus-block .en { color: var(--accent-ink); }
+    .refrain .en { font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+    .refrain .ko { color: var(--muted); }
+
+    /* 표현 노트 */
+    .notes { margin-top: 88px; }
+    .notes h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .term {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 12px 40px;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .term h3 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .term h3 small {
+      display: block; margin-top: 6px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; font-size: 14px; font-weight: 500; color: var(--accent-ink);
+    }
+    .term .body { display: grid; gap: 14px; }
+    .term p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .term dl { margin: 0; display: grid; gap: 8px; }
+    .term dl div { display: grid; grid-template-columns: 104px 1fr; gap: 12px; font-size: 14px; }
+    .term dt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); margin: 0; }
+    .term dd { margin: 0; color: var(--ink-2); }
+    .term .ex { display: grid; gap: 6px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .term .ex div { display: grid; gap: 1px; font-size: 13.5px; }
+    .term .ex i { font-style: normal; color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; }
+    .term .ex span { color: var(--muted); }
+
+    /* 비영어 단어 풀이 */
+    .vocab { margin-top: 88px; }
+    .vocab h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .vline { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
+    .vline .src {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; align-items: baseline;
+    }
+    .vline .src .en { font-size: 20px; }
+    .vline .src .en .pr { display: block; margin-top: 2px; font-family: "Noto Sans KR", sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+    .vline .src .ko { font-size: 15px; color: var(--ink-2); }
+    .words { display: grid; gap: 0; }
+    .word {
+      display: grid; grid-template-columns: 140px 150px 1fr; gap: 6px 24px;
+      padding: 12px 0; border-top: 1px dashed var(--line); font-size: 14px;
+    }
+    .word:first-child { border-top: 0; }
+    .word .w { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); }
+    .word .w small { display: block; font-family: "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 1px; }
+    .word .m { color: var(--ink); font-weight: 500; }
+    .word .n { color: var(--ink-2); }
+    .word .n i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; color: var(--ink); }
+    .vline .idiom {
+      padding: 12px 16px; border-left: 2px solid var(--accent);
+      font-size: 14px; color: var(--ink-2); display: grid; gap: 4px;
+    }
+    .vline .idiom b { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--accent-ink); }
+
+    @media (max-width: 640px) {
+      .wrap { padding-inline: 20px; padding-block: 24px 72px; }
+      header { margin-top: 28px; }
+      .line { grid-template-columns: 1fr; gap: 2px; }
+      .line + .line { margin-top: 6px; }
+      .en { font-size: 18px; }
+      .term { grid-template-columns: 1fr; gap: 14px; }
+      .term dl div { grid-template-columns: 1fr; gap: 2px; }
+      .vline .src { grid-template-columns: 1fr; gap: 2px; }
+      .word { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../../">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    페이지 목록으로
+  </a>
+
+  <header>
+    <div class="eyebrow">Chicago · Chicago 16 · 1982</div>
+    <h1>Hard to Say I'm Sorry</h1>
+    <p class="sub">미안하다는 말이 어려워</p>
+    <div class="meta">
+      <span>노래 <b>Chicago (보컬 Peter Cetera)</b></span>
+      <span>작사·작곡 <b>Peter Cetera · David Foster</b></span>
+      <span>발매 <b>1982년 5월 · Full Moon / Warner Bros.</b></span>
+      <span>영화 <b>Summer Lovers (1982) 엔딩곡</b></span>
+    </div>
+  </header>
+
+  <div class="song">
+
+    <section>
+      <div class="part">Verse 1</div>
+      <div class="line"><div class="en">"Everybody needs a little time away"</div><div class="ko">"누구에게나 잠시 떨어져 있을 시간이 필요해"</div></div>
+      <div class="line"><div class="en">I heard her say</div><div class="ko">그녀가 그렇게 말하는 걸 들었어</div></div>
+      <div class="line"><div class="en">"From each other"</div><div class="ko">"서로에게서 말이야"</div></div>
+      <div class="line"><div class="en">"Even lovers need a holiday</div><div class="ko">"연인들도 휴가는 필요하잖아</div></div>
+      <div class="line"><div class="en">Far away from each other"</div><div class="ko">서로에게서 멀리 떨어진 휴가가"</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">Hold me now</div><div class="ko">지금 날 안아 줘</div></div>
+      <div class="line"><div class="en">It's hard for me to say I'm sorry</div><div class="ko">미안하다고 말하는 게 나한텐 어려워</div></div>
+      <div class="line"><div class="en">I just want you to stay</div><div class="ko">그저 네가 머물러 줬으면 해</div></div>
+    </section>
+
+    <section>
+      <div class="part">Refrain</div>
+      <div class="line"><div class="en">After all that we've been through</div><div class="ko">우리가 함께 겪어 온 그 모든 일을 생각하면</div></div>
+      <div class="line"><div class="en">I will make it up to you</div><div class="ko">내가 너한테 꼭 갚을게</div></div>
+      <div class="line"><div class="en">I promise to</div><div class="ko">약속해</div></div>
+      <div class="line"><div class="en">And after all that's been said and done</div><div class="ko">그리고 할 말 다 하고 할 일 다 한 뒤에도</div></div>
+      <div class="line"><div class="en">You're just a part of me I can't let go</div><div class="ko">넌 내가 놓을 수 없는 내 일부야</div></div>
+    </section>
+
+    <section>
+      <div class="part">Verse 2</div>
+      <div class="line"><div class="en">Couldn't stand to be kept away</div><div class="ko">떨어져 있어야 한다는 걸 견딜 수 없었어</div></div>
+      <div class="line"><div class="en">Just for the day</div><div class="ko">단 하루라도</div></div>
+      <div class="line"><div class="en">From your body</div><div class="ko">네 곁에서 말이야</div></div>
+      <div class="line"><div class="en">Wouldn't wanna be swept away</div><div class="ko">휩쓸려 떠내려가고 싶지 않아</div></div>
+      <div class="line"><div class="en">Far away from the one that I love</div><div class="ko">내가 사랑하는 사람에게서 멀리</div></div>
+    </section>
+
+    <section class="chorus-block">
+      <div class="part">Chorus</div>
+      <div class="line"><div class="en">Hold me now</div><div class="ko">지금 날 안아 줘</div></div>
+      <div class="line"><div class="en">It's hard for me to say I'm sorry</div><div class="ko">미안하다고 말하는 게 나한텐 어려워</div></div>
+      <div class="line"><div class="en">I just want you to know</div><div class="ko">그저 네가 알아줬으면 해</div></div>
+      <div class="line"><div class="en">Hold me now</div><div class="ko">지금 날 안아 줘</div></div>
+      <div class="line"><div class="en">I really wanna tell you I'm sorry</div><div class="ko">정말로 미안하다고 말하고 싶어</div></div>
+      <div class="line"><div class="en">I could never let you go</div><div class="ko">난 절대 널 놓을 수 없어</div></div>
+    </section>
+
+    <section>
+      <div class="part">Refrain</div>
+      <div class="line"><div class="en">After all that we've been through</div><div class="ko">우리가 함께 겪어 온 그 모든 일을 생각하면</div></div>
+      <div class="line"><div class="en">I will make it up to you</div><div class="ko">내가 너한테 꼭 갚을게</div></div>
+      <div class="line"><div class="en">I promise to</div><div class="ko">약속해</div></div>
+      <div class="line"><div class="en">And after all that's been said and done</div><div class="ko">그리고 할 말 다 하고 할 일 다 한 뒤에도</div></div>
+      <div class="line"><div class="en">You're just a part of me I can't let go</div><div class="ko">넌 내가 놓을 수 없는 내 일부야</div></div>
+    </section>
+
+    <section>
+      <div class="part">Outro</div>
+      <div class="line"><div class="en">After all that we've been through</div><div class="ko">우리가 함께 겪어 온 그 모든 일을 생각하면</div></div>
+      <div class="line"><div class="en">I will make it up to you</div><div class="ko">내가 너한테 꼭 갚을게</div></div>
+      <div class="line"><div class="en">I promise to</div><div class="ko">약속해</div></div>
+      <div class="line"><div class="en">You're gonna be the lucky one</div><div class="ko">넌 복 받은 사람이 될 거야</div></div>
+    </section>
+
+  </div>
+
+
+  <div class="notes">
+    <h2>표현 노트</h2>
+
+    <div class="term">
+      <h3>It's hard for me to say I'm sorry<small>미안하다는 말이 나한텐 어려워</small></h3>
+      <div class="body">
+        <p>제목이자 후렴의 핵심 문장입니다. It's hard to ... 는 "~하기 어렵다"는 가장 흔한 틀이고, 그 사이에 for me 를 넣으면 "(다른 사람은 몰라도) 나한테는"이라는 어감이 생깁니다. 즉 사과가 객관적으로 어려운 게 아니라, 자존심 때문에 입이 안 떨어지는 사람의 고백입니다.</p>
+        <div class="ex">
+          <div><i>It's hard for me to ask for help.</i><span>난 도움을 청하는 게 참 어려워.</span></div>
+          <div><i>It's hard to say goodbye.</i><span>작별 인사는 하기 힘들다.</span></div>
+        </div>
+        <p>노래 전체가 "미안하다는 말은 못 하겠지만 가지는 말아 달라"는 구조입니다. 후렴에서 sorry 를 끝내 똑바로 말하지 못하고 "I just want you to stay(그냥 있어 줘)"로 넘어가는 것이 이 노래의 캐릭터입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>make it up to you<small>너한테 갚을게, 만회할게</small></h3>
+      <div class="body">
+        <p>잘못한 일을 다른 방식으로 보상해 만회한다는 관용구입니다. 비슷하게 생긴 make up with 와는 뜻이 다릅니다.</p>
+        <dl>
+          <div><dt>make it up to someone</dt><dd>~에게 (잘못을) 보상하다, 만회하다. it 는 잘못 자체를 가리키는 고정된 자리입니다.</dd></div>
+          <div><dt>make up with someone</dt><dd>~와 화해하다.</dd></div>
+          <div><dt>make up for something</dt><dd>~을 벌충하다, 메우다. (make up for lost time 잃어버린 시간을 만회하다)</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>I'm sorry I missed your birthday. I'll make it up to you.</i><span>생일 못 챙겨서 미안해. 꼭 갚을게.</span></div>
+        </div>
+        <p>"미안하다"는 말 대신 "갚겠다, 약속한다"로 때우는 대목입니다. 사과를 못 하는 사람이 할 수 있는 최선의 말이라, 앞 후렴과 이어 읽으면 더 안쓰럽게 들립니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>after all that's been said and done<small>할 말 다 하고 할 일 다 한 뒤에</small></h3>
+      <div class="body">
+        <p>영어 관용구 when all is said and done(결국, 모든 걸 따져 보면)을 노래에 맞게 바꾼 줄입니다. 말로 다투고(said) 행동으로 상처 주고(done) 난 다음, 그래도 남는 것이 무엇인지 말할 때 씁니다.</p>
+        <div class="ex">
+          <div><i>When all is said and done, family is what matters.</i><span>결국 따지고 보면 중요한 건 가족이야.</span></div>
+        </div>
+        <p>바로 앞줄 after all that we've been through(함께 겪어 온 모든 일)와 짝을 이룹니다. 하나는 둘이 함께 지나온 시간, 하나는 싸우면서 오간 말과 행동. 그 모든 뒤에도 "넌 내가 놓을 수 없는 내 일부"라는 결론으로 이어집니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>a little time away · a holiday from each other<small>잠시 떨어질 시간 · 서로에게서의 휴가</small></h3>
+      <div class="body">
+        <p>1절은 화자의 말이 아니라 그녀가 한 말을 옮기는 구조입니다. I heard her say 가 가운데 끼어 있어, 앞뒤 따옴표 안이 모두 그녀의 이별 통보입니다.</p>
+        <dl>
+          <div><dt>time away</dt><dd>(일이나 사람에게서) 떨어져 있는 시간. need some time away 는 관계에서 거리를 두자는 완곡한 표현입니다.</dd></div>
+          <div><dt>a holiday from</dt><dd>~에서 벗어나는 휴식. 영국식 holiday 는 미국식 vacation. "연인에게도 서로에게서 휴가가 필요하다"는 말은 헤어지자는 말을 부드럽게 포장한 것입니다.</dd></div>
+        </dl>
+        <p>노래가 그녀의 완곡한 이별 통보로 시작하기 때문에, 이어지는 "Hold me now"가 애원으로 들립니다. 해석에서 1절을 따옴표로 묶은 이유입니다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>kept away · swept away<small>떨어져 있다 · 휩쓸려 가다</small></h3>
+      <div class="body">
+        <p>2절의 운율 쌍입니다. 둘 다 away 로 끝나지만 뜻은 반대 방향입니다.</p>
+        <dl>
+          <div><dt>be kept away from</dt><dd>~에게서 떨어져 있게 되다. 누군가 혹은 상황이 나를 못 가게 막는 수동의 느낌.</dd></div>
+          <div><dt>be swept away</dt><dd>휩쓸려 떠내려가다. 물살이나 감정에 휩쓸리는 것. 좋은 뜻(사랑에 빠져 정신을 못 차리다)으로도 쓰지만 여기서는 멀리 떠내려간다는 뜻.</dd></div>
+          <div><dt>couldn't stand to</dt><dd>~하는 걸 견딜 수 없었다. can't stand 는 "참을 수 없다"는 구어체.</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>I can't stand to see you cry.</i><span>네가 우는 걸 보고 있을 수가 없어.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>You're gonna be the lucky one<small>넌 복 받은 사람이 될 거야</small></h3>
+      <div class="body">
+        <p>마지막 줄입니다. 직역하면 "넌 운 좋은 사람이 될 거야"인데, "내가 이렇게까지 잘해 줄 테니 넌 복 받은 거야"라는 자신감 섞인 다짐입니다. 끝까지 미안하다는 말 대신 약속으로 마무리하는, 이 화자다운 끝맺음입니다.</p>
+        <p>앨범 버전(5분 6초)에서는 이 줄 바로 뒤에 "Get Away"라는 빠른 템포의 두 번째 악장이 붙어 시카고 특유의 관악 사운드로 끝납니다. 라디오용 싱글(3분 42초)은 여기서 끝나며, 이 페이지는 싱글 가사를 기준으로 했습니다.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
