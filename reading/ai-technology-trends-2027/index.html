@@ -220,6 +220,95 @@
     .sources p { margin: 0; }
     .sources a { color: var(--accent-ink); word-break: break-all; }
 
+    /* 전문 모드: 문장 단위 3단 */
+    .tools {
+      position: sticky; top: 0; z-index: 5;
+      margin: 32px -24px 0; padding: 10px 24px;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    }
+    .tools .lbl { font-size: 12px; color: var(--muted); margin-right: 4px; }
+    .tools button {
+      font: inherit; font-size: 13px; cursor: pointer;
+      padding: 5px 12px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink-2);
+    }
+    .tools button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent-ink); background: var(--accent-soft); font-weight: 500; }
+    .tools button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    body.hide-pr .sent .pr { display: none; }
+    body.hide-ko .sent .ko { display: none; }
+    body.hide-ko .sent { cursor: pointer; }
+    body.hide-ko .sent:hover .ko, body.hide-ko .sent:focus .ko { display: block; }
+    .sent:focus { outline: none; }
+    .sent:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+
+    .full { display: grid; gap: 56px; margin-top: 48px; }
+    .full section { gap: 22px; }
+    .full .sub-sec { display: grid; gap: 18px; margin-top: 10px; }
+    .full .sub-sec > h3 { margin: 0; display: grid; gap: 2px; padding-top: 14px; border-top: 1px dashed var(--line); }
+    .full .sub-sec > h3 .t-en { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 20px; font-weight: 700; line-height: 1.25; }
+    .full .sub-sec > h3 .t-pr { font-size: 12.5px; font-weight: 400; color: var(--muted); }
+    .full .sub-sec > h3 .t-ko { font-size: 14.5px; font-weight: 500; color: var(--accent-ink); }
+    .para { display: grid; gap: 14px; padding-left: 14px; border-left: 2px solid var(--line); }
+    .para.list { border-left-style: dotted; }
+    .sent {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px 36px; align-items: baseline;
+    }
+    .sent .en {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 17px; font-weight: 500; line-height: 1.45; color: var(--ink);
+    }
+    .sent .en b { font-weight: 700; color: var(--accent-ink); }
+    .para.list .sent .en::before { content: "•"; color: var(--accent); margin-right: 8px; }
+    .sent .pr {
+      display: block; margin-top: 3px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      font-size: 12.5px; font-weight: 400; color: var(--muted); line-height: 1.55;
+    }
+    .sent .ko { font-size: 15px; color: var(--ink-2); line-height: 1.65; }
+    .sent .star {
+      display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 4px;
+      font-family: "Noto Sans KR", sans-serif; font-size: 11px; font-weight: 700; line-height: 1.7;
+      color: var(--accent-ink); background: var(--accent-soft); text-decoration: none; vertical-align: 2px;
+    }
+    .sent.is-key .en { font-weight: 700; }
+    .math {
+      font-family: "Bricolage Grotesque", ui-monospace, monospace; font-size: 20px; font-weight: 700;
+      padding: 10px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; justify-self: start;
+    }
+
+    /* 본문 뒤: 핵심 문장 해설 / 핵심 단어 */
+    .after { margin-top: 96px; display: grid; gap: 0; }
+    .after > h2, .glossary > h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--line-strong);
+    }
+    .explain { padding: 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 14px; scroll-margin-top: 64px; }
+    .explain .from { font-size: 12px; color: var(--muted); }
+    .explain .from a { color: var(--accent-ink); }
+    .explain .key { margin: 0; }
+    .explain .body { display: grid; gap: 12px; }
+    .explain p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .explain p i, .explain dd i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; color: var(--ink); }
+    .explain dl { margin: 0; display: grid; gap: 8px; }
+    .explain dl div { display: grid; grid-template-columns: 150px 1fr; gap: 12px; font-size: 14px; }
+    .explain dt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); }
+    .explain dd { margin: 0; color: var(--ink-2); }
+    .glossary { margin-top: 96px; }
+    .glossary .words { margin-top: 4px; }
+    .glossary .word:first-child { border-top: 0; }
+
+    @media (max-width: 640px) {
+      .tools { margin-inline: -16px; padding-inline: 16px; }
+      .sent { grid-template-columns: 1fr; gap: 2px; }
+      .sent .en { font-size: 16px; }
+      .para { padding-left: 12px; }
+      .explain dl div { grid-template-columns: 1fr; gap: 2px; }
+    }
+
     @media (max-width: 640px) {
       .wrap { padding-inline: 16px; padding-block: 24px 72px; }
       header { margin-top: 28px; }
@@ -570,8 +659,8 @@
         <div class="word"><div class="w">at scale<small>앳 스케일</small></div><div><div class="m"><em>구</em>대규모로</div><div class="n">시범 수준이 아니라 회사 전체 규모로. <i>run AI reliably at scale</i>.</div></div></div>
       </div>
     </section>
-
   </div>
+
 
   <div class="notes">
     <h2>표현 노트</h2>
@@ -657,5 +746,6 @@
   </div>
 
 </div>
+
 </body>
 </html>
