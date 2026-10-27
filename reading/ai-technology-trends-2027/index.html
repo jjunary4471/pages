@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>The 8 AI Trends That Will Change Everything in 2027 읽기</title>
+  <meta name="description" content="Intellectyx 'The 8 AI Trends That Will Change Everything in 2027' 한국어 요약, 핵심 문장(원문·발음·뜻), 단어와 표현 노트">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4;
+      --surface: #FFFFFF;
+      --ink: #1A1F2B;
+      --ink-2: #4B5364;
+      --muted: #8A919F;
+      --line: #E1E3DE;
+      --line-strong: #1A1F2B;
+      --accent: #2F6FB3;
+      --accent-ink: #1F5590;
+      --accent-soft: #E6EEF7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D;
+        --surface: #1B1F27;
+        --ink: #EEF0F3;
+        --ink-2: #BFC6D1;
+        --muted: #7F8794;
+        --line: #2A2F3A;
+        --line-strong: #EEF0F3;
+        --accent: #6EA8E6;
+        --accent-ink: #9CC4F0;
+        --accent-soft: #1E2A3A;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding-inline: 24px;
+      padding-block: 36px 96px;
+    }
+    .en-font { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; }
+
+    /* 목록 바로가기 */
+    .home {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+      text-decoration: none; padding: 4px 0;
+    }
+    .home:hover, .home:focus-visible { color: var(--accent-ink); outline: none; }
+    .home svg { width: 14px; height: 14px; }
+
+    /* 헤더 */
+    header {
+      margin-top: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line-strong);
+      display: grid; gap: 16px;
+    }
+    .eyebrow {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-ink);
+    }
+    h1 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 7.5vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .sub { font-size: 18px; color: var(--ink-2); margin: 0; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 6px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .meta b { color: var(--ink-2); font-weight: 500; }
+    .meta a { color: var(--accent-ink); }
+
+    /* 읽는 법 */
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      font-size: 12.5px; color: var(--muted);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+    .legend .l-en { background: var(--ink); }
+    .legend .l-pr { background: var(--muted); }
+    .legend .l-ko { background: var(--accent); }
+
+    /* 한눈에 보기 */
+    .overview {
+      margin-top: 40px; padding: 24px 26px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+      display: grid; gap: 14px;
+    }
+    .overview h2, .notes h2, .sources h2 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); margin: 0;
+    }
+    .overview p { margin: 0; color: var(--ink-2); }
+    .toc { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 2px; counter-reset: toc; }
+    .toc a {
+      display: grid; grid-template-columns: 70px 1fr; gap: 12px;
+      padding: 7px 0; border-top: 1px dashed var(--line);
+      text-decoration: none; color: var(--ink);
+    }
+    .toc a:hover, .toc a:focus-visible { color: var(--accent-ink); outline: none; }
+    .toc .n { font-family: "Bricolage Grotesque", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: var(--muted); padding-top: 2px; }
+
+    /* 본문 섹션 */
+    .article { display: grid; gap: 64px; margin-top: 64px; }
+    section { display: grid; gap: 18px; scroll-margin-top: 20px; }
+    .part {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--accent-ink);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--accent);
+    }
+    .sec-title { margin: 0; display: grid; gap: 4px; }
+    .sec-title .t-en {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 26px; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em;
+    }
+    .sec-title .t-pr { font-size: 13px; font-weight: 400; color: var(--muted); }
+    .sec-title .t-ko { font-size: 16px; font-weight: 500; color: var(--accent-ink); }
+    .summary { display: grid; gap: 10px; }
+    .summary p { margin: 0; color: var(--ink-2); }
+    .summary b { color: var(--ink); font-weight: 700; }
+
+    /* 핵심 문장: 원문 / 발음 / 뜻 3단 */
+    .key {
+      margin: 0; padding: 20px 22px;
+      background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+      border-radius: 4px 12px 12px 4px;
+      display: grid; gap: 6px;
+    }
+    .key .k-label {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .key + .key { margin-top: -6px; }
+    .key .en {
+      margin: 0;
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 20px; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em;
+    }
+    .key .en b { color: var(--accent-ink); font-weight: 800; background: var(--accent-soft); border-radius: 3px; padding: 0 3px; }
+    .key .pr { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .key .ko { margin: 0; font-size: 15.5px; color: var(--ink); font-weight: 500; }
+
+    /* 섹션 단어 */
+    .words { display: grid; }
+    .words .wh {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+      padding-bottom: 6px;
+    }
+    .word {
+      display: grid; grid-template-columns: 170px 1fr; gap: 4px 24px;
+      padding: 12px 0; border-top: 1px dashed var(--line); font-size: 14px;
+    }
+    .word .w { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 16.5px; color: var(--ink); line-height: 1.3; }
+    .word .w small { display: block; font-family: "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+    .word .m { color: var(--ink); font-weight: 500; }
+    .word .m em { font-style: normal; font-size: 11.5px; color: var(--accent-ink); border: 1px solid var(--accent); border-radius: 4px; padding: 0 5px; margin-right: 6px; }
+    .word .n { color: var(--ink-2); grid-column: 2; }
+    .word .n i { font-style: normal; font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; color: var(--ink); }
+
+    /* 표현 노트 (가사 페이지와 같은 형식) */
+    .notes { margin-top: 96px; }
+    .notes h2 { padding-bottom: 10px; border-bottom: 1px solid var(--line-strong); }
+    .term {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 12px 40px;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .term h3 {
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif;
+      font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .term h3 small {
+      display: block; margin-top: 6px;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; font-size: 14px; font-weight: 500; color: var(--accent-ink);
+    }
+    .term .body { display: grid; gap: 14px; }
+    .term p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .term dl { margin: 0; display: grid; gap: 8px; }
+    .term dl div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; font-size: 14px; }
+    .term dt { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; color: var(--ink); margin: 0; }
+    .term dd { margin: 0; color: var(--ink-2); }
+    .term .ex { display: grid; gap: 6px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .term .ex div { display: grid; gap: 1px; font-size: 13.5px; }
+    .term .ex i { font-style: normal; color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; font-weight: 500; }
+    .term .ex span { color: var(--muted); }
+
+    /* 출처 */
+    .sources { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: 13px; color: var(--muted); }
+    .sources p { margin: 0; }
+    .sources a { color: var(--accent-ink); word-break: break-all; }
+
+    @media (max-width: 640px) {
+      .wrap { padding-inline: 16px; padding-block: 24px 72px; }
+      header { margin-top: 28px; }
+      .overview { padding: 18px 16px; }
+      .toc a { grid-template-columns: 58px 1fr; gap: 8px; }
+      .sec-title .t-en { font-size: 22px; }
+      .key { padding: 16px; }
+      .key .en { font-size: 18px; }
+      .word { grid-template-columns: 1fr; gap: 2px; }
+      .word .n { grid-column: 1; }
+      .term { grid-template-columns: 1fr; gap: 14px; }
+      .term dl div { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../../">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    페이지 목록으로
+  </a>
+
+  <header>
+    <div class="eyebrow">Intellectyx Insights · AI · 2026</div>
+    <h1>The 8 AI Trends That Will Change Everything in 2027</h1>
+    <p class="sub">2027년 모든 것을 바꿀 8가지 AI 트렌드</p>
+    <div class="meta">
+      <span>글쓴이 <b>Shanmuga Pragash (Intellectyx)</b></span>
+      <span>업데이트 <b>2026-10-14</b></span>
+      <span>원문 분량 <b>약 16분</b></span>
+      <span>원문 <b><a href="https://www.intellectyx.com/ai-technology-trends-2027/" rel="noopener">intellectyx.com</a></b></span>
+    </div>
+    <div class="legend">
+      <span><i class="l-en"></i>영어 원문</span>
+      <span><i class="l-pr"></i>한글 발음</span>
+      <span><i class="l-ko"></i>한국어 뜻</span>
+    </div>
+  </header>
+
+  <div class="overview">
+    <h2>한눈에 보기</h2>
+    <p>지난 몇 년의 AI가 <b>정보를 만들어 내는 도구</b>(생성형 AI, 코파일럿, 챗봇)였다면, 2027년의 AI는 기업의 시스템·의사결정·업무 흐름·기계 안으로 들어가 <b>직접 일을 처리하는 존재</b>가 된다는 것이 이 글의 중심 주장이다.</p>
+    <p>글쓴이는 그 변화를 8가지 흐름으로 나눈다. 에이전틱 AI, 멀티 에이전트, 도메인 특화 모델, 물리 AI, 멀티모달 AI, 보안·거버넌스, 주권 AI, AI 비용 관리. 그리고 기술보다 <b>기업의 준비 상태</b>가 더 큰 걸림돌이라고 경고하며, 기술이 아니라 업무 흐름에서 출발하라고 조언한다.</p>
+    <ol class="toc">
+      <li><a href="#intro"><span class="n">Intro</span><span>들어가며: AI의 새로운 국면</span></a></li>
+      <li><a href="#t1"><span class="n">Trend 01</span><span>에이전틱 AI, 비서에서 업무 실행자로</span></a></li>
+      <li><a href="#t2"><span class="n">Trend 02</span><span>멀티 에이전트 시스템이 복잡한 업무를 조율한다</span></a></li>
+      <li><a href="#t3"><span class="n">Trend 03</span><span>도메인 특화 AI가 '만능 모델 하나' 방식에 도전한다</span></a></li>
+      <li><a href="#t4"><span class="n">Trend 04</span><span>물리 AI가 지능을 현실 세계로 가져온다</span></a></li>
+      <li><a href="#t5"><span class="n">Trend 05</span><span>멀티모달 AI가 기업의 기본 창구가 된다</span></a></li>
+      <li><a href="#t6"><span class="n">Trend 06</span><span>AI 보안과 거버넌스가 설계의 일부가 된다</span></a></li>
+      <li><a href="#t7"><span class="n">Trend 07</span><span>주권 AI가 AI의 실행 위치와 방식을 바꾼다</span></a></li>
+      <li><a href="#t8"><span class="n">Trend 08</span><span>AI 경제성: '모델 값'에서 '업무 한 건의 값'으로</span></a></li>
+      <li><a href="#software"><span class="n">Enterprise Software</span><span>기업용 소프트웨어는 어떻게 바뀔까</span></a></li>
+      <li><a href="#limits"><span class="n">Limitations</span><span>2027년을 앞둔 AI의 가장 큰 한계</span></a></li>
+      <li><a href="#prepare"><span class="n">Priorities</span><span>무엇부터, 어떻게 준비할까</span></a></li>
+      <li><a href="#conclusion"><span class="n">Conclusion</span><span>맺음말</span></a></li>
+    </ol>
+  </div>
+
+  <div class="article">
+
+    <section id="intro">
+      <div class="part">Intro</div>
+      <h2 class="sec-title"><span class="t-en">AI Is Entering a New Phase</span><span class="t-pr">에이아이 이즈 엔터링 어 뉴 페이즈</span><span class="t-ko">들어가며: AI의 새로운 국면</span></h2>
+      <div class="summary">
+        <p>지금까지는 생성형 AI 실험과 코파일럿, 채팅 화면, 점점 똑똑해지는 기반 모델이 주인공이었다. 2027년의 질문은 그다음이다. AI가 정보를 만들어 내는 데서 그치지 않고 조직의 시스템과 업무, 기계, 돈의 흐름 속에 박혀 들어가면 무슨 일이 생기는가.</p>
+        <p>돈의 흐름이 이미 이를 보여 준다. Gartner 는 2027년 전 세계 AI 지출을 약 <b>3조 4,900억 달러</b>로 내다봤다. 그중 인프라가 약 1조 8,900억, 서비스 약 7,590억, 소프트웨어 약 6,380억 달러다. 다음 물결은 하나의 기술이 아니라 에이전트, 특화 모델, 물리 AI, 멀티모달, 보안, 비용 관리가 한꺼번에 맞물리며 온다는 것이 글쓴이의 진단이다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">Artificial intelligence is moving into a different <b>phase</b>.</p>
+        <p class="pr">아티피셜 인텔리전스 이즈 무빙 인투 어 디퍼런트 페이즈.</p>
+        <p class="ko">인공지능은 지금 전혀 다른 국면으로 접어들고 있다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">phase<small>페이즈</small></div><div><div class="m"><em>명</em>단계, 국면</div><div class="n">변화 과정의 한 시기. <i>enter a new phase</i>(새 국면에 들어서다), <i>phase out</i>(단계적으로 없애다)도 자주 쓴다.</div></div></div>
+        <div class="word"><div class="w">embedded<small>임베디드</small></div><div><div class="m"><em>형</em>(시스템 안에) 깊숙이 들어가 있는</div><div class="n">embed(박아 넣다)의 과거분사. 따로 떨어진 도구가 아니라 업무 속에 녹아 있다는 뉘앙스. <i>embedded systems</i> 는 '내장형 시스템'.</div></div></div>
+        <div class="word"><div class="w">forecast<small>포어캐스트</small></div><div><div class="m"><em>동·명</em>예측하다, 예측</div><div class="n">수치를 근거로 한 예측. 과거형도 forecast 그대로 쓰는 경우가 많다. <i>Gartner forecasts spending will reach…</i></div></div></div>
+        <div class="word"><div class="w">convergence<small>컨버전스</small></div><div><div class="m"><em>명</em>(여러 흐름이) 한데 모임, 융합</div><div class="n">동사 converge(모이다)의 명사. 반대말은 divergence(갈라짐). 이 글에서는 여러 AI 기술이 동시에 맞물리는 상황.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t1">
+      <div class="part">Trend 01</div>
+      <h2 class="sec-title"><span class="t-en">Agentic AI Will Move From Assistants to Business Execution</span><span class="t-pr">에이전틱 에이아이 윌 무브 프럼 어시스턴츠 투 비즈니스 엑서큐션</span><span class="t-ko">에이전틱 AI, 비서에서 업무 실행자로</span></h2>
+      <div class="summary">
+        <p>글쓴이는 2027년 가장 영향력이 큰 흐름으로 <b>에이전틱 AI</b>를 꼽는다. 질문을 기다렸다가 답만 하는 챗봇과 달리, 에이전트는 목표를 받고 도구를 쓰고 정보를 찾고, 정해진 범위 안에서 판단하며 여러 단계의 일을 끝까지 수행한다.</p>
+        <p>예를 들어 금융 에이전트는 여러 시스템에서 자료를 모아 서류를 검증하고, 예외를 찾아 추천안을 만든 뒤 사람의 승인이 필요한 건만 넘긴다. 제조 에이전트는 설비 이상을 조사하고 정비 이력과 센서 데이터를 분석해 부품 재고까지 확인한 뒤 조치를 제안한다.</p>
+        <p>도입 의지는 강하다. Deloitte 조사(2026년 4월)에서 응답 기업의 74%가 2027년까지 에이전트를 어느 정도 이상 쓸 것이라 답했지만, 성숙한 관리 체계를 갖춘 곳은 21%뿐이었다. Gartner 는 비용 증가, 불분명한 가치, 부실한 위험 관리 때문에 2027년 말까지 에이전틱 AI 프로젝트의 40% 이상이 취소될 수 있다고 경고했다. 결국 핵심은 '에이전트를 더 많이'가 아니라 <b>측정 가능한 구체적 업무에 맞춘 에이전트</b>다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">The next stage involves systems <b>capable of</b> taking action.</p>
+        <p class="pr">더 넥스트 스테이지 인볼브즈 시스템즈 케이퍼블 오브 테이킹 액션.</p>
+        <p class="ko">다음 단계는 직접 행동에 나설 수 있는 시스템이다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">capable of<small>케이퍼블 오브</small></div><div><div class="m"><em>구</em>~할 수 있는 (능력이 있는)</div><div class="n">뒤에 명사나 -ing 가 온다. <i>capable of taking action</i>. able to 는 뒤에 동사원형: <i>able to take action</i>.</div></div></div>
+        <div class="word"><div class="w">consequential<small>칸서퀜셜</small></div><div><div class="m"><em>형</em>중대한, 큰 결과를 낳는</div><div class="n">consequence(결과)에서 나온 말. 단순히 '결과적인'이 아니라 '파급력이 큰'. <i>one of the most consequential trends</i>.</div></div></div>
+        <div class="word"><div class="w">anomaly<small>어나멀리</small></div><div><div class="m"><em>명</em>이상 징후, 비정상</div><div class="n">평소 패턴에서 벗어난 것. 제조·보안 글에 자주 나온다. 형용사 anomalous(어나멀러스).</div></div></div>
+        <div class="word"><div class="w">escalating<small>에스컬레이팅</small></div><div><div class="m"><em>형</em>점점 불어나는</div><div class="n">escalate(단계적으로 커지다). <i>escalating costs</i> 처럼 비용·갈등이 걷잡을 수 없이 오를 때. 고객 응대에서 escalate 는 '상급자에게 넘기다'.</div></div></div>
+        <div class="word"><div class="w">inadequate<small>인애더큇</small></div><div><div class="m"><em>형</em>불충분한, 부실한</div><div class="n">adequate(충분한)의 반대. insufficient 와 비슷하지만 '기준에 못 미친다'는 평가가 더 강하다.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t2">
+      <div class="part">Trend 02</div>
+      <h2 class="sec-title"><span class="t-en">Multi-Agent Systems Will Coordinate Complex Workflows</span><span class="t-pr">멀타이 에이전트 시스템즈 윌 코오디네잇 컴플렉스 웍플로우즈</span><span class="t-ko">멀티 에이전트 시스템이 복잡한 업무를 조율한다</span></h2>
+      <div class="summary">
+        <p>거대한 에이전트 하나에 업무 전체를 맡기는 대신, 역할을 나눈 <b>여러 에이전트</b>가 협업하는 방식이 늘어난다. 구매 업무라면 수요 분석, 공급업체 평가, 계약 검토, 규정 준수 확인을 각각 다른 에이전트가 맡고, 이를 묶는 조율 계층이 언제 사람의 승인이 필요한지 정한다.</p>
+        <p>모듈처럼 나눌 수 있다는 장점이 있지만 새 문제도 생긴다. 에이전트끼리의 조율, 권한, 관측 가능성, 오류가 연쇄적으로 번지는 문제, 책임 소재. 경쟁력은 '에이전트가 있느냐'가 아니라 <b>실제 업무에 맞춘 믿을 만한 에이전트 체계를 설계했느냐</b>에서 나온다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">…organizations can assign specialized responsibilities to multiple agents.</p>
+        <p class="pr">…오거나이제이션즈 캔 어사인 스페셜라이즈드 리스판서빌러티즈 투 멀티플 에이전츠.</p>
+        <p class="ko">…조직은 여러 에이전트에게 각자 전문화된 역할을 나눠 맡길 수 있다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">procurement<small>프로큐어먼트</small></div><div><div class="m"><em>명</em>조달, 구매</div><div class="n">기업이 물품·서비스를 사들이는 업무 전체. 토익 단골. 동사 procure(조달하다).</div></div></div>
+        <div class="word"><div class="w">orchestration<small>오케스트레이션</small></div><div><div class="m"><em>명</em>(여러 구성 요소의) 조율·지휘</div><div class="n">오케스트라 지휘에서 온 IT 용어. 여러 에이전트·서비스의 순서와 역할을 맞춰 돌리는 일. <i>orchestration layer</i> = 조율 계층.</div></div></div>
+        <div class="word"><div class="w">observability<small>옵저버빌러티</small></div><div><div class="m"><em>명</em>관측 가능성</div><div class="n">시스템 안에서 무슨 일이 일어나는지 로그·지표로 들여다볼 수 있는 정도. monitoring 보다 넓은 개념.</div></div></div>
+        <div class="word"><div class="w">propagation<small>프라퍼게이션</small></div><div><div class="m"><em>명</em>전파, 퍼져 나감</div><div class="n"><i>error propagation</i> = 한 곳의 오류가 다음 단계로 번지는 것. 동사 propagate.</div></div></div>
+        <div class="word"><div class="w">accountability<small>어카운터빌러티</small></div><div><div class="m"><em>명</em>책임 소재, 책임성</div><div class="n">결과에 대해 설명하고 책임질 의무. responsibility(맡은 일)와 달리 '잘못되면 누가 답하나'에 초점.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t3">
+      <div class="part">Trend 03</div>
+      <h2 class="sec-title"><span class="t-en">Domain-Specific AI Will Challenge the “One Model for Everything” Approach</span><span class="t-pr">도메인 스퍼시픽 에이아이 윌 챌린지 더 원 마들 포 에브리씽 어프로치</span><span class="t-ko">도메인 특화 AI가 '만능 모델 하나' 방식에 도전한다</span></h2>
+      <div class="summary">
+        <p>큰 모델은 계속 좋아지겠지만 기업에 늘 가장 큰 모델이 필요한 것은 아니다. 기업에 필요한 건 <b>자기 회사의 용어·정책·제품·고객·업무 절차·업계 규제</b>를 아는 AI다. 그래서 도메인 특화 모델, 작은 추론 모델, 사내 지식 시스템, 전문 에이전트에 관심이 몰린다.</p>
+        <p>비용 면에서도 유리하다. 한 가지 일을 확실히 해내는 특화 모델이 크고 비싼 모델을 반복 호출하는 것보다 나을 수 있다. 앞으로 기업 AI는 작업·비용·지연 시간·보안·추론 수준에 따라 모델을 골라 쓰는 <b>멀티 모델 구조</b>가 된다. 글쓴이는 2027년에 나올 모델 이름은 발표 전까지 단정하지 말고 '지켜볼 범주'로만 보라고 덧붙인다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">Enterprises do not always need the largest available model.</p>
+        <p class="pr">엔터프라이지즈 두 낫 올웨이즈 니드 더 라지스트 어베일러블 마들.</p>
+        <p class="ko">기업에 언제나 가장 큰 모델이 필요한 것은 아니다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">terminology<small>터미날러지</small></div><div><div class="m"><em>명</em>(전문) 용어</div><div class="n">한 분야에서 쓰는 용어 전체. 낱말 하나는 term.</div></div></div>
+        <div class="word"><div class="w">latency<small>레이턴시</small></div><div><div class="m"><em>명</em>지연 시간, 응답 속도</div><div class="n">요청부터 응답까지 걸리는 시간. 낮을수록 좋다(<i>low latency</i>).</div></div></div>
+        <div class="word"><div class="w">invoke<small>인보우크</small></div><div><div class="m"><em>동</em>(프로그램·모델을) 호출하다</div><div class="n">IT 에서는 call 과 같은 뜻. 일반 영어에서는 '(법·권리를) 내세우다', '(신을) 부르다'.</div></div></div>
+        <div class="word"><div class="w">preferable<small>프레퍼러블</small></div><div><div class="m"><em>형</em>더 나은, 바람직한</div><div class="n">비교 대상은 to 로 받는다. <i>A is preferable to B</i>. more preferable 이라고 쓰지 않는다.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t4">
+      <div class="part">Trend 04</div>
+      <h2 class="sec-title"><span class="t-en">Physical AI Will Bring Intelligence Into the Real World</span><span class="t-pr">피지컬 에이아이 윌 브링 인텔리전스 인투 더 리얼 월드</span><span class="t-ko">물리 AI가 지능을 현실 세계로 가져온다</span></h2>
+      <div class="summary">
+        <p><b>물리 AI(physical AI)</b>는 로봇, 자율 장비, 센서, 차량처럼 주변을 감지하고 반응하는 물리 시스템에 AI를 결합한 것이다. 제조, 물류, 창고, 의료, 에너지, 운송, 현장 업무에서 특히 중요하다.</p>
+        <p>Deloitte 2026 조사에서 응답 기업의 58%가 이미 제한적으로라도 물리 AI를 쓰고 있었고, 2년 안에 80%에 이를 것으로 예상됐다. 제조에서는 로봇 작업·검사·자재 이동·정비·적응형 생산을, 물류에서는 기계와 재고·일정·경로를 관리하는 소프트웨어 에이전트가 손발을 맞추는 모습을 그린다. 요점은 AI가 디지털 업무뿐 아니라 <b>물리적 현장</b>까지 움직이게 된다는 것.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">AI is also <b>moving beyond</b> screens and software.</p>
+        <p class="pr">에이아이 이즈 올소 무빙 비욘드 스크린즈 앤 소프트웨어.</p>
+        <p class="ko">AI는 이제 화면과 소프트웨어 밖으로도 나아가고 있다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">perceive<small>퍼시브</small></div><div><div class="m"><em>동</em>인지하다, 감지하다</div><div class="n">감각으로 알아차리는 것. 명사 perception. 로봇·자율주행 글에서는 센서로 주변을 파악하는 일.</div></div></div>
+        <div class="word"><div class="w">warehousing<small>웨어하우징</small></div><div><div class="m"><em>명</em>창고 보관·관리업</div><div class="n">warehouse(창고)에 -ing 가 붙어 업종을 뜻한다. logistics(물류)와 짝으로 자주 나온다.</div></div></div>
+        <div class="word"><div class="w">adaptive<small>어댑티브</small></div><div><div class="m"><em>형</em>상황에 맞춰 바뀌는, 적응형의</div><div class="n">adapt(적응하다)의 형용사. adaptable(적응할 수 있는)은 능력, adaptive 는 실제로 적응하며 움직이는 성질.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t5">
+      <div class="part">Trend 05</div>
+      <h2 class="sec-title"><span class="t-en">Multimodal AI Will Become the Default Enterprise Interface</span><span class="t-pr">멀티모들 에이아이 윌 비컴 더 디폴트 엔터프라이즈 인터페이스</span><span class="t-ko">멀티모달 AI가 기업의 기본 창구가 된다</span></h2>
+      <div class="summary">
+        <p>기업의 정보는 문서, 스프레드시트, 이미지, 설계 도면, 영상, 음성, 센서 신호, 데이터베이스 등 형태가 제각각이다. <b>멀티모달 AI</b>는 모든 것을 텍스트로 바꾸지 않고도 여러 형식을 한꺼번에 보고 추론한다.</p>
+        <p>제조 현장이라면 기술자의 질문, 장비 매뉴얼, 부품 사진, 정비 기록, 센서 값을 함께 따져 볼 수 있고, 금융이라면 서식·스캔 문서·표·거래 기록·대화를 하나의 흐름에서 분석할 수 있다. 2027년에는 AI에게 '이 문서 읽어 줘'가 아니라 <b>'이 상황과 관련된 걸 전부 이해해 줘'</b>라고 말하게 될 것이라고 글쓴이는 내다본다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">Enterprise information is not stored only as text.</p>
+        <p class="pr">엔터프라이즈 인포메이션 이즈 낫 스토어드 오운리 애즈 텍스트.</p>
+        <p class="ko">기업의 정보가 텍스트로만 저장되어 있는 것은 아니다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">multimodal<small>멀티모들</small></div><div><div class="m"><em>형</em>여러 형식(텍스트·이미지·음성 등)을 다루는</div><div class="n">mode(방식, 형태)에서 온 말. 교통에서는 '복합 운송'(<i>multimodal transport</i>).</div></div></div>
+        <div class="word"><div class="w">reason across<small>리즌 어크로스</small></div><div><div class="m"><em>구</em>(여러 자료를) 넘나들며 추론하다</div><div class="n">reason 은 동사로 '논리적으로 따지다'. across 가 붙어 여러 형식을 가로지른다는 뜻.</div></div></div>
+        <div class="word"><div class="w">readings<small>리딩즈</small></div><div><div class="m"><em>명</em>(계기의) 측정값</div><div class="n"><i>sensor readings</i>, <i>meter readings</i>. '독서'가 아니라 기계가 읽어 낸 수치.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t6">
+      <div class="part">Trend 06</div>
+      <h2 class="sec-title"><span class="t-en">AI Security and Governance Will Become Part of the Architecture</span><span class="t-pr">에이아이 시큐어러티 앤 거버넌스 윌 비컴 파트 오브 디 아키텍처</span><span class="t-ko">AI 보안과 거버넌스가 설계의 일부가 된다</span></h2>
+      <div class="summary">
+        <p>AI가 앱에 접근하고 직접 행동할 권한을 얻으면 거버넌스는 문서 속 규정으로만 남을 수 없다. 에이전트가 어떤 정보에 접근하고 어떤 도구를 쓰는지, 어떤 행동에 승인이 필요한지, 결정을 어떻게 기록하고 이상 행동을 어떻게 잡아내는지가 <b>실행 중에 작동하는 통제</b>로 들어가야 한다.</p>
+        <p>이 자체가 큰 시장이 된다. Gartner 는 AI 보안 지출이 2027년 약 48억 달러로 2026년보다 68.7% 늘 것으로 본다. 또 2027년까지 기업의 40%가 실제 운영 중 사고를 겪고 나서야 관리 허점을 발견해 자율 에이전트를 강등하거나 폐기할 수 있다고 예측한다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">Controls need to operate at <b>runtime</b>.</p>
+        <p class="pr">컨트로울즈 니드 투 아퍼레잇 앳 런타임.</p>
+        <p class="ko">통제 장치는 시스템이 돌아가는 그 순간에 작동해야 한다.</p>
+      </figure>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">…autonomy and governance need to scale together.</p>
+        <p class="pr">…오타너미 앤 거버넌스 니드 투 스케일 투게더.</p>
+        <p class="ko">…자율성과 거버넌스는 함께 커져야 한다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">runtime<small>런타임</small></div><div><div class="m"><em>명</em>실행 시점, 실행 중</div><div class="n">프로그램이 실제로 돌아가는 동안. 반대는 설계·배포 전 단계. <i>at runtime</i> = 실행 중에.</div></div></div>
+        <div class="word"><div class="w">substantial<small>서브스탠셜</small></div><div><div class="m"><em>형</em>상당한, 규모가 큰</div><div class="n">considerable 과 비슷. <i>a substantial market</i>. substance(실체)에서 나와 '알맹이가 있는'이라는 뜻도 있다.</div></div></div>
+        <div class="word"><div class="w">demote<small>디모우트</small></div><div><div class="m"><em>동</em>강등하다</div><div class="n">promote(승진시키다)의 반대. 이 글에서는 에이전트의 권한·역할을 낮추는 것.</div></div></div>
+        <div class="word"><div class="w">decommission<small>디커미션</small></div><div><div class="m"><em>동</em>(시설·시스템을) 퇴역시키다, 폐기하다</div><div class="n">군함·발전소·서버 등을 공식적으로 운영에서 빼는 것. commission(취역시키다)의 반대.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t7">
+      <div class="part">Trend 07</div>
+      <h2 class="sec-title"><span class="t-en">Sovereign AI Will Influence Where and How AI Runs</span><span class="t-pr">사버린 에이아이 윌 인플루언스 웨어 앤 하우 에이아이 런즈</span><span class="t-ko">주권 AI가 AI의 실행 위치와 방식을 바꾼다</span></h2>
+      <div class="summary">
+        <p><b>주권 AI(sovereign AI)</b>는 국가나 조직이 데이터, 인프라, 모델, 법적 요건, 전략적 의존 관계에 대한 통제력을 지키면서 AI를 쓰는 능력을 말한다. 규제 산업, 정부, 의료, 금융, 그리고 여러 나라의 법 아래서 일하는 다국적 기업에 특히 중요하다.</p>
+        <p>그래서 2027년의 AI 설계 회의에는 기술 질문 말고도 이런 질문이 올라온다. 모델은 어디서 돌리는가, 데이터는 어느 나라에 두는가, 어떤 공급자를 써도 되는가, 퍼블릭·프라이빗·주권 환경 사이에서 작업을 어떻게 옮기는가.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">…where models run, where data <b>resides</b>, which providers are permitted…</p>
+        <p class="pr">…웨어 마들즈 런, 웨어 데이터 리자이즈, 위치 프러바이더즈 아 퍼미티드…</p>
+        <p class="ko">…모델이 어디서 돌아가는지, 데이터가 어디에 있는지, 어떤 공급자가 허용되는지…</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">sovereign<small>사버린</small></div><div><div class="m"><em>형</em>주권을 가진, 자주적인</div><div class="n">원래 '군주'. <i>sovereign state</i>(주권 국가), <i>sovereign wealth fund</i>(국부 펀드). 명사 sovereignty(주권).</div></div></div>
+        <div class="word"><div class="w">jurisdiction<small>주리스딕션</small></div><div><div class="m"><em>명</em>관할권, 관할 구역</div><div class="n">어느 나라·기관의 법이 적용되는 범위. 데이터 규제(GDPR 등)를 이야기할 때 빠지지 않는다.</div></div></div>
+        <div class="word"><div class="w">reside<small>리자이드</small></div><div><div class="m"><em>동</em>(~에) 있다, 거주하다</div><div class="n">격식 있는 '있다'. 데이터에 쓰면 '어느 서버·국가에 저장되어 있다'. 명사 residence, 관련어 data residency(데이터 소재지).</div></div></div>
+        <div class="word"><div class="w">workload<small>웍로우드</small></div><div><div class="m"><em>명</em>(IT) 작업 부하, 돌아가는 작업</div><div class="n">일반적으로는 '업무량'. 클라우드에서는 서버에서 실행되는 애플리케이션·작업 단위.</div></div></div>
+      </div>
+    </section>
+
+    <section id="t8">
+      <div class="part">Trend 08</div>
+      <h2 class="sec-title"><span class="t-en">AI Economics Will Shift From “How Much Does the Model Cost?” to “What Does This Task Cost?”</span><span class="t-pr">에이아이 이커나믹스 윌 시프트 프럼 하우 머치 더즈 더 마들 코스트 투 왓 더즈 디스 태스크 코스트</span><span class="t-ko">AI 경제성: '모델 값'에서 '업무 한 건의 값'으로</span></h2>
+      <div class="summary">
+        <p>직원이 가끔 AI를 쓸 때는 토큰 사용량을 관리하기 쉽다. 하지만 자율 에이전트는 업무 하나를 처리하는 데 모델 호출, 도구 사용, 검색, 검증, 에이전트 간 대화를 여러 번 거친다. 기업 규모로 커지면 이것이 <b>새로운 재무 관리 문제</b>가 된다.</p>
+        <p>그래서 기업은 '이 모델이 얼마냐' 대신 업무당 비용, 에이전트 실행 1회당 비용, 토큰 효율, 해결 건당 비용, 아낀 사람 시간, 만들어 낸 사업 가치를 재게 된다. 글쓴이는 이 차이가 AI <b>실험</b>과 실제 <b>운영</b>을 가르는 가장 큰 차이가 될 수 있다고 본다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">At enterprise scale, that creates a new financial management problem.</p>
+        <p class="pr">앳 엔터프라이즈 스케일, 댓 크리에이츠 어 뉴 파이낸셜 매니지먼트 프라블럼.</p>
+        <p class="ko">기업 규모로 커지면, 그것은 새로운 재무 관리 문제가 된다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">consumption<small>컨섬션</small></div><div><div class="m"><em>명</em>소비량, 사용량</div><div class="n"><i>token consumption</i> = 모델이 쓴 토큰 양. 동사 consume. 전기·연료 사용량에도 쓴다.</div></div></div>
+        <div class="word"><div class="w">validation<small>밸리데이션</small></div><div><div class="m"><em>명</em>검증, 유효성 확인</div><div class="n">결과가 규칙에 맞는지 확인하는 단계. verification(사실 확인)과 자주 섞여 쓰인다.</div></div></div>
+        <div class="word"><div class="w">justify<small>저스티파이</small></div><div><div class="m"><em>동</em>정당화하다, ~할 만한 근거가 되다</div><div class="n"><i>whether AI economics justify deployment</i> = 들인 돈에 비해 배포할 가치가 있는지. 명사 justification.</div></div></div>
+      </div>
+    </section>
+
+    <section id="software">
+      <div class="part">Enterprise Software</div>
+      <h2 class="sec-title"><span class="t-en">How Will AI Technology Trends Change Enterprise Software in 2027?</span><span class="t-pr">하우 윌 에이아이 테크날러지 트렌즈 체인지 엔터프라이즈 소프트웨어 인 투웨니 투웨니세븐</span><span class="t-ko">기업용 소프트웨어는 어떻게 바뀔까</span></h2>
+      <div class="summary">
+        <p>지금의 소프트웨어는 사람이 앱을 열고 메뉴를 찾아 입력하고, 대시보드를 해석해 여러 시스템을 오가며 일을 맞추게 되어 있다. 앞으로는 에이전트가 사용자 대신 여러 시스템을 오가며 일한다. 소프트웨어가 사람이 직접 쓰는 화면 중심에서 <b>에이전트가 접근할 수 있는 구조</b>로 바뀐다는 뜻이다.</p>
+        <p>Gartner 는 2030년까지 최대 2,340억 달러 규모의 기업용 소프트웨어 지출이 이른바 '에이전틱 차익(agentic arbitrage)'의 영향을 받을 수 있다고 본다. 그렇다고 ERP·CRM 같은 플랫폼이 사라지지는 않는다. 데이터·규칙·API·거래 기능은 오히려 더 중요해지고, 바뀌는 것은 일을 처리하는 창구다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">What changes is the interface through which work gets done.</p>
+        <p class="pr">왓 체인지즈 이즈 디 인터페이스 쓰루 위치 웍 겟츠 던.</p>
+        <p class="ko">바뀌는 것은 일이 처리되는 통로, 즉 인터페이스다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">on one's behalf<small>온 원즈 비해프</small></div><div><div class="m"><em>구</em>~를 대신하여</div><div class="n"><i>on the user's behalf</i> = 사용자 대신. 에이전트(대리인)의 본뜻과 딱 맞는 표현. <i>on behalf of the team</i> 형태도 흔하다.</div></div></div>
+        <div class="word"><div class="w">arbitrage<small>아비트라지</small></div><div><div class="m"><em>명</em>차익 거래</div><div class="n">같은 것을 싼 곳에서 사서 비싼 곳에 파는 거래. 여기서는 에이전트가 사람 대신 일을 처리하면서 기존 소프트웨어 지출이 다른 곳으로 옮겨 가는 현상을 비유한 Gartner 용어.</div></div></div>
+        <div class="word"><div class="w">exposed to<small>익스포우즈드 투</small></div><div><div class="m"><em>구</em>(위험·영향에) 노출된</div><div class="n">금융에서는 '~의 영향을 받을 수 있는 규모'. <i>$234 billion could be exposed to…</i> = 그만큼의 지출이 흔들릴 수 있다.</div></div></div>
+      </div>
+    </section>
+
+    <section id="limits">
+      <div class="part">Limitations</div>
+      <h2 class="sec-title"><span class="t-en">What Are the Biggest Limitations of AI Going Into 2027?</span><span class="t-pr">왓 아 더 비기스트 리미테이션즈 오브 에이아이 고잉 인투 투웨니 투웨니세븐</span><span class="t-ko">2027년을 앞둔 AI의 가장 큰 한계</span></h2>
+      <div class="summary">
+        <p>가장 큰 걸림돌은 모델의 지능이 아니라 <b>기업의 준비 상태</b>일 수 있다. Deloitte 2026 조사에서 자사 업무 프로세스가 에이전트를 받아들일 준비가 잘 되어 있다고 답한 곳은 5%, 여러 부서에 걸친 멀티 에이전트를 실제로 확대 적용한 곳은 15%에 그쳤다.</p>
+        <p>흩어진 데이터, 레거시 시스템 연동, 보안, 거버넌스, 불분명한 책임자, 인력의 AI 역량, 예측하기 어려운 운영비, 환각, 평가 방법, 업무 재설계가 아직 숙제다. 그러니 질문은 'AI가 이걸 할 수 있나?'가 아니라 <b>'우리 회사 안에서 믿을 만하게, 안전하게, 경제적으로, 측정 가능하게 할 수 있나?'</b>여야 한다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">The biggest limitation may not be model intelligence. It may be enterprise <b>readiness</b>.</p>
+        <p class="pr">더 비기스트 리미테이션 메이 낫 비 마들 인텔리전스. 잇 메이 비 엔터프라이즈 레디니스.</p>
+        <p class="ko">가장 큰 한계는 모델의 지능이 아닐 수 있다. 기업의 준비 상태일 수 있다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">readiness<small>레디니스</small></div><div><div class="m"><em>명</em>준비 상태, 준비도</div><div class="n">ready 의 명사. <i>operational readiness</i>(운영 준비도), <i>readiness assessment</i>(준비도 진단).</div></div></div>
+        <div class="word"><div class="w">fragmented<small>프래그멘티드</small></div><div><div class="m"><em>형</em>조각조각 흩어진</div><div class="n">fragment(파편)에서 온 말. <i>fragmented data</i> = 여러 시스템에 흩어져 하나로 모이지 않은 데이터.</div></div></div>
+        <div class="word"><div class="w">legacy system<small>레거시 시스템</small></div><div><div class="m"><em>명</em>오래된 기존 시스템</div><div class="n">legacy 는 원래 '유산'. IT 에서는 오래돼 바꾸기 어렵지만 여전히 돌아가는 시스템.</div></div></div>
+        <div class="word"><div class="w">hallucination<small>헐루서네이션</small></div><div><div class="m"><em>명</em>(AI의) 환각</div><div class="n">AI가 사실이 아닌 내용을 그럴듯하게 지어내는 현상. 원래 뜻은 '환각, 환청'.</div></div></div>
+      </div>
+    </section>
+
+    <section id="prepare">
+      <div class="part">Priorities</div>
+      <h2 class="sec-title"><span class="t-en">How Should Enterprises Prepare for AI Trends in 2027?</span><span class="t-pr">하우 슈드 엔터프라이지즈 프리페어 포 에이아이 트렌즈 인 투웨니 투웨니세븐</span><span class="t-ko">무엇부터, 어떻게 준비할까</span></h2>
+      <div class="summary">
+        <p>모든 조직이 8가지 흐름에 똑같이 투자할 필요는 없다. 글쓴이는 표로 정리한다. 에이전틱 AI는 여러 단계짜리 업무에, 멀티 에이전트는 부서를 넘나드는 복잡한 절차에, 물리 AI는 제조·물류·현장에, 주권 AI는 규제 산업과 글로벌 조직에 맞는다. 제조사라면 물리 AI와 산업용 에이전트가, 금융사라면 지식 에이전트·거버넌스·보안·주권 배포가 먼저다.</p>
+        <p>출발점은 기술이 아니라 <b>업무 흐름</b>이다. 지연·반복 판단·흩어진 지식·수작업 분석·시스템 간 인계에서 마찰이 생기는 곳을 찾고, 비용·품질·속도·위험·매출의 기준선을 잡은 뒤, 그 문제에 맞는 해법이 비서형인지 자동화인지 예측 모델인지 에이전트인지 판단한다. 규모를 키우기 전에는 데이터 접근 통제, 에이전트 권한, 평가 방법, 사람 승인 범위, 관측, 비용 모니터링, 운영 책임자를 먼저 정해야 한다.</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">Enterprises should start with business workflows rather than individual AI technologies.</p>
+        <p class="pr">엔터프라이지즈 슈드 스타트 위드 비즈니스 웍플로우즈 래더 댄 인디비주얼 에이아이 테크날러지즈.</p>
+        <p class="ko">기업은 개별 AI 기술이 아니라 업무 흐름에서 출발해야 한다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">friction<small>프릭션</small></div><div><div class="m"><em>명</em>마찰, 걸림돌</div><div class="n">일이 매끄럽게 흐르지 못하게 하는 요소. <i>measurable friction</i> = 수치로 잴 수 있는 비효율.</div></div></div>
+        <div class="word"><div class="w">baseline<small>베이스라인</small></div><div><div class="m"><em>명</em>기준선, 비교 기준치</div><div class="n">변화 전 상태를 재 둔 값. 도입 후 성과를 이것과 비교한다. <i>establish a baseline</i>.</div></div></div>
+        <div class="word"><div class="w">handoff<small>핸드오프</small></div><div><div class="m"><em>명</em>인계, 넘겨주기</div><div class="n">일이 한 사람·시스템에서 다음으로 넘어가는 지점. 동사구 hand off.</div></div></div>
+      </div>
+    </section>
+
+    <section id="conclusion">
+      <div class="part">Conclusion</div>
+      <h2 class="sec-title"><span class="t-en">Conclusion</span><span class="t-pr">컨클루전</span><span class="t-ko">맺음말</span></h2>
+      <div class="summary">
+        <p>2027년의 AI는 질문에 더 잘 답하는 것보다 <b>기업이 일하는 방식의 일부</b>가 되는 쪽으로 간다. 에이전틱 AI가 가장 주목받겠지만, 물리 AI·멀티모달·특화 모델·주권 AI·보안·비용 관리와 함께 자란다.</p>
+        <p>가장 큰 가치를 얻는 회사는 AI 도구를 가장 많이 들인 회사가 아니라, <b>맞는 AI를 맞는 업무에 연결</b>하고 가치를 수치로 증명하며, 규모가 커져도 안정적으로 돌릴 만큼의 거버넌스와 운영 규율을 갖춘 회사다. (원문 끝에는 Intellectyx 서비스 소개와 FAQ 가 이어지는데, 본문 내용을 되풀이하므로 여기서는 생략했다.)</p>
+      </div>
+      <figure class="key">
+        <div class="k-label">핵심 문장</div>
+        <p class="en">The future of artificial intelligence in 2027 will be less about AI simply becoming better at answering questions and more about AI becoming part of how businesses operate.</p>
+        <p class="pr">더 퓨처 오브 아티피셜 인텔리전스 인 투웨니 투웨니세븐 윌 비 레스 어바웃 에이아이 심플리 비커밍 베터 앳 앤서링 퀘스천즈 앤 모어 어바웃 에이아이 비커밍 파트 오브 하우 비즈니시즈 아퍼레잇.</p>
+        <p class="ko">2027년 인공지능의 미래는 AI가 단지 질문에 더 잘 답하게 되는 것이라기보다, AI가 기업이 일하는 방식의 일부가 되는 것에 가깝다.</p>
+      </figure>
+      <div class="words">
+        <div class="wh">단어</div>
+        <div class="word"><div class="w">rigorous<small>리거러스</small></div><div><div class="m"><em>형</em>엄격한, 철저한</div><div class="n"><i>more rigorous AI economics</i> = 비용과 효과를 더 꼼꼼히 따지는 것. 명사 rigor.</div></div></div>
+        <div class="word"><div class="w">discipline<small>디서플린</small></div><div><div class="m"><em>명</em>규율, 체계적인 관리</div><div class="n">'훈육'만이 아니라 '정해진 방식을 꾸준히 지키는 운영 습관'. <i>operational discipline</i>. '학문 분야'라는 뜻도 있다.</div></div></div>
+        <div class="word"><div class="w">at scale<small>앳 스케일</small></div><div><div class="m"><em>구</em>대규모로</div><div class="n">시범 수준이 아니라 회사 전체 규모로. <i>run AI reliably at scale</i>.</div></div></div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="notes">
+    <h2>표현 노트</h2>
+
+    <div class="term">
+      <h3>agentic AI<small>에이전틱 AI — 스스로 일을 해내는 AI</small></h3>
+      <div class="body">
+        <p>agent 는 '대리인'이다. 부동산 중개인(real estate agent), 여행사 직원(travel agent)처럼 남을 대신해 일을 처리하는 사람. 여기에 -ic 을 붙인 agentic 은 '대리인처럼 스스로 행동하는'이라는 형용사다.</p>
+        <dl>
+          <div><dt>chatbot</dt><dd>질문을 기다렸다가 답을 돌려준다</dd></div>
+          <div><dt>copilot</dt><dd>옆에서 거든다. 결정과 실행은 사람</dd></div>
+          <div><dt>agent</dt><dd>목표를 받아 도구를 쓰고 여러 단계를 직접 실행한다</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>The agent booked the flight on my behalf.</i><span>에이전트가 나 대신 항공편을 예약했다.</span></div>
+        </div>
+        <p>이 글에서 agentic AI 는 Trend 01 의 제목이자 결론에서 다시 꺼내는 중심어다. 글 전체가 'AI가 답하는 도구(information tool)에서 일을 실행하는 계층(execution layer)으로 바뀐다'는 한 문장을 8가지 방향에서 풀어 쓴 구조라서, 이 단어를 잡으면 나머지 트렌드가 왜 나왔는지 보인다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>less about A and more about B<small>A라기보다는 B에 가깝다</small></h3>
+      <div class="body">
+        <p>강조점을 옮기는 비교 구문. A를 완전히 부정하지 않고 '무게중심이 B로 간다'고 말할 때 쓴다. not A but B 보다 부드럽다.</p>
+        <div class="ex">
+          <div><i>Success is less about talent and more about consistency.</i><span>성공은 재능보다는 꾸준함의 문제다.</span></div>
+          <div><i>The question should be less “Can AI do this?” and more “Can AI do this reliably?”</i><span>질문은 'AI가 할 수 있나'보다 'AI가 믿을 만하게 할 수 있나'가 되어야 한다.</span></div>
+        </div>
+        <p>이 글은 같은 틀을 여러 번 쓴다. 결론의 핵심 문장, 한계 섹션의 질문, Trend 02 의 'less from simply having an agent and more from designing reliable systems'. 모두 '있느냐'에서 '제대로 굴리느냐'로 무게를 옮기는 문장이고, 그게 이 글의 논지다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>move beyond<small>~을 넘어서다, ~에서 한 단계 나아가다</small></h3>
+      <div class="body">
+        <p>지금 머물러 있는 단계를 떠나 다음으로 간다는 뜻. 앞 단계를 버린다기보다 '거기서 그치지 않는다'에 가깝다.</p>
+        <div class="ex">
+          <div><i>We need to move beyond short-term fixes.</i><span>임시방편에서 벗어나야 한다.</span></div>
+        </div>
+        <p>이 글에서는 AI가 정보 생성을 넘어서고(Intro), 코파일럿을 넘어서고(Trend 01), 화면과 소프트웨어를 넘어선다(Trend 04). 장마다 같은 동사를 써서 'AI의 활동 범위가 한 겹씩 넓어진다'는 그림을 반복해 그린다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>scale<small>(동사) 규모를 키우다, (명사) 규모</small></h3>
+      <div class="body">
+        <p>비즈니스 영어에서 scale 은 '저울'이나 '비늘'보다 '규모'라는 뜻으로 훨씬 많이 쓴다. 동사로는 시범 사업을 전사로 넓히는 것.</p>
+        <dl>
+          <div><dt>scale (v)</dt><dd>규모를 키우다. before scaling = 확대 적용하기 전에</dd></div>
+          <div><dt>at scale</dt><dd>대규모로, 전사 수준으로</dd></div>
+          <div><dt>scale together</dt><dd>함께 커지다, 보조를 맞춰 확대되다</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>The pilot worked, so we're ready to scale.</i><span>시범 운영이 잘 됐으니 이제 확대할 준비가 됐다.</span></div>
+        </div>
+        <p>Trend 06 의 'autonomy and governance need to scale together'는 에이전트에게 권한을 늘려 줄수록 감시와 통제도 같은 속도로 늘려야 한다는 뜻이다. Trend 08 과 결론에서는 at scale 이 'AI 실험'과 '실제 운영'을 가르는 말로 쓰인다.</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <h3>is positioned to · is likely to · may<small>예측 글의 조심스러운 말투</small></h3>
+      <div class="body">
+        <p>미래를 다루는 글은 단정하지 않는다. 확신의 정도를 조동사와 표현으로 조절하는데, 이를 헤지(hedging)라고 한다. 한국어로 옮길 때 '~할 것이다'로 다 바꾸면 글쓴이의 신중함이 사라진다.</p>
+        <dl>
+          <div><dt>will</dt><dd>~할 것이다 (가장 강함)</dd></div>
+          <div><dt>is likely to</dt><dd>~할 가능성이 높다</dd></div>
+          <div><dt>is positioned to</dt><dd>~할 위치에 있다, ~할 태세다</dd></div>
+          <div><dt>may / could</dt><dd>~할 수도 있다</dd></div>
+        </dl>
+        <div class="ex">
+          <div><i>Our company is positioned to lead the market.</i><span>우리 회사는 시장을 이끌 만한 위치에 있다.</span></div>
+        </div>
+        <p>이 글은 트렌드 제목에는 will 을 써서 힘 있게 말하고, 본문의 수치와 전망에는 may, could, is likely to 를 써서 한 발 물러선다. 'Agentic AI is positioned to be one of the most…'처럼 1위라고 단정하지 않고 '가장 중요한 것 중 하나가 될 태세'라고 말하는 식이다.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sources">
+    <h2>원문</h2>
+    <p><a href="https://www.intellectyx.com/ai-technology-trends-2027/" rel="noopener">Intellectyx — The 8 AI Trends That Will Change Everything in 2027 (Shanmuga Pragash, 2026-10-14)</a></p>
+    <p>이 페이지는 영어 공부를 위한 요약·발췌 노트입니다. 섹션 요약은 직접 풀어 쓴 한국어이고, 원문 인용은 핵심 문장 몇 개뿐입니다. 전문은 원문 페이지에서 읽어 주세요.</p>
+  </div>
+
+</div>
+</body>
+</html>
