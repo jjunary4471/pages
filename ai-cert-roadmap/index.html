@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <title>AI 자격증 로드맵</title>
-  <meta name="description" content="하루 30분, 주 5회로 1년 안에 AWS AI Practitioner → ML Engineer → GenAI Developer Professional까지. 무료 수료증부터 NVIDIA·AICE 선택 트랙, 한국어·일본어·원서 추천 도서, 주차별 체크리스트">
+  <title>AI 자격증 2년 로드맵</title>
+  <meta name="description" content="하루 30분, 주 5회로 2년 안에 무료 수료증 → AWS 3종 → NVIDIA 2종 → AICE → Google 2종 → Azure 2종까지 10개 자격증. 주차별 계획, Skill Builder 활용법, 한국어·일본어·원서 추천 도서, 104주 체크리스트">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
@@ -112,25 +112,27 @@
 
   <header>
     <div class="eyebrow">AI Certification Roadmap</div>
-    <h1>하루 30분, 1년 AI 자격증 로드맵</h1>
-    <p class="lead">백엔드 개발자가 AWS를 축으로 <b>무료 수료증 → AI Practitioner → ML Engineer → GenAI Developer Professional</b>까지 가는 52주 계획. 주 5회 × 30분이면 끝나도록 주차별로 쪼갰고, 요일별 할 일 패턴과 한국어·일본어·원서 추천 도서, 체크리스트를 붙였습니다.</p>
+    <h1>하루 30분, 2년 AI 자격증 로드맵</h1>
+    <p class="lead">백엔드 개발자가 <b>무료 수료증 → AWS 3종 → NVIDIA 2종 → AICE → Google 2종 → Azure 2종</b> 순서로 자격증 10개를 따는 104주 계획. 주 5회 × 30분이면 끝나도록 주차별로 쪼갰고, 요일별 할 일 패턴과 Skill Builder 활용법, 한국어·일본어·원서 추천 도서, 체크리스트를 붙였습니다.</p>
     <div class="meta">작성 2026-11-03 · 시작 2026-11-09(월) 기준 · 시험 정보는 등록 직전 공식 페이지에서 재확인</div>
   </header>
 
   <nav class="toc">
     <div class="t">차례</div>
     <ol>
-      <li><a href="#rule">30분 규칙과 전제</a></li>
-      <li><a href="#timeline">전체 타임라인</a></li>
+      <li><a href="#rule">30분 규칙 · Skill Builder</a></li>
+      <li><a href="#timeline">전체 타임라인 (2년)</a></li>
       <li><a href="#p0">0단계 · 무료 수료증 (3주)</a></li>
       <li><a href="#p1">1단계 · AWS AI Practitioner (7주)</a></li>
       <li><a href="#p2">2단계 · AWS ML Engineer (16주)</a></li>
-      <li><a href="#p3">3단계 · GenAI Developer Pro (26주)</a></li>
-      <li><a href="#trackb">트랙 B · NVIDIA LLM</a></li>
-      <li><a href="#optional">선택 트랙 · AICE / Google / Azure</a></li>
+      <li><a href="#p3">3단계 · AWS GenAI Developer Pro (26주)</a></li>
+      <li><a href="#p4">4단계 · NVIDIA NCA → NCP (26주)</a></li>
+      <li><a href="#p5">5단계 · AICE Associate (4주)</a></li>
+      <li><a href="#p6">6단계 · Google Gen AI Leader → PMLE (13주)</a></li>
+      <li><a href="#p7">7단계 · Azure AI-901 → AI-103 (9주)</a></li>
       <li><a href="#books">추천 도서 (한국어 · 일본어 · 원서)</a></li>
       <li><a href="#exams">시험 정보 · 2026 변경점</a></li>
-      <li><a href="#checklist">주차별 체크리스트</a></li>
+      <li><a href="#checklist">주차별 체크리스트 (104주)</a></li>
     </ol>
   </nav>
 
@@ -148,29 +150,59 @@
       2. 문제 풀이는 "맞히기"가 아니라 "왜 다른 보기가 틀렸는지"를 적는 시간이다.<br>
       3. 시험 2주 전에는 새 내용을 보지 않는다. 모의고사 + 오답만.
     </div>
-    <p style="font-size:14px;color:var(--ink-2)">1년에 쓰는 시간은 약 <b>125시간</b>(30분 × 5일 × 50주). 응시료는 AWS 3개 기준 약 $550이며, 자격증을 하나 따면 다음 시험 50% 할인 바우처가 나와 실제로는 더 적습니다.</p>
+    <p style="font-size:14px;color:var(--ink-2)">2년에 쓰는 시간은 약 <b>250시간</b>(30분 × 5일 × 100주). 응시료 합계는 약 $1,100 + 8만 원(AWS $550 · NVIDIA $330 · Google $300 · Azure 약 $100 · AICE 8만 원). AWS는 자격증 하나를 따면 다음 시험 50% 할인 바우처가 나와 실제로는 더 적습니다.</p>
+
+    <h3 id="skillbuilder">AWS Skill Builder 활용법</h3>
+    <p>AWS 3개 시험은 <a href="https://explore.skillbuilder.aws/" target="_blank" rel="noopener">Skill Builder</a>가 중심 교재입니다. 출제 기관이 만든 자료라 범위가 정확히 맞고, 책은 보조로 씁니다.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>구분</th><th>자료</th><th>로드맵에서 쓰는 곳</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="4"><span class="tag ok">무료</span></td><td><b>Exam Prep Standard Course</b> — 시험별 공식 준비 강의</td><td>1·2·3단계 월·화</td></tr>
+        <tr><td><b>Official Pretest / Sample Questions</b> — 공식 샘플 20문</td><td>목요일 문제 풀이 시작점</td></tr>
+        <tr><td><b>Learning Plan</b> — "Generative AI Developer", "ML Engineer" 등 역할별 묶음</td><td>수요일 실습 전 개념</td></tr>
+        <tr><td>디지털 코스 600개 이상 (Bedrock·SageMaker 입문), 기초 강의는 한국어·일본어 제공</td><td>수요일 실습 안내</td></tr>
+        <tr><td rowspan="3"><span class="tag info">유료 · 월 $29</span></td><td><b>Exam Prep Enhanced Course</b> — 도메인별 심화 + 추가 문제</td><td>시험 4주 전</td></tr>
+        <tr><td><b>Official Practice Exam</b> — 실제와 같은 65문항 풀 타임 모의고사</td><td>모의고사 주차</td></tr>
+        <tr><td><b>Builder Labs</b> — 내 계정 없이 쓰는 실습 환경 (SageMaker·Bedrock 랩, 요금 걱정 없음)</td><td>2단계 수요일 실습을 유료 달에 몰아서</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>구독 전략</b>: 평소에는 무료로 Standard 강의 + 샘플 문제. <b>시험 4주 전에 한 달만</b> 구독해 Enhanced 복습 + Practice Exam + Builder Labs, 시험이 끝나면 해지. 시험 3번에 유료는 3개월 ≒ $87. MLA-C02·AIP-C01은 신설이라 Enhanced·Practice Exam 출시가 늦을 수 있으니 단계 시작 전에 검색으로 확인합니다. 요금은 <a href="https://aws.amazon.com/training/digital/pricing/" target="_blank" rel="noopener">공식 요금 페이지</a>에서 결제 전 재확인.</div>
   </section>
 
   <!-- 2 -->
   <section id="timeline">
-    <h2><span class="n">02</span>전체 타임라인</h2>
+    <h2><span class="n">02</span>전체 타임라인 (2년)</h2>
+    <h4>1년 차 · 2026-11 ~ 2027-11 — AWS 3종</h4>
     <div class="bar">
       <div class="p0" style="flex:3">0</div>
       <div class="p1" style="flex:7">1 · AIF</div>
       <div class="p2" style="flex:16">2 · MLA</div>
-      <div class="p3" style="flex:26">3 · AIP (또는 NVIDIA)</div>
+      <div class="p3" style="flex:26">3 · AIP</div>
     </div>
     <div class="barlab"><span>2026-11</span><span>2027-01</span><span>2027-05</span><span>2027-11</span></div>
+    <h4>2년 차 · 2027-11 ~ 2028-11 — NVIDIA · AICE · Google · Azure</h4>
+    <div class="bar">
+      <div class="pb" style="flex:26;background:var(--pb)">4 · NVIDIA</div>
+      <div class="p0" style="flex:4">5</div>
+      <div class="p1" style="flex:13">6 · Google</div>
+      <div class="p2" style="flex:9">7 · Azure</div>
+    </div>
+    <div class="barlab"><span>2027-11</span><span>2028-05</span><span>2028-06</span><span>2028-09</span><span>2028-11</span></div>
     <div class="tbl"><table>
-      <thead><tr><th>단계</th><th>주차</th><th>기간</th><th>목표</th><th>시험 시점</th></tr></thead>
+      <thead><tr><th>단계</th><th>주차</th><th>기간</th><th>자격증</th><th>시험 시점</th></tr></thead>
       <tbody>
-        <tr><td><span class="ph p0"></span>0</td><td>1~3</td><td>11/9 ~ 11/27</td><td>무료 수료증 3개 (Claude Academy · AWS Skill Builder · OpenAI Academy)</td><td>—</td></tr>
-        <tr><td><span class="ph p1"></span>1</td><td>4~10</td><td>11/30 ~ 1/15</td><td><b>AWS Certified AI Practitioner</b> (AIF-C01)</td><td>2027년 1월 셋째 주</td></tr>
-        <tr><td><span class="ph p2"></span>2</td><td>11~26</td><td>1/18 ~ 5/7</td><td><b>AWS Certified Machine Learning Engineer – Associate</b> (MLA-C02)</td><td>2027년 5월 첫째 주</td></tr>
-        <tr><td><span class="ph p3"></span>3</td><td>27~52</td><td>5/10 ~ 11/5</td><td><b>AWS Certified Generative AI Developer – Professional</b> (AIP-C01) <br><span style="color:var(--muted)">또는 트랙 B: NVIDIA NCA-GENL → NCP-GENL</span></td><td>2027년 11월 첫째 주</td></tr>
+        <tr><td><span class="ph p0"></span>0</td><td>1~3</td><td>2026-11-09 ~ 11-27</td><td>무료 수료증 3개 (Claude Academy · AWS Skill Builder · OpenAI Academy)</td><td>—</td></tr>
+        <tr><td><span class="ph p1"></span>1</td><td>4~10</td><td>11-30 ~ 2027-01-15</td><td><b>AWS Certified AI Practitioner</b> (AIF-C01)</td><td>2027-01 셋째 주</td></tr>
+        <tr><td><span class="ph p2"></span>2</td><td>11~26</td><td>01-18 ~ 05-07</td><td><b>AWS Certified ML Engineer – Associate</b> (MLA-C02)</td><td>2027-05 첫째 주</td></tr>
+        <tr><td><span class="ph p3"></span>3</td><td>27~52</td><td>05-10 ~ 11-05</td><td><b>AWS Certified Generative AI Developer – Professional</b> (AIP-C01)</td><td>2027-11 첫째 주</td></tr>
+        <tr><td><span class="ph pb"></span>4</td><td>53~78</td><td>11-08 ~ 2028-05-07</td><td><b>NVIDIA NCA-GENL</b> (주 66) → <b>NCP-GENL</b> (주 78)</td><td>2028-02 둘째 주 · 2028-05 첫째 주</td></tr>
+        <tr><td><span class="ph p0"></span>5</td><td>79~82</td><td>05-08 ~ 06-04</td><td><b>AICE Associate</b> (국가공인)</td><td>2028-06 회차 (일정 확인)</td></tr>
+        <tr><td><span class="ph p1"></span>6</td><td>83~95</td><td>06-05 ~ 09-03</td><td><b>Google Generative AI Leader</b> (주 85) → <b>Professional ML Engineer</b> (주 95)</td><td>2028-06 넷째 주 · 2028-09 첫째 주</td></tr>
+        <tr><td><span class="ph p2"></span>7</td><td>96~104</td><td>09-04 ~ 11-05</td><td><b>Azure AI Fundamentals AI-901</b> (주 98) → <b>Azure AI Engineer AI-103</b> (주 104)</td><td>2028-09 넷째 주 · 2028-11 첫째 주</td></tr>
       </tbody>
     </table></div>
     <div class="warn">2단계 시점(2027-01-18 이후)에는 MLA-C01이 전 언어에서 종료되고(2027-01-14) <b>MLA-C02</b>가 정식 출시됩니다. C02는 생성형·에이전틱 AI가 추가된 버전이라 3단계와 이어지므로 오히려 유리합니다. 교재는 C01용 Sybex 책 + Bedrock 책으로 메웁니다.</div>
+    <div class="note">2년 차는 1년 차에서 배운 것이 그대로 쓰입니다. NVIDIA는 3단계의 LLM 지식, AICE는 2단계의 파이썬·ML, Google PMLE는 2단계와 범위가 70% 겹치고, Azure AI-103은 3단계의 RAG·에이전트를 Foundry로 바꿔 보는 수준입니다. 그래서 뒤로 갈수록 준비 기간이 짧습니다.</div>
   </section>
 
   <!-- 3 -->
@@ -240,7 +272,7 @@
         <tr><td>26</td><td>모의고사 2 → 시험. 리소스 전부 삭제 확인</td><td>—</td></tr>
       </tbody>
     </table></div>
-    <div class="note">AICE Associate(국가공인, 파이썬 실습)를 딸 생각이 있으면 이 단계가 겹치는 부분이 가장 많습니다. 2단계를 마친 뒤 4주를 끼워 넣는 방식은 <a href="#optional">선택 트랙</a>에.</div>
+    <div class="note">여기서 배운 파이썬·ML 흐름이 2년 차 <a href="#p5">5단계 AICE Associate</a>와 <a href="#p6">6단계 Google PMLE</a>에 그대로 쓰입니다. 오답 노트를 버리지 말 것.</div>
   </section>
 
   <!-- 6 -->
@@ -286,34 +318,104 @@
   </section>
 
   <!-- 7 -->
-  <section id="trackb">
-    <h2><span class="n">07</span>트랙 B · NVIDIA LLM <span class="tag warn">영어 전용</span></h2>
-    <p>3단계 대신, 또는 3단계 뒤에. 앱 개발보다 <b>모델 내부(트랜스포머·학습·추론 최적화)</b>를 알고 싶을 때 고릅니다. <i>Build a LLM from Scratch</i>를 한 번 따라 만든 뒤 시험을 보면 가장 효율이 좋습니다.</p>
+  <section id="p4">
+    <h2><span class="n">07</span>4단계 · NVIDIA NCA-GENL → NCP-GENL <span class="tag warn">26주 · 영어 전용 · $325~335</span></h2>
+    <p class="src">NCA-GENL: 50문항 · 60분 · $125~135 · 도메인 = 핵심 ML 30%, 데이터 전처리, 실험·소프트웨어 개발, 트랜스포머·LLM, 신뢰할 수 있는 AI 10%. NCP-GENL: 120분 · $200 · 10개 도메인(파인튜닝, 추론 최적화, TensorRT-LLM·Triton, NeMo, 평가·안전)</p>
+    <p>3단계까지가 "모델을 쓰는 법"이었다면 4단계는 "모델 안에서 무슨 일이 일어나는지"입니다. <i>Build a LLM from Scratch</i>를 한 번 직접 만들고 시험을 보면 가장 효율이 좋습니다. 시험이 영어뿐이라 목요일 문제 풀이는 영어 지문 읽는 연습을 겸합니다.</p>
+    <div class="week">
+      <div><b>월·화</b>책 읽기</div><div><b>수·목</b>코랩에서 코드 실행</div><div><b>금</b>메모 + 용어 영어로</div><div><b>—</b>주말 보충</div><div><b>시험 전</b>목=문제, 금=오답</div>
+    </div>
     <div class="tbl"><table>
-      <thead><tr><th>주차</th><th>목표</th><th>내용</th></tr></thead>
+      <thead><tr><th>주차</th><th>주제</th><th>수·목 실습</th></tr></thead>
       <tbody>
-        <tr><td>27~34 (8주)</td><td>책 1회독 + 코드</td><td><i>밑바닥부터 만들면서 배우는 LLM</i> 7장 + 부록. 월·화 읽기, 수·목 코드 실행(코랩), 금 메모. 하루 30분이면 한 장에 1~2주</td></tr>
-        <tr><td>35~36</td><td>NVIDIA DLI 무료 강좌</td><td>"Generative AI Explained"(2시간), "Building RAG Agents with LLMs" 등 무료 과정</td></tr>
-        <tr><td>37~40</td><td><b>NCA-GENL</b> 준비·응시</td><td>50문항 60분 $125~135. 도메인: 핵심 ML 30%, 데이터 전처리, 실험·소프트웨어 개발, 트랜스포머·LLM, 신뢰할 수 있는 AI 10%</td></tr>
-        <tr><td>41~52</td><td><b>NCP-GENL</b> 준비·응시</td><td>120분 $200, 10개 도메인(파인튜닝, 추론 최적화, TensorRT-LLM·Triton, NeMo, 평가·안전). 공식 시험 가이드와 NVIDIA 문서 중심. 전용 수험서는 거의 없음</td></tr>
+        <tr><td>53~54</td><td>책 1~2장: LLM 개요, 텍스트 데이터 처리(토크나이저·BPE·임베딩)</td><td>토크나이저 구현, 데이터로더</td></tr>
+        <tr><td>55~56</td><td>책 3장: 어텐션(셀프·인과·멀티헤드)</td><td>어텐션 클래스 직접 구현</td></tr>
+        <tr><td>57~58</td><td>책 4장: GPT 모델 조립(레이어 정규화, GELU, 잔차 연결)</td><td>124M GPT 조립 후 텍스트 생성</td></tr>
+        <tr><td>59~60</td><td>책 5장: 사전학습, 손실, 디코딩(temperature·top-k), 가중치 불러오기</td><td>GPT-2 가중치 로드</td></tr>
+        <tr><td>61</td><td>책 6~7장: 분류 파인튜닝, 지시 파인튜닝, 부록 LoRA</td><td>LoRA 파인튜닝</td></tr>
+        <tr><td>62</td><td>NVIDIA DLI 무료 강좌: "Generative AI Explained", "Building RAG Agents with LLMs"</td><td>강좌 실습</td></tr>
+        <tr><td>63</td><td>NCA-GENL 시험 가이드 정독. 책에 없던 것: 데이터 전처리·실험 관리·NVIDIA 스택(NeMo, NIM, Triton) 용어</td><td>용어 카드 50개</td></tr>
+        <tr><td>64~65</td><td>도메인별 문제(Udemy·ExamCert 등) + 신뢰할 수 있는 AI(편향·안전·설명가능성)</td><td>오답 노트</td></tr>
+        <tr><td>66</td><td><b>NCA-GENL 응시</b> (온라인 원격 감독)</td><td>—</td></tr>
+        <tr><td>67~68</td><td>NCP-GENL 시험 가이드 + 10개 도메인 지도 그리기. NeMo Framework 문서</td><td>NeMo 튜토리얼 1개</td></tr>
+        <tr><td>69~70</td><td>파인튜닝 심화: SFT·PEFT·RLHF/DPO, 데이터 큐레이션, 분산 학습 개념</td><td>NeMo로 LoRA</td></tr>
+        <tr><td>71~72</td><td>추론 최적화: 양자화, KV 캐시, TensorRT-LLM, Triton Inference Server, NIM</td><td>NIM 컨테이너 띄워 보기 (GPU 클라우드 1~2시간)</td></tr>
+        <tr><td>73~74</td><td>RAG·에이전트 아키텍처(NeMo Retriever), 가드레일(NeMo Guardrails), 평가 지표</td><td>Guardrails 설정</td></tr>
+        <tr><td>75</td><td>MLOps·배포·모니터링·비용, 데이터 거버넌스</td><td>—</td></tr>
+        <tr><td>76~77</td><td>모의고사 2회 + 약한 도메인 공식 문서</td><td>—</td></tr>
+        <tr><td>78</td><td><b>NCP-GENL 응시</b></td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">NCP-GENL은 2026년에 확대된 Professional 등급이라 전용 수험서가 거의 없습니다. 공식 시험 가이드 + NVIDIA 기술 문서 + DLI 강좌가 전부라고 생각하고 준비합니다. GPU 실습은 Colab Pro나 클라우드 GPU를 시간 단위로 빌려 쓰고, 끝나면 반드시 끕니다.</div>
+  </section>
+
+  <!-- 8 -->
+  <section id="p5">
+    <h2><span class="n">08</span>5단계 · AICE Associate <span class="tag info">4주 · 8만 원 · 국가공인</span></h2>
+    <p class="src">14문항 · 90분 · 80점 합격 · Jupyter에서 파이썬으로 데이터 분석·모델링 실기 · 유효 3년 · 연 4~5회 정기시험 (<a href="https://aice.study/" target="_blank" rel="noopener">aice.study</a>에서 2028년 일정 확인 후 주차를 맞춤)</p>
+    <p>2단계에서 SageMaker로 했던 것을 pandas·scikit-learn·TensorFlow/Keras로 손으로 다시 하는 시험입니다. 유일한 국가공인 AI 자격증이라 한국 이직·채용 서류에 효과가 있습니다.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>할 것</th></tr></thead>
+      <tbody>
+        <tr><td>79</td><td>공식 수험서(시나공) 1~2부: 데이터 전처리(결측·인코딩·스케일링), 시각화, 데이터 분할. 월~금 매일 코드 10줄은 직접 친다</td></tr>
+        <tr><td>80</td><td>공식 수험서 3~4부: 머신러닝(회귀·분류·앙상블) + 딥러닝(Keras Sequential, 콜백, 평가)</td></tr>
+        <tr><td>81</td><td>모의고사 6회(에듀윌) 중 4회. 틀린 유형은 코드 템플릿으로 만들어 둔다</td></tr>
+        <tr><td>82</td><td>모의고사 2회 + 템플릿 암기 → <b>응시</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">시험은 코드를 "외워서 치는" 성격이 강합니다. 전처리 → 분할 → 모델 → 평가 흐름을 하나의 템플릿 노트북으로 만들어 두고 막힘없이 타이핑할 수 있으면 합격선입니다.</div>
+  </section>
+
+  <!-- 9 -->
+  <section id="p6">
+    <h2><span class="n">09</span>6단계 · Google Generative AI Leader → Professional ML Engineer <span class="tag info">13주 · $299</span></h2>
+    <p class="src">Gen AI Leader: 90분 · $99 · 영어 · 기초 · 유효 3년. PMLE: 120분 · $200 · 영어·일본어 · 유효 2년 · 2026-04 제품명 개편(Vertex AI 개명) 이후 자료인지 확인</p>
+    <p>Gen AI Leader는 1단계 AIF와 내용이 거의 같아 3주면 됩니다. PMLE는 2단계 MLA와 70%가 겹치고, 차이는 Google 제품명(BigQuery ML, Vertex AI 계열, Dataflow, TFX)입니다.</p>
+    <div class="week">
+      <div><b>월·화</b>Google Cloud Skills Boost 강의</div><div><b>수</b>무료 크레딧 실습</div><div><b>목</b>문제 25문</div><div><b>금</b>AWS ↔ Google 서비스 대응표</div><div><b>—</b>주말 보충</div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>주제</th></tr></thead>
+      <tbody>
+        <tr><td>83~84</td><td>Gen AI Leader 시험 가이드 + Skills Boost "Generative AI Leader" 학습 경로. Gemini·Vertex AI 생성형 제품군, 책임 있는 AI, 활용 사례</td></tr>
+        <tr><td>85</td><td>공식 샘플 문제 + 복습 → <b>Gen AI Leader 응시</b></td></tr>
+        <tr><td>86</td><td>PMLE 시험 가이드 6개 도메인 지도. "AWS에서는 이것 = Google에서는 이것" 대응표 작성 (SageMaker↔Vertex, S3↔GCS, Glue↔Dataflow)</td></tr>
+        <tr><td>87~88</td><td>ML 솔루션 설계·데이터 준비: BigQuery, BigQuery ML, Dataflow, 피처 스토어</td></tr>
+        <tr><td>89~90</td><td>모델 개발: Vertex AI Training, AutoML, 커스텀 컨테이너, 하이퍼파라미터 튜닝, 분산 학습(TPU)</td></tr>
+        <tr><td>91~92</td><td>파이프라인·배포: Vertex AI Pipelines(Kubeflow), TFX, 엔드포인트, 배치 예측, Model Registry</td></tr>
+        <tr><td>93</td><td>모니터링·운영: Model Monitoring, 드리프트, 설명가능성, 비용, 책임 있는 AI</td></tr>
+        <tr><td>94</td><td>모의고사 2회 + 오답</td></tr>
+        <tr><td>95</td><td>약한 도메인 복습 → <b>PMLE 응시</b></td></tr>
       </tbody>
     </table></div>
   </section>
 
-  <!-- 8 -->
-  <section id="optional">
-    <h2><span class="n">08</span>선택 트랙 · AICE / Google / Azure</h2>
-    <div class="grid2">
-      <div class="card"><div class="t">AICE Associate (국가공인) — 한국 취업·이직 대비</div><div class="d">14문항 90분, 80점 합격, 8만 원, Jupyter에서 파이썬으로 데이터 분석·모델링. 2단계 뒤 <b>4주</b>를 끼운다: 1~2주 공식 수험서(시나공) 완독, 3주 모의고사 6회(에듀윌), 4주 실습 재현 + 응시. 가장 가까운 회차는 2026-12-18~19(접수 11/23~12/11), 그다음은 2027년 일정 확인.</div></div>
-      <div class="card"><div class="t">Google Cloud — 회사가 GCP일 때</div><div class="d">Generative AI Leader($99, 90분, 영어, 기초) → Professional ML Engineer($200, 120분, 일본어 응시 가능). PMLE는 2단계와 범위가 70% 겹쳐서 MLA 직후 6~8주면 충분. 2026-04 제품명 개편 이후 자료인지 확인.</div></div>
-      <div class="card"><div class="t">Azure — 회사가 Azure일 때</div><div class="d">AI-901(기초, 만료 없음, 한국어·일본어) 2~3주 → AI-103(AI Engineer, Microsoft Foundry 중심). DP-100은 AI-300으로 교체. Microsoft Learn 무료 학습 경로만으로 준비 가능.</div></div>
-      <div class="card"><div class="t">Google AI Essentials (Coursera)</div><div class="d">약 5시간. 비개발자 대상이라 우선순위 낮음. 수료증이 필요하면 Enroll → Audit로 무료 수강 후 Financial aid 신청(심사 기간 있음).</div></div>
+  <!-- 10 -->
+  <section id="p7">
+    <h2><span class="n">10</span>7단계 · Azure AI-901 → AI-103 <span class="tag info">9주 · 약 $100~165</span></h2>
+    <p class="src">AI-901 (Azure AI Fundamentals): 약 45분 · 700/1000 · 한국어·일본어 · 만료 없음. AI-103 (Azure AI Engineer Associate): Microsoft Foundry 중심 · 한국어·일본어 · 유효 1년(갱신 무료). 응시료는 국가별(일본 기준 AI-901 약 ¥14,000, AI-103 약 ¥24,000 — 등록 시 확인)</p>
+    <p>마지막 단계는 가장 짧습니다. AI-901은 AIF·Gen AI Leader의 Azure판이고, AI-103은 3단계에서 만든 RAG·에이전트를 <b>Azure AI Foundry + Azure AI Search</b>로 다시 만드는 수준입니다. Microsoft Learn 무료 학습 경로만으로 준비 가능합니다.</p>
+    <div class="week">
+      <div><b>월·화</b>Microsoft Learn 모듈</div><div><b>수</b>Azure 무료 크레딧 실습</div><div><b>목</b>Learn 연습 평가</div><div><b>금</b>AWS ↔ Azure 대응표</div><div><b>—</b>주말 보충</div>
     </div>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>주제</th></tr></thead>
+      <tbody>
+        <tr><td>96~97</td><td>AI-901 학습 경로: AI 워크로드, ML 원리, 컴퓨터 비전·NLP·문서 인텔리전스, 생성형 AI(Foundry·Copilot), 책임 있는 AI</td></tr>
+        <tr><td>98</td><td>Learn 연습 평가 2회 → <b>AI-901 응시</b></td></tr>
+        <tr><td>99</td><td>AI-103 시험 가이드 + 대응표 (Bedrock↔Foundry, Knowledge Bases↔AI Search, Guardrails↔Content Safety)</td></tr>
+        <tr><td>100~101</td><td>Foundry로 생성형 AI 솔루션: 모델 카탈로그, 프롬프트 플로우, RAG(AI Search 인덱스·벡터), 에이전트 서비스, 평가</td></tr>
+        <tr><td>102</td><td>Azure AI 서비스: 비전, 언어(요약·NER·번역), 음성, 문서 인텔리전스, Content Safety. 보안·모니터링·비용</td></tr>
+        <tr><td>103</td><td>Learn 연습 평가 + 모의고사 1회, 오답</td></tr>
+        <tr><td>104</td><td>복습 → <b>AI-103 응시</b>. 2년 로드맵 완료, 자격증 10개를 LinkedIn·이력서에 정리</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Azure 기초 자격증은 만료가 없고, Associate 이상은 1년마다 Microsoft Learn에서 <b>무료 온라인 갱신 평가</b>로 연장합니다. AWS(3년)·NVIDIA(2년)·Google(PMLE 2년) 갱신 시점도 마지막 주에 캘린더에 적어 둡니다.</div>
   </section>
 
   <!-- 9 -->
   <section id="books">
-    <h2><span class="n">09</span>추천 도서 (한국어 · 일본어 · 원서)</h2>
+    <h2><span class="n">11</span>추천 도서 (한국어 · 일본어 · 원서)</h2>
     <p class="src">2026-11-03 검색 기준. 한국어 수험서가 없는 시험은 그 사실을 적었습니다. 가격·개정판은 구매 전 확인.</p>
 
     <h3 id="books-aif">AWS AI Practitioner (AIF-C01)</h3>
@@ -345,6 +447,18 @@
     <div class="book"><div class="lang">EN</div><div><div class="ti">Build a Large Language Model (From Scratch)</div><div class="by">Sebastian Raschka · Manning · 2024 · 원서. 저자 깃허브에 전체 코드</div></div></div>
     <div class="book"><div class="lang">EN</div><div><div class="ti">NVIDIA DLI 무료 강좌 + Packt 영상 "NVIDIA GenAI &amp; LLMs: Learn and Pass NCA-GENL"</div><div class="by">2026-04 · 약 9시간 · 수험서 대신 쓸 만한 유일한 대형 출판사 자료. 종이 수험서는 자비출판뿐</div></div></div>
 
+    <h3 id="books-google">Google Gen AI Leader / Professional ML Engineer</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">국내 수험서 없음 (검색 기준)</div><div class="by">대안: Google Cloud Skills Boost 학습 경로(한국어 일부) + 2단계 지식 + 아래 원서</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">일본어 수험서 없음 (검색 기준)</div><div class="by">대안: Skills Boost 일본어 강의. PMLE는 일본어 응시 가능</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Official Google Cloud Certified Professional Machine Learning Engineer Study Guide</div><div class="by">Mona Mona, Pratap Ramamurthy · Sybex(Wiley) · 공식 가이드. 2026-04 제품명 개편 이전 판이라 이름은 공식 시험 가이드로 대조</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Google Cloud Skills Boost — "Generative AI Leader", "Machine Learning Engineer" 학습 경로</div><div class="by">무료 강의 + 월 무료 크레딧 실습. 수험서 대신 이걸 1순위로</div></div></div>
+
+    <h3 id="books-azure">Azure AI-901 / AI-103</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">국내 수험서 없음 (검색 기준)</div><div class="by">대안: Microsoft Learn 한국어 학습 경로 + 연습 평가 (무료, 시험 범위와 1:1)</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">일본어 수험서 없음 (검색 기준)</div><div class="by">대안: Microsoft Learn 일본어 학습 경로. AI-901·AI-103 모두 일본어 응시 가능</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Azure AI Engineer Associate (AI-102) Study Guide</div><div class="by">Renaldi Gondosubroto · O'Reilly · 2025-09 · 456쪽 · AI-102용이라 AI-103(Foundry 중심)과 차이가 있음. 서비스 설명 부분만 참고</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Microsoft Learn — AI-901 / AI-103 학습 경로 + Practice Assessment</div><div class="by">무료. 2026년 시험 개편 이후 유일하게 범위가 정확한 자료</div></div></div>
+
     <h3 id="books-aice">AICE Associate</h3>
     <div class="book"><div class="lang">KO</div><div><div class="ti">2027 시나공 AI 능력시험 AICE Associate</div><div class="by">길벗 · 2026-07 · KT 현업 개발자 집필 공식 수험서</div></div></div>
     <div class="book"><div class="lang">KO</div><div><div class="ti">2026 에듀윌 AI 능력시험 AICE Associate 한권끝장</div><div class="by">에듀윌 · 핵심이론 + 실전모의고사 6회. 문제 연습용</div></div></div>
@@ -353,7 +467,7 @@
 
   <!-- 10 -->
   <section id="exams">
-    <h2><span class="n">10</span>시험 정보 · 2026 변경점</h2>
+    <h2><span class="n">12</span>시험 정보 · 2026 변경점</h2>
     <div class="tbl"><table>
       <thead><tr><th>시험</th><th>문항·시간</th><th>응시료</th><th>합격선</th><th>언어</th><th>유효</th></tr></thead>
       <tbody>
@@ -388,10 +502,11 @@
 
   <!-- 11 -->
   <section id="checklist">
-    <h2><span class="n">11</span>주차별 체크리스트</h2>
+    <h2><span class="n">13</span>주차별 체크리스트 (104주)</h2>
     <p style="font-size:14px;color:var(--ink-2)">체크 상태는 이 브라우저에만 저장됩니다. 다른 기기에서는 다시 체크해야 합니다.</p>
+    <p style="font-size:13px;color:var(--muted)"><span class="ph p0"></span>0·5단계 <span class="ph p1" style="margin-left:10px"></span>1·6단계 <span class="ph p2" style="margin-left:10px"></span>2·7단계 <span class="ph p3" style="margin-left:10px"></span>3단계 <span class="ph pb" style="margin-left:10px"></span>4단계</p>
     <div class="progress"><i id="bar"></i></div>
-    <div class="pct" id="pct">0 / 52</div>
+    <div class="pct" id="pct">0 / 104</div>
     <div class="checks" id="checks"></div>
     <p style="margin-top:12px"><button type="button" id="reset" style="font:inherit;font-size:13px;padding:4px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer">체크 초기화</button></p>
   </section>
@@ -406,9 +521,14 @@
     [4,'p1','AIF · AI/ML 기초'],[5,'p1','AIF · 생성형 AI 기초'],[6,'p1','AIF · FM 애플리케이션 ① RAG·벡터 DB'],[7,'p1','AIF · FM 애플리케이션 ② 프롬프트·에이전트·평가'],[8,'p1','AIF · 책임 있는 AI · 보안'],[9,'p1','AIF · 모의고사 1'],[10,'p1','AIF · 모의고사 2 → 시험 응시'],
     [11,'p2','MLA · 시험 가이드 · ML 수명주기'],[12,'p2','MLA · 데이터 준비 ① 수집·저장'],[13,'p2','MLA · 데이터 준비 ② 변환·피처'],[14,'p2','MLA · 데이터 준비 ③ 품질·편향·라벨링'],[15,'p2','MLA · 모델 개발 ① 알고리즘·학습 잡'],[16,'p2','MLA · 모델 개발 ② 튜닝·분산'],[17,'p2','MLA · 모델 개발 ③ 평가·실험'],[18,'p2','MLA · 모델 개발 ④ 생성형 AI'],[19,'p2','MLA · 배포 ① 엔드포인트'],[20,'p2','MLA · 배포 ② 컨테이너·Lambda'],[21,'p2','MLA · 배포 ③ 파이프라인·CI/CD'],[22,'p2','MLA · 모니터링 ① 드리프트'],[23,'p2','MLA · 모니터링 ② 비용·보안·거버넌스'],[24,'p2','MLA · 약한 도메인 복습'],[25,'p2','MLA · 모의고사 1'],[26,'p2','MLA · 모의고사 2 → 시험 응시'],
     [27,'p3','AIP · 시험 가이드 · Bedrock 기초 · 프로젝트 시작'],[28,'p3','AIP · 프롬프트 설계'],[29,'p3','AIP · 임베딩·청킹·벡터 DB'],[30,'p3','AIP · Knowledge Bases'],[31,'p3','AIP · RAG 품질·평가'],[32,'p3','AIP · Bedrock Agents'],[33,'p3','AIP · AgentCore · MCP'],[34,'p3','AIP · Guardrails'],[35,'p3','AIP · 모델 커스터마이징'],[36,'p3','AIP · 평가 체계'],[37,'p3','AIP · 운영·캐싱·비용'],[38,'p3','AIP · 관측성'],[39,'p3','AIP · 보안·거버넌스'],[40,'p3','AIP · 아키텍처 종합 · 다이어그램 완성'],
-    [41,'p3','AIP · 도메인 정리 1'],[42,'p3','AIP · 도메인 정리 2'],[43,'p3','AIP · 도메인 정리 3'],[44,'p3','AIP · 도메인 정리 4'],[45,'p3','AIP · 모의고사 1'],[46,'p3','AIP · 모의고사 2'],[47,'p3','AIP · 모의고사 3'],[48,'p3','AIP · 약한 도메인 공식 문서'],[49,'p3','AIP · 약한 도메인 세션 영상'],[50,'p3','AIP · 모의고사 4'],[51,'p3','AIP · 180분 풀 타임 연습'],[52,'p3','AIP · 시험 응시 · 포트폴리오 정리']
+    [41,'p3','AIP · 도메인 정리 1'],[42,'p3','AIP · 도메인 정리 2'],[43,'p3','AIP · 도메인 정리 3'],[44,'p3','AIP · 도메인 정리 4'],[45,'p3','AIP · 모의고사 1'],[46,'p3','AIP · 모의고사 2'],[47,'p3','AIP · 모의고사 3'],[48,'p3','AIP · 약한 도메인 공식 문서'],[49,'p3','AIP · 약한 도메인 세션 영상'],[50,'p3','AIP · 모의고사 4'],[51,'p3','AIP · 180분 풀 타임 연습'],[52,'p3','AIP · 시험 응시 · 포트폴리오 정리'],
+    [53,'pb','NV · 책 1장 LLM 개요'],[54,'pb','NV · 책 2장 토크나이저·임베딩'],[55,'pb','NV · 책 3장 어텐션 ①'],[56,'pb','NV · 책 3장 어텐션 ②'],[57,'pb','NV · 책 4장 GPT 조립 ①'],[58,'pb','NV · 책 4장 GPT 조립 ②'],[59,'pb','NV · 책 5장 사전학습 ①'],[60,'pb','NV · 책 5장 사전학습 ② 가중치 로드'],[61,'pb','NV · 책 6~7장 파인튜닝 · LoRA'],[62,'pb','NV · DLI 무료 강좌'],[63,'pb','NCA · 시험 가이드 · NVIDIA 스택 용어'],[64,'pb','NCA · 도메인별 문제 ①'],[65,'pb','NCA · 도메인별 문제 ② 신뢰할 수 있는 AI'],[66,'pb','NCA-GENL 응시'],
+    [67,'pb','NCP · 시험 가이드 · 도메인 지도'],[68,'pb','NCP · NeMo 튜토리얼'],[69,'pb','NCP · 파인튜닝 심화 ①'],[70,'pb','NCP · 파인튜닝 심화 ② RLHF/DPO'],[71,'pb','NCP · 추론 최적화 ① 양자화·KV 캐시'],[72,'pb','NCP · 추론 최적화 ② TensorRT-LLM·Triton·NIM'],[73,'pb','NCP · RAG·에이전트 아키텍처'],[74,'pb','NCP · NeMo Guardrails · 평가'],[75,'pb','NCP · MLOps·배포·거버넌스'],[76,'pb','NCP · 모의고사 1'],[77,'pb','NCP · 모의고사 2 · 약한 도메인'],[78,'pb','NCP-GENL 응시'],
+    [79,'p0','AICE · 전처리·시각화·분할'],[80,'p0','AICE · ML·DL 모델링'],[81,'p0','AICE · 모의고사 4회 · 템플릿'],[82,'p0','AICE · 모의고사 2회 → 응시'],
+    [83,'p1','GAIL · 학습 경로 ①'],[84,'p1','GAIL · 학습 경로 ②'],[85,'p1','Gen AI Leader 응시'],[86,'p1','PMLE · 시험 가이드 · AWS↔Google 대응표'],[87,'p1','PMLE · 솔루션 설계·데이터 준비 ①'],[88,'p1','PMLE · 데이터 준비 ② BigQuery ML·Dataflow'],[89,'p1','PMLE · 모델 개발 ① Vertex Training·AutoML'],[90,'p1','PMLE · 모델 개발 ② 튜닝·분산'],[91,'p1','PMLE · 파이프라인 ① Pipelines·TFX'],[92,'p1','PMLE · 배포 ② 엔드포인트·Registry'],[93,'p1','PMLE · 모니터링·운영'],[94,'p1','PMLE · 모의고사 2회'],[95,'p1','PMLE 응시'],
+    [96,'p2','AI-901 · 학습 경로 ①'],[97,'p2','AI-901 · 학습 경로 ② 생성형 AI'],[98,'p2','AI-901 응시'],[99,'p2','AI-103 · 시험 가이드 · AWS↔Azure 대응표'],[100,'p2','AI-103 · Foundry 생성형 AI ①'],[101,'p2','AI-103 · Foundry RAG·에이전트 ②'],[102,'p2','AI-103 · Azure AI 서비스·보안'],[103,'p2','AI-103 · 연습 평가·모의고사'],[104,'p2','AI-103 응시 · 로드맵 완료']
   ];
-  var KEY = 'ai-cert-roadmap-v1';
+  var KEY = 'ai-cert-roadmap-v2';
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
   var box = document.getElementById('checks'), bar = document.getElementById('bar'), pct = document.getElementById('pct');
