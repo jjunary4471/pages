@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>AI 자격증 로드맵</title>
+  <meta name="description" content="하루 30분, 주 5회로 1년 안에 AWS AI Practitioner → ML Engineer → GenAI Developer Professional까지. 무료 수료증부터 NVIDIA·AICE 선택 트랙, 한국어·일본어·원서 추천 도서, 주차별 체크리스트">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4; --surface: #FFFFFF; --ink: #1A1F2B; --ink-2: #4B5364; --muted: #8A919F;
+      --line: #E1E3DE; --line-strong: #1A1F2B;
+      --accent: #2F6FB3; --accent-ink: #1F5590; --accent-soft: #E6EEF7;
+      --warn-bg: #FFF4E5; --warn-ink: #8A4B00; --warn-line: #F2C48A;
+      --ok-bg: #E7F5EC; --ok-ink: #1E6B3A;
+      --p0: #6B7280; --p1: #2F6FB3; --p2: #7C4DBD; --p3: #C2410C; --pb: #0F766E;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D; --surface: #1B1F27; --ink: #EEF0F3; --ink-2: #BFC6D1; --muted: #7F8794;
+        --line: #2A2F3A; --line-strong: #EEF0F3;
+        --accent: #6EA8E6; --accent-ink: #9CC4F0; --accent-soft: #1E2A3A;
+        --warn-bg: #2E2416; --warn-ink: #F0B46A; --warn-line: #5A4220;
+        --ok-bg: #1A2E22; --ok-ink: #8ED4A6;
+        --p0: #9CA3AF; --p1: #6EA8E6; --p2: #B394E8; --p3: #F0905C; --pb: #5EC4B8;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 820px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 96px; }
+    a { color: var(--accent-ink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .home { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); padding: 4px 0; }
+    .home:hover { color: var(--accent-ink); text-decoration: none; }
+    header { margin-top: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--line-strong); display: grid; gap: 12px; }
+    .eyebrow { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); }
+    h1 { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 800; font-size: clamp(30px, 7vw, 42px); letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
+    .lead { color: var(--ink-2); margin: 0; }
+    .meta { color: var(--muted); font-size: 13px; }
+    nav.toc { margin: 24px 0 8px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+    nav.toc .t { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
+    nav.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 24px; }
+    nav.toc li { break-inside: avoid; margin: 2px 0; }
+    @media (max-width: 520px) { nav.toc ol { columns: 1; } }
+    section { margin-top: 56px; }
+    h2 { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 26px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 6px; padding-top: 8px; border-top: 3px solid var(--line-strong); display: flex; align-items: baseline; gap: 10px; }
+    h2 .n { color: var(--accent); font-size: 16px; }
+    h3 { font-size: 19px; font-weight: 700; margin: 36px 0 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    h4 { font-size: 15.5px; font-weight: 700; margin: 22px 0 6px; }
+    p { margin: 8px 0; }
+    .src { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .note { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+    .warn { border-left: 3px solid var(--warn-line); background: var(--warn-bg); color: var(--warn-ink); padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+    .warn a { color: inherit; text-decoration: underline; }
+    .tag { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; vertical-align: middle; }
+    .tag.ok { background: var(--ok-bg); color: var(--ok-ink); }
+    .tag.warn { background: var(--warn-bg); color: var(--warn-ink); }
+    .tag.info { background: var(--accent-soft); color: var(--accent-ink); }
+    .ph { display: inline-block; width: 10px; height: 10px; border-radius: 3px; vertical-align: middle; margin-right: 6px; }
+    .ph.p0 { background: var(--p0); } .ph.p1 { background: var(--p1); } .ph.p2 { background: var(--p2); } .ph.p3 { background: var(--p3); } .ph.pb { background: var(--pb); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0 14px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 12.5px; color: var(--muted); font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; }
+    .tbl { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tbl table { min-width: 560px; }
+    ul.plain { padding-left: 20px; margin: 8px 0; }
+    ul.plain li { margin: 4px 0; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .card .t { font-weight: 700; margin-bottom: 4px; }
+    .card .d { font-size: 14px; color: var(--ink-2); }
+    /* 타임라인 바 */
+    .bar { display: flex; height: 22px; border-radius: 6px; overflow: hidden; margin: 10px 0 6px; font-size: 11px; font-weight: 700; color: #fff; }
+    .bar div { display: grid; place-items: center; white-space: nowrap; overflow: hidden; }
+    .bar .p0 { background: var(--p0); } .bar .p1 { background: var(--p1); } .bar .p2 { background: var(--p2); } .bar .p3 { background: var(--p3); }
+    .barlab { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+    /* 요일 패턴 */
+    .week { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0 14px; }
+    .week div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 6px; font-size: 12.5px; text-align: center; }
+    .week b { display: block; font-size: 13px; margin-bottom: 2px; }
+    @media (max-width: 560px) { .week { grid-template-columns: repeat(5, minmax(0,1fr)); } .week div { font-size: 11px; padding: 6px 3px; } }
+    /* 체크리스트 */
+    .checks label { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px dashed var(--line); cursor: pointer; font-size: 14px; }
+    .checks input { margin-top: 5px; accent-color: var(--accent); flex: none; }
+    .checks label.done { color: var(--muted); text-decoration: line-through; }
+    .progress { height: 8px; background: var(--line); border-radius: 999px; overflow: hidden; margin: 8px 0 4px; }
+    .progress i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+    .pct { font-size: 12.5px; color: var(--muted); }
+    details { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); margin: 10px 0; }
+    details summary { cursor: pointer; padding: 10px 14px; font-weight: 700; list-style: none; display: flex; align-items: center; gap: 8px; }
+    details summary::before { content: "▸"; color: var(--accent); font-size: 12px; transition: transform .15s; }
+    details[open] summary::before { transform: rotate(90deg); }
+    details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+    details > :last-child { margin-bottom: 14px; }
+    .book { display: grid; grid-template-columns: 44px 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .book:last-child { border-bottom: 0; }
+    .book .lang { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .06em; color: var(--muted); padding-top: 3px; }
+    .book .ti { font-weight: 700; }
+    .book .by { color: var(--ink-2); font-size: 13px; }
+    footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home" href="../">← 목록으로</a>
+
+  <header>
+    <div class="eyebrow">AI Certification Roadmap</div>
+    <h1>하루 30분, 1년 AI 자격증 로드맵</h1>
+    <p class="lead">백엔드 개발자가 AWS를 축으로 <b>무료 수료증 → AI Practitioner → ML Engineer → GenAI Developer Professional</b>까지 가는 52주 계획. 주 5회 × 30분이면 끝나도록 주차별로 쪼갰고, 요일별 할 일 패턴과 한국어·일본어·원서 추천 도서, 체크리스트를 붙였습니다.</p>
+    <div class="meta">작성 2026-11-03 · 시작 2026-11-09(월) 기준 · 시험 정보는 등록 직전 공식 페이지에서 재확인</div>
+  </header>
+
+  <nav class="toc">
+    <div class="t">차례</div>
+    <ol>
+      <li><a href="#rule">30분 규칙과 전제</a></li>
+      <li><a href="#timeline">전체 타임라인</a></li>
+      <li><a href="#p0">0단계 · 무료 수료증 (3주)</a></li>
+      <li><a href="#p1">1단계 · AWS AI Practitioner (7주)</a></li>
+      <li><a href="#p2">2단계 · AWS ML Engineer (16주)</a></li>
+      <li><a href="#p3">3단계 · GenAI Developer Pro (26주)</a></li>
+      <li><a href="#trackb">트랙 B · NVIDIA LLM</a></li>
+      <li><a href="#optional">선택 트랙 · AICE / Google / Azure</a></li>
+      <li><a href="#books">추천 도서 (한국어 · 일본어 · 원서)</a></li>
+      <li><a href="#exams">시험 정보 · 2026 변경점</a></li>
+      <li><a href="#checklist">주차별 체크리스트</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="rule">
+    <h2><span class="n">01</span>30분 규칙과 전제</h2>
+    <p><b>누구를 위한 계획인가</b>: NestJS·React Native로 서비스를 만들고 AWS 인프라를 다뤄 본 개발자. 파이썬은 읽을 수 있고, 영어 교재는 가능하지만 시험은 한국어·일본어로 보는 쪽이 편한 사람.</p>
+    <div class="grid2">
+      <div class="card"><div class="t">30분 블록 템플릿</div><div class="d">① 5분 — 어제 메모 훑기<br>② 20분 — 오늘 할 일 하나만<br>③ 5분 — 오늘 배운 것 3줄 메모<br>타이머를 켜고, 30분이 되면 중간이라도 멈춘다. 다음 날 이어서 한다.</div></div>
+      <div class="card"><div class="t">주 5회 요일 패턴</div><div class="d"><b>월·화</b> 개념 (강의·책)<br><b>수</b> 실습 (콘솔·코드)<br><b>목</b> 문제 풀이<br><b>금</b> 오답 복습 + 주간 메모<br>주말은 쉬거나, 밀린 날을 보충한다.</div></div>
+    </div>
+    <div class="note">
+      <b>원칙 3가지</b><br>
+      1. 한 번에 자격증 하나. 겹치지 않는다.<br>
+      2. 문제 풀이는 "맞히기"가 아니라 "왜 다른 보기가 틀렸는지"를 적는 시간이다.<br>
+      3. 시험 2주 전에는 새 내용을 보지 않는다. 모의고사 + 오답만.
+    </div>
+    <p style="font-size:14px;color:var(--ink-2)">1년에 쓰는 시간은 약 <b>125시간</b>(30분 × 5일 × 50주). 응시료는 AWS 3개 기준 약 $550이며, 자격증을 하나 따면 다음 시험 50% 할인 바우처가 나와 실제로는 더 적습니다.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="timeline">
+    <h2><span class="n">02</span>전체 타임라인</h2>
+    <div class="bar">
+      <div class="p0" style="flex:3">0</div>
+      <div class="p1" style="flex:7">1 · AIF</div>
+      <div class="p2" style="flex:16">2 · MLA</div>
+      <div class="p3" style="flex:26">3 · AIP (또는 NVIDIA)</div>
+    </div>
+    <div class="barlab"><span>2026-11</span><span>2027-01</span><span>2027-05</span><span>2027-11</span></div>
+    <div class="tbl"><table>
+      <thead><tr><th>단계</th><th>주차</th><th>기간</th><th>목표</th><th>시험 시점</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ph p0"></span>0</td><td>1~3</td><td>11/9 ~ 11/27</td><td>무료 수료증 3개 (Claude Academy · AWS Skill Builder · OpenAI Academy)</td><td>—</td></tr>
+        <tr><td><span class="ph p1"></span>1</td><td>4~10</td><td>11/30 ~ 1/15</td><td><b>AWS Certified AI Practitioner</b> (AIF-C01)</td><td>2027년 1월 셋째 주</td></tr>
+        <tr><td><span class="ph p2"></span>2</td><td>11~26</td><td>1/18 ~ 5/7</td><td><b>AWS Certified Machine Learning Engineer – Associate</b> (MLA-C02)</td><td>2027년 5월 첫째 주</td></tr>
+        <tr><td><span class="ph p3"></span>3</td><td>27~52</td><td>5/10 ~ 11/5</td><td><b>AWS Certified Generative AI Developer – Professional</b> (AIP-C01) <br><span style="color:var(--muted)">또는 트랙 B: NVIDIA NCA-GENL → NCP-GENL</span></td><td>2027년 11월 첫째 주</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">2단계 시점(2027-01-18 이후)에는 MLA-C01이 전 언어에서 종료되고(2027-01-14) <b>MLA-C02</b>가 정식 출시됩니다. C02는 생성형·에이전틱 AI가 추가된 버전이라 3단계와 이어지므로 오히려 유리합니다. 교재는 C01용 Sybex 책 + Bedrock 책으로 메웁니다.</div>
+  </section>
+
+  <!-- 3 -->
+  <section id="p0">
+    <h2><span class="n">03</span>0단계 · 무료 수료증 <span class="tag ok">3주 · 0원</span></h2>
+    <p>돈을 쓰기 전에 "매일 30분" 습관부터 만드는 구간입니다. 세 과정 모두 수료증(배지)이 나옵니다.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>할 것</th><th>월·화</th><th>수</th><th>목</th><th>금</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://academy.claude.com/" target="_blank" rel="noopener">Claude Academy</a> — Claude 101</td><td>강의 2개씩</td><td>Claude Code에서 배운 기능 써 보기</td><td>퀴즈</td><td>수료 배지 저장 + 메모</td></tr>
+        <tr><td>2</td><td><a href="https://explore.skillbuilder.aws/" target="_blank" rel="noopener">AWS Skill Builder</a> — "AWS Certified AI Practitioner Exam Prep Standard" 전반부</td><td>모듈 1~2</td><td>Bedrock 콘솔에서 모델 하나 호출</td><td>모듈 퀴즈</td><td>용어 20개 정리</td></tr>
+        <tr><td>3</td><td><a href="https://academy.openai.com/" target="_blank" rel="noopener">OpenAI Academy</a> — AI Foundations</td><td>강의</td><td>강의</td><td>퀴즈</td><td>수료증 다운로드 + 1단계 교재 주문</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:14px;color:var(--ink-2)">AWS Skill Builder는 무료 계정으로 Exam Prep Standard 과정과 공식 샘플 문항(20문)을 볼 수 있습니다. 유료(월 $29)인 Enhanced 과정·모의고사는 1단계 시험 2주 전에 한 달만 결제하면 충분합니다.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="p1">
+    <h2><span class="n">04</span>1단계 · AWS AI Practitioner <span class="tag info">7주 · $100</span></h2>
+    <p class="src">AIF-C01 · 65문항 · 90분 · 700/1000 합격 · 한국어·일본어 응시 가능 · 온라인(Pearson VUE) 응시 가능</p>
+    <p>AWS를 써 본 개발자라면 가장 빨리 끝나는 자격증입니다. 시험 범위 5개 도메인을 주차에 그대로 배분했습니다. 교재는 <a href="#books-aif">추천 도서</a> 중 하나만 고릅니다.</p>
+    <div class="week">
+      <div><b>월·화</b>교재 1챕터</div><div><b>수</b>콘솔 실습</div><div><b>목</b>문제 30문</div><div><b>금</b>오답 노트</div><div><b>—</b>주말 보충</div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>도메인 (비중)</th><th>핵심 주제</th><th>수요일 실습</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>1. AI·ML 기초 (20%)</td><td>AI/ML/딥러닝 차이, 지도·비지도·강화학습, 데이터 유형, ML 파이프라인</td><td>SageMaker Studio 열어 보기</td></tr>
+        <tr><td>5</td><td>2. 생성형 AI 기초 (24%)</td><td>파운데이션 모델, 토큰·임베딩·컨텍스트, 프롬프트, 활용 사례와 한계</td><td>Bedrock 플레이그라운드로 모델 3개 비교</td></tr>
+        <tr><td>6</td><td>3. FM 애플리케이션 (28%) 전반</td><td>모델 선택 기준, 추론 파라미터, RAG 개념, 벡터 DB(OpenSearch 등)</td><td>Bedrock Knowledge Base 만들기</td></tr>
+        <tr><td>7</td><td>3. FM 애플리케이션 후반</td><td>프롬프트 기법, 파인튜닝 vs RAG, 에이전트, 평가 지표</td><td>Bedrock Agents 튜토리얼</td></tr>
+        <tr><td>8</td><td>4. 책임 있는 AI (14%) + 5. 보안·거버넌스 (14%)</td><td>편향·공정성·설명가능성, Guardrails, IAM·암호화·규정 준수</td><td>Guardrails 설정해 보기</td></tr>
+        <tr><td>9</td><td>모의고사 1</td><td>Skill Builder 공식 샘플 + 교재 모의고사. 틀린 문제는 서비스 이름까지 정리</td><td>—</td></tr>
+        <tr><td>10</td><td>모의고사 2 → 시험</td><td>약한 도메인만 복습. 금요일 또는 주말 응시</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">AWS 서비스 이름 암기가 점수를 가릅니다. Rekognition(이미지), Comprehend(텍스트), Transcribe(음성→글), Polly(글→음성), Textract(문서), Translate, Lex(챗봇), Kendra(검색), Personalize(추천)는 한 줄 설명과 함께 외워 둡니다.</div>
+  </section>
+
+  <!-- 5 -->
+  <section id="p2">
+    <h2><span class="n">05</span>2단계 · AWS ML Engineer – Associate <span class="tag info">16주 · $150</span></h2>
+    <p class="src">MLA-C02 (2027-01-14 정식) · 65문항 · 130분 · 720/1000 · 한국어·일본어 응시 가능. C01 기준 4개 도메인은 데이터 준비 28% · 모델 개발 26% · 배포·오케스트레이션 22% · 모니터링·유지·보안 24%</p>
+    <p>SageMaker 중심의 실무 시험이라 손으로 한 번씩 해 보는 것이 중요합니다. 수요일 실습은 <b>프리티어·소형 인스턴스</b>로 하고, 끝나면 반드시 리소스를 지웁니다.</p>
+    <div class="week">
+      <div><b>월·화</b>교재 + 공식 문서</div><div><b>수</b>SageMaker 실습</div><div><b>목</b>문제 25문</div><div><b>금</b>오답 + 아키텍처 그림</div><div><b>—</b>주말 보충</div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>주제</th><th>수요일 실습</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>시험 가이드 읽기, ML 수명주기, 파이썬·판다스 감 잡기</td><td>SageMaker Studio 노트북에서 CSV 로드·요약</td></tr>
+        <tr><td>12</td><td><b>데이터 준비 ①</b> 수집·저장: S3, Glue, Data Wrangler, 포맷(Parquet)</td><td>Glue 크롤러 + Athena 쿼리</td></tr>
+        <tr><td>13</td><td><b>데이터 준비 ②</b> 변환·피처 엔지니어링, 결측·불균형, Feature Store</td><td>Data Wrangler 플로우</td></tr>
+        <tr><td>14</td><td><b>데이터 준비 ③</b> 데이터 품질·편향(Clarify), 라벨링(Ground Truth)</td><td>Clarify 편향 리포트</td></tr>
+        <tr><td>15</td><td><b>모델 개발 ①</b> 알고리즘 선택(내장 알고리즘, XGBoost, 딥러닝), 학습 잡</td><td>XGBoost 학습 잡 실행</td></tr>
+        <tr><td>16</td><td><b>모델 개발 ②</b> 하이퍼파라미터 튜닝, 분산 학습, 스팟 학습</td><td>Automatic Model Tuning</td></tr>
+        <tr><td>17</td><td><b>모델 개발 ③</b> 평가 지표(정밀도·재현율·F1·AUC·RMSE), 과적합 대응, 실험 관리</td><td>SageMaker Experiments</td></tr>
+        <tr><td>18</td><td><b>모델 개발 ④</b> 생성형 AI: Bedrock 파인튜닝, JumpStart, RAG 평가 (C02 추가 범위)</td><td>JumpStart 모델 배포</td></tr>
+        <tr><td>19</td><td><b>배포 ①</b> 엔드포인트 종류(실시간·서버리스·배치·비동기), 오토스케일링</td><td>서버리스 엔드포인트</td></tr>
+        <tr><td>20</td><td><b>배포 ②</b> 컨테이너·BYOC, Lambda·API Gateway 연계, 멀티모델</td><td>Lambda에서 엔드포인트 호출</td></tr>
+        <tr><td>21</td><td><b>배포 ③</b> 파이프라인·오케스트레이션: SageMaker Pipelines, Step Functions, CI/CD</td><td>Pipelines 3단계 파이프라인</td></tr>
+        <tr><td>22</td><td><b>모니터링 ①</b> Model Monitor(드리프트), CloudWatch, 재학습 트리거</td><td>Model Monitor 스케줄</td></tr>
+        <tr><td>23</td><td><b>모니터링 ②</b> 비용 최적화, 인스턴스 선택, 보안(IAM·VPC·KMS), 거버넌스(Model Cards)</td><td>VPC 내 엔드포인트</td></tr>
+        <tr><td>24</td><td>약한 도메인 집중 복습 (오답 노트 기준)</td><td>—</td></tr>
+        <tr><td>25</td><td>모의고사 1 → 틀린 서비스의 공식 FAQ 읽기</td><td>—</td></tr>
+        <tr><td>26</td><td>모의고사 2 → 시험. 리소스 전부 삭제 확인</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">AICE Associate(국가공인, 파이썬 실습)를 딸 생각이 있으면 이 단계가 겹치는 부분이 가장 많습니다. 2단계를 마친 뒤 4주를 끼워 넣는 방식은 <a href="#optional">선택 트랙</a>에.</div>
+  </section>
+
+  <!-- 6 -->
+  <section id="p3">
+    <h2><span class="n">06</span>3단계 · GenAI Developer – Professional <span class="tag info">26주 · $300</span></h2>
+    <p class="src">AIP-C01 · 전문가 레벨 · 180분 · 750/1000 (3자 자료, 공식 가이드로 확인) · Bedrock, RAG, 벡터 DB, 에이전트, 가드레일, 평가, 비용·운영</p>
+    <p>지금 만드는 서비스와 가장 가까운 자격증입니다. 범위가 넓어 <b>전반 14주는 작은 프로젝트 하나를 끝까지 만들고</b>, 후반 12주는 시험 범위에 맞춰 정리합니다. 프로젝트 주제는 "내 서비스의 문서를 RAG로 답하는 사내 봇"처럼 실제로 쓸 것을 고릅니다.</p>
+    <div class="week">
+      <div><b>월·화</b>책 1절 + 공식 문서</div><div><b>수</b>프로젝트 코드</div><div><b>목</b>문제 20문 또는 설계 문제</div><div><b>금</b>오답 + 설계 메모</div><div><b>—</b>주말 보충</div>
+    </div>
+    <h4>전반 · 프로젝트로 범위 훑기 (주 27~40)</h4>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>주제</th><th>프로젝트 진도</th></tr></thead>
+      <tbody>
+        <tr><td>27</td><td>시험 가이드 정독, Bedrock 모델 카탈로그·요금·리전, Converse API</td><td>저장소 생성, Bedrock 호출 CLI</td></tr>
+        <tr><td>28</td><td>프롬프트 설계: 시스템 프롬프트, few-shot, 구조화 출력, 프롬프트 관리(Prompt Management)</td><td>프롬프트 템플릿 모듈</td></tr>
+        <tr><td>29</td><td>임베딩·청킹 전략, 벡터 DB 비교(OpenSearch Serverless, Aurora pgvector, Pinecone)</td><td>문서 적재 파이프라인</td></tr>
+        <tr><td>30</td><td>Bedrock Knowledge Bases: 데이터 소스, 청킹 옵션, 메타데이터 필터, 하이브리드 검색</td><td>KB 연결 + 검색 API</td></tr>
+        <tr><td>31</td><td>RAG 품질: 리랭킹, 쿼리 재작성, 인용(citation), 평가(RAGAS 식 지표)</td><td>답변에 출처 붙이기</td></tr>
+        <tr><td>32</td><td>Bedrock Agents: 액션 그룹, Lambda 도구, 메모리, 멀티 에이전트</td><td>도구 2개 가진 에이전트</td></tr>
+        <tr><td>33</td><td>Strands Agents SDK / AgentCore(런타임·게이트웨이·메모리), MCP 연동</td><td>MCP 서버 하나 연결</td></tr>
+        <tr><td>34</td><td>Guardrails: 주제 거부, PII, 콘텐츠 필터, 그라운딩 체크</td><td>가드레일 적용 + 테스트</td></tr>
+        <tr><td>35</td><td>모델 커스터마이징: 파인튜닝·계속 사전학습·디스틸레이션, 언제 RAG 대신 쓰나</td><td>소규모 파인튜닝 잡(비용 주의)</td></tr>
+        <tr><td>36</td><td>평가: Bedrock Model Evaluation, LLM-as-judge, 휴먼 평가 설계, 회귀 테스트</td><td>평가 셋 30문 + 자동 채점</td></tr>
+        <tr><td>37</td><td>운영: 스트리밍, 캐싱(프롬프트 캐시), 배치 추론, 프로비저닝 처리량, 비용 모델</td><td>스트리밍 응답 + 비용 로그</td></tr>
+        <tr><td>38</td><td>관측성: CloudWatch 로그·지표, 모델 호출 로깅, 트레이싱</td><td>호출 로그 대시보드</td></tr>
+        <tr><td>39</td><td>보안·거버넌스: IAM 최소 권한, VPC 엔드포인트, KMS, 데이터 주권, 책임 있는 AI</td><td>권한 정리 + 위협 모델 메모</td></tr>
+        <tr><td>40</td><td>아키텍처 종합: 서버리스 RAG, 이벤트 기반 에이전트, 멀티리전·DR</td><td>아키텍처 다이어그램 완성</td></tr>
+      </tbody>
+    </table></div>
+    <h4>후반 · 시험 모드 (주 41~52)</h4>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>할 것</th></tr></thead>
+      <tbody>
+        <tr><td>41~44</td><td>시험 가이드 도메인 순서대로 다시 정리. 매주 1도메인, 목요일은 시나리오형 문제(긴 지문)를 시간 재며 푼다</td></tr>
+        <tr><td>45~47</td><td>Tutorials Dojo 등 모의고사 1회분씩. 틀린 보기마다 "왜 틀렸나" 한 줄</td></tr>
+        <tr><td>48~49</td><td>약한 도메인 공식 문서·FAQ·re:Invent 세션 영상</td></tr>
+        <tr><td>50~51</td><td>모의고사 2회분, 180분 풀 타임 연습 1회</td></tr>
+        <tr><td>52</td><td>시험. 그 뒤 프로젝트를 블로그·포트폴리오로 정리</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">AIP-C01은 신설 시험이라 대형 출판사의 수험서가 아직 없습니다. 자비출판 수험서가 많이 검색되는데 품질 편차가 크니, 교재는 <a href="#books-aip">Bedrock·AI 엔지니어링 책 + 공식 시험 가이드 + Skill Builder</a>로 잡는 것이 안전합니다.</div>
+  </section>
+
+  <!-- 7 -->
+  <section id="trackb">
+    <h2><span class="n">07</span>트랙 B · NVIDIA LLM <span class="tag warn">영어 전용</span></h2>
+    <p>3단계 대신, 또는 3단계 뒤에. 앱 개발보다 <b>모델 내부(트랜스포머·학습·추론 최적화)</b>를 알고 싶을 때 고릅니다. <i>Build a LLM from Scratch</i>를 한 번 따라 만든 뒤 시험을 보면 가장 효율이 좋습니다.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>주차</th><th>목표</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>27~34 (8주)</td><td>책 1회독 + 코드</td><td><i>밑바닥부터 만들면서 배우는 LLM</i> 7장 + 부록. 월·화 읽기, 수·목 코드 실행(코랩), 금 메모. 하루 30분이면 한 장에 1~2주</td></tr>
+        <tr><td>35~36</td><td>NVIDIA DLI 무료 강좌</td><td>"Generative AI Explained"(2시간), "Building RAG Agents with LLMs" 등 무료 과정</td></tr>
+        <tr><td>37~40</td><td><b>NCA-GENL</b> 준비·응시</td><td>50문항 60분 $125~135. 도메인: 핵심 ML 30%, 데이터 전처리, 실험·소프트웨어 개발, 트랜스포머·LLM, 신뢰할 수 있는 AI 10%</td></tr>
+        <tr><td>41~52</td><td><b>NCP-GENL</b> 준비·응시</td><td>120분 $200, 10개 도메인(파인튜닝, 추론 최적화, TensorRT-LLM·Triton, NeMo, 평가·안전). 공식 시험 가이드와 NVIDIA 문서 중심. 전용 수험서는 거의 없음</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 8 -->
+  <section id="optional">
+    <h2><span class="n">08</span>선택 트랙 · AICE / Google / Azure</h2>
+    <div class="grid2">
+      <div class="card"><div class="t">AICE Associate (국가공인) — 한국 취업·이직 대비</div><div class="d">14문항 90분, 80점 합격, 8만 원, Jupyter에서 파이썬으로 데이터 분석·모델링. 2단계 뒤 <b>4주</b>를 끼운다: 1~2주 공식 수험서(시나공) 완독, 3주 모의고사 6회(에듀윌), 4주 실습 재현 + 응시. 가장 가까운 회차는 2026-12-18~19(접수 11/23~12/11), 그다음은 2027년 일정 확인.</div></div>
+      <div class="card"><div class="t">Google Cloud — 회사가 GCP일 때</div><div class="d">Generative AI Leader($99, 90분, 영어, 기초) → Professional ML Engineer($200, 120분, 일본어 응시 가능). PMLE는 2단계와 범위가 70% 겹쳐서 MLA 직후 6~8주면 충분. 2026-04 제품명 개편 이후 자료인지 확인.</div></div>
+      <div class="card"><div class="t">Azure — 회사가 Azure일 때</div><div class="d">AI-901(기초, 만료 없음, 한국어·일본어) 2~3주 → AI-103(AI Engineer, Microsoft Foundry 중심). DP-100은 AI-300으로 교체. Microsoft Learn 무료 학습 경로만으로 준비 가능.</div></div>
+      <div class="card"><div class="t">Google AI Essentials (Coursera)</div><div class="d">약 5시간. 비개발자 대상이라 우선순위 낮음. 수료증이 필요하면 Enroll → Audit로 무료 수강 후 Financial aid 신청(심사 기간 있음).</div></div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section id="books">
+    <h2><span class="n">09</span>추천 도서 (한국어 · 일본어 · 원서)</h2>
+    <p class="src">2026-11-03 검색 기준. 한국어 수험서가 없는 시험은 그 사실을 적었습니다. 가격·개정판은 구매 전 확인.</p>
+
+    <h3 id="books-aif">AWS AI Practitioner (AIF-C01)</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">국내 출판 수험서 없음 (검색 기준)</div><div class="by">대안: 인프런 "AWS AI Practitioner 실전 대비"(한국어 문제 강의) + AWS Skill Builder 한국어 Exam Prep. 책은 아래 일본어판이나 원서 중 하나</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">AWS認定AIプラクティショナー 合格テキスト&演習問題</div><div class="by">高山裕司 · リックテレコム · 2026-05 · 2,750円 · 가장 최신, 장말 문제 + 모의고사</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">独学合格 AWS認定 AIプラクティショナー テキスト&問題集</div><div class="by">小池歩 · KADOKAWA · 2025-07 · 그림·사례 중심, AI 입문자 친화. 모의고사 85문</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">AWS Certified AI Practitioner (AIF-C01) Study Guide</div><div class="by">Tom Taulli · O'Reilly · 2025-08 · 서비스 실습 위주</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">AWS Certified AI Practitioner Study Guide: Foundational (AIF-C01) Exam</div><div class="by">Vikram Elango 외 · Sybex(Wiley) · 2025-10 · 시험 도메인 순서 그대로, 온라인 문제은행 포함</div></div></div>
+
+    <h3 id="books-mla">AWS ML Engineer – Associate (MLA-C01/C02)</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">국내 수험서 없음 (검색 기준)</div><div class="by">대안: AWS Skill Builder 한국어 Exam Prep + Sybex 원서. 파이썬·ML 기초가 약하면 『혼자 공부하는 머신러닝+딥러닝』(한빛, 박해선)으로 보강</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">MLA 전용 일본어 수험서 없음 (검색 기준)</div><div class="by">대안: AWS Skill Builder 일본어 + 원서. C02 출시 후 출간 여부를 다시 확인</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">AWS Certified Machine Learning Engineer Study Guide: Associate (MLA-C01) Exam</div><div class="by">Dario Cabianca · Sybex(Wiley) · 2025-06 · 448쪽 · 대형 출판사 유일. C02 범위의 생성형 AI 부분은 아래 Bedrock 책으로 보충</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Tutorials Dojo MLA-C01 Study Guide eBook + Practice Exams</div><div class="by">tutorialsdojo.com · 저렴하고 해설이 자세해 모의고사용으로 적합</div></div></div>
+
+    <h3 id="books-aip">AWS GenAI Developer – Professional (AIP-C01) · Bedrock · AI 엔지니어링</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">Amazon Bedrock으로 시작하는 실전 생성형 AI 개발</div><div class="by">임지훈 · 디지털북스 · 2025-01 · 274쪽 · 22,000원 · 프롬프트·RAG·에이전트 실습. 입문용</div></div></div>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">AI 엔지니어링: 기초 모델로 애플리케이션 구축하기</div><div class="by">칩 후옌 · 한빛미디어 · 2025-09 · 프롬프트·RAG·파인튜닝·에이전트·평가·인프라까지. 3단계 전반의 교과서</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">Amazon Bedrock 生成AIアプリ開発入門 ~AWS深掘りガイド</div><div class="by">御田稔・熊田寛・森田和明 · SBクリエイティブ · 2024-06 · 526쪽 · 사내 문서 RAG·자율 에이전트 장이 있음. 화면 캡처가 많아 따라 하기 쉬움</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">AIエンジニアリング ―基盤モデルを用いたAIアプリケーション開発の基礎と実践</div><div class="by">Chip Huyen · オライリー・ジャパン · 2025-11 · 544쪽</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">AI Engineering: Building Applications with Foundation Models</div><div class="by">Chip Huyen · O'Reilly · 2025-01 · 원서</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Using Amazon Bedrock: Learn to Architect, Secure and Optimize Generative AI Applications on AWS</div><div class="by">Wiley · 2025-10 · 아키텍처·보안·최적화 관점</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Tutorials Dojo AIP-C01 Study Guide eBook</div><div class="by">300쪽 이상 치트시트. 자비출판 수험서보다 안전한 선택</div></div></div>
+
+    <h3 id="books-nv">NVIDIA NCA-GENL / NCP-GENL · LLM 내부</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">밑바닥부터 만들면서 배우는 LLM</div><div class="by">세바스찬 라시카 · 길벗 · 2025 · 박해선 역 · GPT-2를 코랩에서 직접 구현. 역자 깃허브(rickiepark/llm-from-scratch)와 인프런 해설 강의 있음</div></div></div>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">대규모 언어 모델, 핵심만 빠르게!</div><div class="by">인사이트 · 2025 · 박해선 역 · 위 책의 압축판. 시간이 없을 때</div></div></div>
+    <div class="book"><div class="lang">JA</div><div><div class="ti">つくりながら学ぶ！LLM自作入門</div><div class="by">Sebastian Raschka · マイナビ出版 (Compass Books) · 2025-02 · 巣籠悠輔 訳 · 384쪽</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">Build a Large Language Model (From Scratch)</div><div class="by">Sebastian Raschka · Manning · 2024 · 원서. 저자 깃허브에 전체 코드</div></div></div>
+    <div class="book"><div class="lang">EN</div><div><div class="ti">NVIDIA DLI 무료 강좌 + Packt 영상 "NVIDIA GenAI &amp; LLMs: Learn and Pass NCA-GENL"</div><div class="by">2026-04 · 약 9시간 · 수험서 대신 쓸 만한 유일한 대형 출판사 자료. 종이 수험서는 자비출판뿐</div></div></div>
+
+    <h3 id="books-aice">AICE Associate</h3>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">2027 시나공 AI 능력시험 AICE Associate</div><div class="by">길벗 · 2026-07 · KT 현업 개발자 집필 공식 수험서</div></div></div>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">2026 에듀윌 AI 능력시험 AICE Associate 한권끝장</div><div class="by">에듀윌 · 핵심이론 + 실전모의고사 6회. 문제 연습용</div></div></div>
+    <div class="book"><div class="lang">KO</div><div><div class="ti">2026 빠르게 따는 AICE Associate</div><div class="by">골든래빗 · 무료 온라인 스터디 운영 이력</div></div></div>
+  </section>
+
+  <!-- 10 -->
+  <section id="exams">
+    <h2><span class="n">10</span>시험 정보 · 2026 변경점</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>시험</th><th>문항·시간</th><th>응시료</th><th>합격선</th><th>언어</th><th>유효</th></tr></thead>
+      <tbody>
+        <tr><td>AWS AIF-C01</td><td>65문 · 90분</td><td>$100</td><td>700/1000</td><td>한·일·영</td><td>3년</td></tr>
+        <tr><td>AWS MLA-C02</td><td>65문 · 130분</td><td>$150</td><td>720/1000</td><td>한·일·영</td><td>3년</td></tr>
+        <tr><td>AWS AIP-C01</td><td>180분</td><td>$300</td><td>750/1000*</td><td>영 (한·일 제공 여부 확인)</td><td>3년</td></tr>
+        <tr><td>NVIDIA NCA-GENL</td><td>50문 · 60분</td><td>$125~135*</td><td>미공개</td><td>영</td><td>2년</td></tr>
+        <tr><td>NVIDIA NCP-GENL</td><td>120분</td><td>$200</td><td>미공개</td><td>영</td><td>2년</td></tr>
+        <tr><td>AICE Associate</td><td>14문 · 90분</td><td>80,000원</td><td>80점</td><td>한</td><td>3년</td></tr>
+        <tr><td>Google Gen AI Leader</td><td>90분</td><td>$99</td><td>미공개</td><td>영</td><td>3년</td></tr>
+        <tr><td>Google PMLE</td><td>120분</td><td>$200</td><td>미공개</td><td>영·일</td><td>2년</td></tr>
+        <tr><td>Azure AI-901</td><td>약 45분</td><td>국가별</td><td>700/1000</td><td>한·일·영</td><td>만료 없음</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:13px;color:var(--muted)">* 3자 자료 기준. 공식 시험 가이드에서 확인.</p>
+    <h4>2026년에 바뀐 것</h4>
+    <ul class="plain">
+      <li><b>AWS</b>: ML Specialty(MLS-C01) 2026-03-31 종료. MLA-C01은 2027-01-14 전 언어 종료, 같은 날 MLA-C02 정식. GenAI Developer Pro(AIP-C01) 2026-03 정식.</li>
+      <li><b>Google</b>: Generative AI Leader 신설(2025-05). 2026-04 Vertex AI 개명 → 옛 교재의 제품명 주의.</li>
+      <li><b>Azure</b>: AI-900 → AI-901, AI-102 → AI-103, DP-100 → AI-300, AZ-204 → AI-200. 날짜는 Microsoft Learn에서 확인.</li>
+      <li><b>NVIDIA</b>: Professional 등급(NCP-GENL 등) 확대. 응시료 자료 간 편차 있음.</li>
+    </ul>
+    <h4>공식 링크</h4>
+    <ul class="plain">
+      <li><a href="https://aws.amazon.com/certification/" target="_blank" rel="noopener">AWS Certification</a> · <a href="https://docs.aws.amazon.com/aws-certification/latest/examguides/aws-certification-exam-guides.html" target="_blank" rel="noopener">AWS 시험 가이드 모음</a> · <a href="https://explore.skillbuilder.aws/" target="_blank" rel="noopener">Skill Builder</a></li>
+      <li><a href="https://www.nvidia.com/certification" target="_blank" rel="noopener">NVIDIA Certification</a> · <a href="https://www.nvidia.com/en-us/training/" target="_blank" rel="noopener">NVIDIA DLI</a></li>
+      <li><a href="https://aice.study/" target="_blank" rel="noopener">AICE</a></li>
+      <li><a href="https://cloud.google.com/learn/certification" target="_blank" rel="noopener">Google Cloud Certification</a> · <a href="https://learn.microsoft.com/credentials/" target="_blank" rel="noopener">Microsoft Credentials</a></li>
+      <li><a href="https://academy.claude.com/" target="_blank" rel="noopener">Claude Academy</a> · <a href="https://academy.openai.com/" target="_blank" rel="noopener">OpenAI Academy</a></li>
+    </ul>
+  </section>
+
+  <!-- 11 -->
+  <section id="checklist">
+    <h2><span class="n">11</span>주차별 체크리스트</h2>
+    <p style="font-size:14px;color:var(--ink-2)">체크 상태는 이 브라우저에만 저장됩니다. 다른 기기에서는 다시 체크해야 합니다.</p>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="pct" id="pct">0 / 52</div>
+    <div class="checks" id="checks"></div>
+    <p style="margin-top:12px"><button type="button" id="reset" style="font:inherit;font-size:13px;padding:4px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer">체크 초기화</button></p>
+  </section>
+
+  <footer>자격증·시험 정보는 2026-11-03 기준 공식 페이지와 2차 자료를 바탕으로 정리했으며, 등록 전 공식 페이지에서 재확인해야 합니다. 도서 정보는 같은 날 검색 기준입니다.</footer>
+</div>
+
+<script>
+  // 주차별 체크리스트 (상태는 localStorage)
+  var WEEKS = [
+    [1,'p0','Claude Academy · Claude 101 수료'],[2,'p0','AWS Skill Builder AIF Exam Prep 전반부'],[3,'p0','OpenAI Academy AI Foundations 수료 · 1단계 교재 주문'],
+    [4,'p1','AIF · AI/ML 기초'],[5,'p1','AIF · 생성형 AI 기초'],[6,'p1','AIF · FM 애플리케이션 ① RAG·벡터 DB'],[7,'p1','AIF · FM 애플리케이션 ② 프롬프트·에이전트·평가'],[8,'p1','AIF · 책임 있는 AI · 보안'],[9,'p1','AIF · 모의고사 1'],[10,'p1','AIF · 모의고사 2 → 시험 응시'],
+    [11,'p2','MLA · 시험 가이드 · ML 수명주기'],[12,'p2','MLA · 데이터 준비 ① 수집·저장'],[13,'p2','MLA · 데이터 준비 ② 변환·피처'],[14,'p2','MLA · 데이터 준비 ③ 품질·편향·라벨링'],[15,'p2','MLA · 모델 개발 ① 알고리즘·학습 잡'],[16,'p2','MLA · 모델 개발 ② 튜닝·분산'],[17,'p2','MLA · 모델 개발 ③ 평가·실험'],[18,'p2','MLA · 모델 개발 ④ 생성형 AI'],[19,'p2','MLA · 배포 ① 엔드포인트'],[20,'p2','MLA · 배포 ② 컨테이너·Lambda'],[21,'p2','MLA · 배포 ③ 파이프라인·CI/CD'],[22,'p2','MLA · 모니터링 ① 드리프트'],[23,'p2','MLA · 모니터링 ② 비용·보안·거버넌스'],[24,'p2','MLA · 약한 도메인 복습'],[25,'p2','MLA · 모의고사 1'],[26,'p2','MLA · 모의고사 2 → 시험 응시'],
+    [27,'p3','AIP · 시험 가이드 · Bedrock 기초 · 프로젝트 시작'],[28,'p3','AIP · 프롬프트 설계'],[29,'p3','AIP · 임베딩·청킹·벡터 DB'],[30,'p3','AIP · Knowledge Bases'],[31,'p3','AIP · RAG 품질·평가'],[32,'p3','AIP · Bedrock Agents'],[33,'p3','AIP · AgentCore · MCP'],[34,'p3','AIP · Guardrails'],[35,'p3','AIP · 모델 커스터마이징'],[36,'p3','AIP · 평가 체계'],[37,'p3','AIP · 운영·캐싱·비용'],[38,'p3','AIP · 관측성'],[39,'p3','AIP · 보안·거버넌스'],[40,'p3','AIP · 아키텍처 종합 · 다이어그램 완성'],
+    [41,'p3','AIP · 도메인 정리 1'],[42,'p3','AIP · 도메인 정리 2'],[43,'p3','AIP · 도메인 정리 3'],[44,'p3','AIP · 도메인 정리 4'],[45,'p3','AIP · 모의고사 1'],[46,'p3','AIP · 모의고사 2'],[47,'p3','AIP · 모의고사 3'],[48,'p3','AIP · 약한 도메인 공식 문서'],[49,'p3','AIP · 약한 도메인 세션 영상'],[50,'p3','AIP · 모의고사 4'],[51,'p3','AIP · 180분 풀 타임 연습'],[52,'p3','AIP · 시험 응시 · 포트폴리오 정리']
+  ];
+  var KEY = 'ai-cert-roadmap-v1';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  var box = document.getElementById('checks'), bar = document.getElementById('bar'), pct = document.getElementById('pct');
+  WEEKS.forEach(function (w) {
+    var id = 'w' + w[0];
+    var label = document.createElement('label');
+    var cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!state[id];
+    var dot = document.createElement('span'); dot.className = 'ph ' + w[1];
+    var txt = document.createElement('span'); txt.appendChild(dot); txt.appendChild(document.createTextNode('주 ' + w[0] + ' · ' + w[2]));
+    label.appendChild(cb); label.appendChild(txt);
+    if (cb.checked) label.classList.add('done');
+    cb.addEventListener('change', function () {
+      state[id] = cb.checked; label.classList.toggle('done', cb.checked);
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      render();
+    });
+    box.appendChild(label);
+  });
+  function render() {
+    var n = WEEKS.filter(function (w) { return state['w' + w[0]]; }).length;
+    bar.style.width = (n / WEEKS.length * 100) + '%';
+    pct.textContent = n + ' / ' + WEEKS.length;
+  }
+  render();
+  document.getElementById('reset').addEventListener('click', function () {
+    if (!confirm('체크를 모두 지울까요?')) return;
+    state = {};
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    box.querySelectorAll('input').forEach(function (c) { c.checked = false; c.parentElement.classList.remove('done'); });
+    render();
+  });
+</script>
+</body>
+</html>
