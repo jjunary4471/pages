@@ -46,9 +46,87 @@
     a.card .t { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 700; font-size: 18px; }
     a.card .d { color: var(--ink-2); font-size: 14px; }
     a.card .m { color: var(--muted); font-size: 12px; }
+    /* ───── 사이드바 레이아웃 ───── */
+    :root { --side-w: 272px; }
+    .wrap { padding-block: 32px 72px; }
+    .layout { display: block; }
+    @media (min-width: 960px) {
+      .layout { display: grid; grid-template-columns: var(--side-w) minmax(0, 1fr); }
+      .wrap { margin: 0; padding-inline: 48px; }
+    }
+    .side { position: fixed; inset: 0 auto 0 0; width: min(86vw, var(--side-w)); z-index: 30; background: var(--surface);
+      border-right: 1px solid var(--line); display: flex; flex-direction: column; transform: translateX(-102%); transition: transform .22s ease; }
+    .side.open { transform: none; box-shadow: 0 0 40px rgba(0,0,0,.25); }
+    @media (min-width: 960px) { .side { position: sticky; top: 0; height: 100vh; width: auto; transform: none; box-shadow: none; } }
+    .scrim { position: fixed; inset: 0; z-index: 25; background: rgba(10,12,16,.45); opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .scrim.on { opacity: 1; pointer-events: auto; }
+    @media (min-width: 960px) { .scrim { display: none; } }
+    .side-h { padding: 20px 18px 12px; display: grid; gap: 12px; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .brand a { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 800; font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: -.02em; }
+    .brand a span { color: var(--accent); }
+    .side-x { appearance: none; border: 1px solid var(--line); background: none; color: var(--ink-2); width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; }
+    @media (min-width: 960px) { .side-x { display: none; } }
+    .search { position: relative; }
+    .search input { width: 100%; font: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 9px; padding: 8px 10px 8px 32px; outline: none; }
+    .search input:focus { border-color: var(--accent); }
+    .search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--muted); }
+    .search kbd { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font: 600 11px/1 ui-monospace, monospace; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 3px 5px; }
+    .tree { flex: 1; overflow-y: auto; padding: 10px 10px 24px; overscroll-behavior: contain; }
+    .tree details { margin: 2px 0; }
+    .tree summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 7px 8px; border-radius: 8px;
+      font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .tree summary::-webkit-details-marker { display: none; }
+    .tree summary::before { content: "▸"; font-size: 10px; transition: transform .15s; }
+    .tree details[open] > summary::before { transform: rotate(90deg); }
+    .tree summary .n { margin-left: auto; font-size: 11px; letter-spacing: 0; font-weight: 600; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; }
+    .tree summary.cur { color: var(--accent-ink); }
+    .tree summary:hover { background: var(--bg); }
+    .tree ul { margin: 0 0 6px; padding: 0; display: block; gap: 0; }
+    .tree li { margin: 0; }
+    .tree a { display: block; padding: 6px 10px 6px 26px; border-radius: 7px; color: var(--ink); text-decoration: none; font-size: 14px; line-height: 1.4; }
+    .tree a:hover { background: var(--bg); color: var(--accent-ink); }
+    .tree ul ul a { position: relative; padding-left: 44px; font-size: 13px; color: var(--ink-2); }
+    .tree ul ul a::before { content: ""; position: absolute; left: 30px; top: 0; bottom: 0; width: 1px; background: var(--line); }
+    .tree mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color: inherit; border-radius: 3px; }
+    .tree .empty { padding: 10px; font-size: 13px; color: var(--muted); }
+    .side-f { padding: 12px 18px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+
+    .topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 10px; padding: 10px 16px;
+      background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    @media (min-width: 960px) { .topbar { display: none; } }
+    .menu { appearance: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      font: inherit; font-size: 14px; font-weight: 700; padding: 6px 12px; border-radius: 9px; cursor: pointer; }
+    .menu svg { width: 16px; height: 16px; }
+    .topbar .tt { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; }
+
+    .group { scroll-margin-top: 72px; }
+    .subs { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 2px 0; }
+    .subs a { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: var(--ink-2); text-decoration: none;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; }
+    .subs a::before { content: "↳"; color: var(--muted); }
+    .subs a:hover { border-color: var(--accent); color: var(--accent-ink); }
+    li.hide, .group.hide, ul.hide { display: none; }
   </style>
 </head>
 <body>
+<div class="layout">
+  <aside class="side" id="side" aria-label="사이트 목차">
+    <div class="side-h">
+      <div class="brand"><a href="./">Pages<span>.</span></a><button class="side-x" type="button" id="sideX" aria-label="목차 닫기">✕</button></div>
+      <label class="search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+        <input id="q" type="search" placeholder="페이지 검색" autocomplete="off" aria-label="페이지 검색"><kbd>/</kbd></label>
+    </div>
+    <nav class="tree" id="tree"></nav>
+    <div class="side-f" id="sideF"></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div>
+  <div class="topbar">
+    <button class="menu" type="button" id="menu" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h12M2 8h12M2 12h12"/></svg>목차</button>
+    <span class="tt">Pages</span>
+  </div>
   <div class="wrap">
     <h1>Pages</h1>
     <p class="sub">공부하면서 정리해 둔 페이지 모음입니다.</p>
@@ -61,6 +139,11 @@
           <span class="d">무료 수료증 → AWS 3종 → NVIDIA 2종 → AICE → Google 2종 → Azure 2종. 104주 계획, Skill Builder 활용법, 한·일·영 추천 도서, 체크리스트</span>
           <span class="m">2026-11-03</span>
         </a>
+        <div class="subs">
+          <a href="ai-cert-roadmap/weeks/week-01/">1주차 · Claude 101</a>
+          <a href="ai-cert-roadmap/trophies/">🏆 전리품 진열실</a>
+          <a href="ai-cert-roadmap/#checklist">104주 체크리스트</a>
+        </div>
       </li>
       <li data-slug="ai-resources">
         <a class="card" href="ai-resources/">
@@ -146,5 +229,81 @@
       </li>
     </ul>
   </div>
+  </div>
+</div>
+
+<script>
+// 본문의 그룹·카드·서브링크를 읽어 사이드바 트리를 만든다 — 카드만 추가하면 사이드바는 자동
+(function () {
+  var groups = [].slice.call(document.querySelectorAll(".wrap > .group"));
+  var tree = document.getElementById("tree"), q = document.getElementById("q");
+  var side = document.getElementById("side"), scrim = document.getElementById("scrim"), menu = document.getElementById("menu");
+  function esc(t) { return t.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function slug(t) { return t.trim().toLowerCase().replace(/[^a-z0-9가-힣]+/g, "-"); }
+
+  var model = groups.map(function (g) {
+    g.id = g.id || "g-" + slug(g.textContent);
+    var ul = g.nextElementSibling;
+    var pages = [].slice.call(ul.children).map(function (li) {
+      var a = li.querySelector("a.card");
+      return { li: li, t: a.querySelector(".t").textContent.trim(), d: (a.querySelector(".d") || {}).textContent || "", h: a.getAttribute("href"),
+        subs: [].slice.call(li.querySelectorAll(".subs a")).map(function (s) { return { t: s.textContent.trim(), h: s.getAttribute("href") }; }) };
+    });
+    return { el: g, ul: ul, name: g.textContent.trim(), pages: pages };
+  });
+  var total = model.reduce(function (n, g) { return n + g.pages.length; }, 0);
+  document.getElementById("sideF").textContent = "페이지 " + total + "개 · 그룹 " + model.length + "개";
+
+  function hl(t, k) { if (!k) return esc(t); var i = t.toLowerCase().indexOf(k); return i < 0 ? esc(t) : esc(t.slice(0, i)) + "<mark>" + esc(t.slice(i, i + k.length)) + "</mark>" + esc(t.slice(i + k.length)); }
+  function render() {
+    var k = q.value.trim().toLowerCase(), html = "", any = false;
+    model.forEach(function (g) {
+      var vis = g.pages.filter(function (p) {
+        var hit = !k || (p.t + " " + p.d + " " + p.subs.map(function (s) { return s.t; }).join(" ")).toLowerCase().indexOf(k) >= 0;
+        p.li.classList.toggle("hide", !hit); return hit;
+      });
+      g.el.classList.toggle("hide", !vis.length); g.ul.classList.toggle("hide", !vis.length);
+      if (!vis.length) return; any = true;
+      html += '<details open data-g="' + g.el.id + '"><summary>' + esc(g.name) + '<span class="n">' + vis.length + '</span></summary><ul>' +
+        vis.map(function (p) {
+          return '<li><a href="' + esc(p.h) + '">' + hl(p.t, k) + '</a>' +
+            (p.subs.length ? '<ul>' + p.subs.map(function (s) { return '<li><a href="' + esc(s.h) + '">' + hl(s.t, k) + '</a></li>'; }).join("") + '</ul>' : "") + '</li>';
+        }).join("") + '</ul></details>';
+    });
+    tree.innerHTML = any ? html : '<div class="empty">검색 결과가 없습니다.</div>';
+    spy();
+  }
+  q.addEventListener("input", render);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); open(true); q.focus(); }
+    if (e.key === "Escape") { if (q.value) { q.value = ""; render(); } open(false); }
+  });
+
+  // 그룹 이름을 누르면 본문 해당 그룹으로 이동 (접기/펴기는 ▸ 영역)
+  tree.addEventListener("click", function (e) {
+    var sm = e.target.closest("summary");
+    if (sm && e.offsetX > 20) { e.preventDefault(); document.getElementById(sm.parentNode.dataset.g).scrollIntoView({ behavior: "smooth" }); open(false); }
+    if (e.target.closest("a")) open(false);
+  });
+
+  // 모바일 서랍
+  function open(on) {
+    if (window.innerWidth >= 960) return;
+    side.classList.toggle("open", on); scrim.classList.toggle("on", on); menu.setAttribute("aria-expanded", on);
+  }
+  menu.onclick = function () { open(true); };
+  scrim.onclick = document.getElementById("sideX").onclick = function () { open(false); };
+
+  // 지금 보이는 그룹 표시
+  function spy() {
+    var cur = null;
+    model.forEach(function (g) { if (!g.el.classList.contains("hide") && g.el.getBoundingClientRect().top < 140) cur = g.el.id; });
+    if (!cur && model.length) cur = model[0].el.id;
+    [].forEach.call(tree.querySelectorAll("summary"), function (s) { s.classList.toggle("cur", s.parentNode.dataset.g === cur); });
+  }
+  window.addEventListener("scroll", spy, { passive: true });
+  render();
+})();
+</script>
 </body>
 </html>
