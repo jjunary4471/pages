@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>AIF-C01 AWS 서비스 사전</title>
+  <meta name="description" content="AWS Certified AI Practitioner(AIF-C01) 공식 연습 문제에 나온 AWS 서비스·기능을 한 줄 요약, 시험 포인트, 헷갈리는 짝으로 정리한 사전. 가리고 떠올리기 모드 포함.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #F7F7F4; --surface: #FFFFFF; --ink: #1A1F2B; --ink-2: #4B5364; --muted: #8A919F;
+      --line: #E1E3DE; --line-strong: #1A1F2B;
+      --accent: #2F6FB3; --accent-ink: #1F5590; --accent-soft: #E6EEF7;
+      --warn-bg: #FFF4E5; --warn-ink: #8A4B00; --warn-line: #F2C48A;
+      --ok-bg: #E7F5EC; --ok-ink: #1E6B3A;
+      --c-gen: #7C4DBD; --c-sm: #0F766E; --c-ai: #2F6FB3; --c-sec: #C2410C; --c-gov: #B7791F; --c-inf: #6B7280;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14171D; --surface: #1B1F27; --ink: #EEF0F3; --ink-2: #BFC6D1; --muted: #7F8794;
+        --line: #2A2F3A; --line-strong: #EEF0F3;
+        --accent: #6EA8E6; --accent-ink: #9CC4F0; --accent-soft: #1E2A3A;
+        --warn-bg: #2E2416; --warn-ink: #F0B46A; --warn-line: #5A4220;
+        --ok-bg: #1A2E22; --ok-ink: #8ED4A6;
+        --c-gen: #B394E8; --c-sm: #5EC4B8; --c-ai: #6EA8E6; --c-sec: #F0905C; --c-gov: #E8B65A; --c-inf: #9CA3AF;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 920px; margin: 0 auto; padding-inline: 16px; padding-block: 36px 96px; }
+    a { color: var(--accent-ink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .crumbs { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 13px; color: var(--muted); }
+    .crumbs a { color: var(--muted); }
+    header { margin-top: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--line-strong); display: grid; gap: 12px; }
+    .eyebrow { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); }
+    h1 { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-weight: 800; font-size: clamp(28px, 7vw, 40px); letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+    .lead { color: var(--ink-2); margin: 0; }
+    .meta { color: var(--muted); font-size: 13px; }
+    section { margin-top: 48px; }
+    h2 { font-family: "Bricolage Grotesque", "Noto Sans KR", sans-serif; font-size: 24px; font-weight: 800; margin: 0 0 6px; padding-top: 8px; border-top: 3px solid var(--line-strong); display: flex; gap: 10px; align-items: baseline; }
+    h2 .n { color: var(--accent); font-size: 15px; }
+    .src { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .note { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+
+    /* 비교표 */
+    .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 640px) { .cmp { grid-template-columns: 1fr; } }
+    .cmp .box { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .cmp .box h3 { font-size: 15.5px; margin: 0 0 8px; }
+    .cmp table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .cmp td { padding: 6px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+    .cmp td:first-child { color: var(--muted); width: 42%; }
+    .cmp td b { color: var(--ink); }
+
+    /* 도구 막대 */
+    .tools { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 0 10px; display: grid; gap: 10px; border-bottom: 1px solid var(--line); }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    input[type=search] { flex: 1 1 220px; min-width: 0; font: inherit; font-size: 15px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); }
+    .btn { font: inherit; font-size: 13.5px; font-weight: 700; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+    .btn[aria-pressed=true] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chip { flex: none; font: inherit; font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+    .chip[aria-pressed=true] { background: var(--accent-soft); color: var(--accent-ink); border-color: var(--accent); }
+    .count { font-size: 13px; color: var(--muted); }
+
+    /* 카드 */
+    .cat { margin-top: 28px; }
+    .cat > h3 { font-size: 17px; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+    .cat > h3 i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+    .cat > p { margin: 0 0 12px; font-size: 13.5px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .svc { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 12px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+    .svc .nm { font-weight: 700; font-size: 16px; line-height: 1.35; }
+    .svc .ko { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+    .svc .one { font-size: 14.5px; }
+    .svc ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-2); }
+    .svc ul li { margin: 2px 0; }
+    .svc .kw { font-size: 13px; background: var(--ok-bg); color: var(--ok-ink); padding: 6px 10px; border-radius: 8px; }
+    .svc .vs { font-size: 13px; background: var(--warn-bg); color: var(--warn-ink); padding: 6px 10px; border-radius: 8px; }
+    .svc .qs { display: flex; gap: 4px; flex-wrap: wrap; }
+    .svc .qs span { font-size: 11.5px; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); }
+    .svc .qs span.extra { background: transparent; border: 1px dashed var(--line); color: var(--muted); }
+    .svc .body { display: grid; gap: 8px; }
+    .svc .hint { display: none; font-size: 12.5px; color: var(--muted); }
+
+    /* 가리고 떠올리기 */
+    body.quiz .svc:not(.open) .body { display: none; }
+    body.quiz .svc:not(.open) .hint { display: block; }
+    body.quiz .svc { cursor: pointer; }
+    .empty { display: none; padding: 30px 0; text-align: center; color: var(--muted); }
+
+    footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumbs"><a href="../../">← 목록</a><span>·</span><a href="../">AI 자격증 2년 로드맵</a><span>·</span><a href="../weeks/week-02/">2주차</a><span>·</span><a href="../notes/aif-practice-01/">연습 문제 오답 노트</a></div>
+
+  <header>
+    <div class="eyebrow">AIF-C01 · Service Glossary</div>
+    <h1>AWS 서비스 사전</h1>
+    <p class="lead">AWS Certified AI Practitioner 공식 연습 문제(20문)의 문제와 보기에 나온 AWS 서비스·기능 <b id="total">0</b>개를 정리했습니다. 각 서비스를 <b>한 줄 요약 → 시험 포인트 → 문제에서 이 단어가 보이면 → 헷갈리는 짝</b> 순서로 적었습니다.</p>
+    <p class="meta">Q번호는 2026-11-22에 푼 공식 연습 문제 세트의 문항 번호입니다. 점선 칩은 문제에는 없지만 짝으로 함께 알아 둘 것입니다.</p>
+  </header>
+
+  <section>
+    <h2><span class="n">01</span>헷갈리는 묶음 먼저</h2>
+    <p class="src">이번에 틀린 문제의 절반이 아래 묶음 안에서 고르다가 틀렸습니다. 묶음별로 “무엇을 보는 서비스인가”만 구분해도 대부분 풀립니다.</p>
+    <div class="cmp">
+      <div class="box">
+        <h3>🔍 감사·모니터링·점검</h3>
+        <table>
+          <tr><td>누가·언제·어떤 API 를 호출했나</td><td><b>CloudTrail</b></td></tr>
+          <tr><td>지표·로그·알람 (성능, 호출 수)</td><td><b>CloudWatch</b></td></tr>
+          <tr><td>리소스 구성이 어떻게 바뀌었나 · 규칙 준수</td><td><b>Config</b></td></tr>
+          <tr><td>EC2·ECR·Lambda 취약점 스캔</td><td><b>Inspector</b></td></tr>
+          <tr><td>S3 속 민감 데이터(PII) 찾기</td><td><b>Macie</b></td></tr>
+          <tr><td>AWS 규정 준수 보고서 다운로드</td><td><b>Artifact</b></td></tr>
+          <tr><td>비용·보안·성능 모범 사례 점검</td><td><b>Trusted Advisor</b></td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <h3>🗣️ 말·글·문서·이미지</h3>
+        <table>
+          <tr><td>음성 → 텍스트</td><td><b>Transcribe</b></td></tr>
+          <tr><td>텍스트 → 음성</td><td><b>Polly</b></td></tr>
+          <tr><td>언어 A → 언어 B</td><td><b>Translate</b></td></tr>
+          <tr><td>텍스트의 감정·개체·핵심 구문</td><td><b>Comprehend</b></td></tr>
+          <tr><td>문서 이미지에서 글자·손글씨·표</td><td><b>Textract</b></td></tr>
+          <tr><td>이미지·영상 분석 (생성 ✕)</td><td><b>Rekognition</b></td></tr>
+          <tr><td>챗봇 대화 인터페이스</td><td><b>Lex</b></td></tr>
+          <tr><td>사내 문서 자연어 검색</td><td><b>Kendra</b></td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <h3>🧠 파운데이션 모델을 쓰는 세 가지 길</h3>
+        <table>
+          <tr><td>여러 FM 을 API 로, 서버 관리 없이</td><td><b>Bedrock</b></td></tr>
+          <tr><td>오픈 소스 FM 을 내 SageMaker 에 배포</td><td><b>SageMaker JumpStart</b></td></tr>
+          <tr><td>회사 데이터에 붙는 완성형 어시스턴트</td><td><b>Amazon Q Business</b></td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <h3>📋 SageMaker 모델 관리</h3>
+        <table>
+          <tr><td>모델 설명서 (용도·위험·평가)</td><td><b>Model Cards</b></td></tr>
+          <tr><td>모든 모델을 한 화면에서 조회</td><td><b>Model Dashboard</b></td></tr>
+          <tr><td>운영 중 품질·드리프트 감시</td><td><b>Model Monitor</b></td></tr>
+          <tr><td>편향 탐지·설명 가능성</td><td><b>Clarify</b></td></tr>
+          <tr><td>ML 역할별 권한 만들기</td><td><b>Role Manager</b></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>서비스 카드</h2>
+    <div class="tools">
+      <div class="row">
+        <input type="search" id="q" placeholder="서비스 이름·기능 검색 (예: 음성, 로그, RAG)" aria-label="검색">
+        <button class="btn" id="quiz" aria-pressed="false">🙈 가리고 떠올리기</button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="count" id="count"></div>
+    </div>
+    <div class="note" id="quizNote" hidden>이름만 보고 무엇을 하는 서비스인지 소리 내어 말해 본 뒤, 카드를 눌러 확인하세요. 말로 설명하지 못한 카드만 다시 보면 됩니다.</div>
+    <div id="list"></div>
+    <div class="empty" id="empty">찾는 서비스가 없습니다.</div>
+  </section>
+
+  <footer>설명은 각 서비스의 AWS 공식 문서와 연습 문제 해설을 바탕으로 2026-11-22에 요약했습니다. 시험은 서비스의 세부 설정보다 “어떤 문제에 어떤 서비스를 쓰는가”를 묻습니다.</footer>
+</div>
+
+<script>
+var CATS = [
+  { id: 'gen', name: '생성형 AI · 파운데이션 모델', color: 'var(--c-gen)', desc: 'FM 을 어떻게 가져다 쓰는가' },
+  { id: 'sm',  name: 'Amazon SageMaker AI', color: 'var(--c-sm)', desc: '직접 모델을 만들고 배포·관리하는 ML 플랫폼' },
+  { id: 'ai',  name: '사전 훈련된 AI 서비스', color: 'var(--c-ai)', desc: 'ML 지식 없이 API 로 바로 쓰는 완성 기능' },
+  { id: 'sec', name: '보안 · 접근 제어', color: 'var(--c-sec)', desc: '누가 접근하나, 무엇이 위험한가' },
+  { id: 'gov', name: '감사 · 모니터링 · 거버넌스', color: 'var(--c-gov)', desc: '기록하고 지켜보고 증명하기' },
+  { id: 'inf', name: '기본 인프라 (보기 속 등장)', color: 'var(--c-inf)', desc: '다른 서비스의 대상으로 나온 리소스' }
+];
+
+var S = [
+  // 생성형 AI
+  { cat: 'gen', nm: 'Amazon Bedrock', ko: '베드록', one: '여러 회사의 파운데이션 모델을 하나의 API 로 쓰는 완전관리형 서비스. 서버나 모델 호스팅을 신경 쓰지 않는다.',
+    pts: ['Anthropic Claude, Amazon Nova, Meta Llama, Stability AI 등 모델 선택', 'Knowledge Bases(RAG), Agents, Guardrails(유해 출력 차단), 모델 평가', '모델 사용자 지정: 미세 조정(레이블 있는 프롬프트-응답 쌍), 지속적 사전 훈련(레이블 없는 도메인 텍스트)'],
+    kw: '“ML 전문 지식 없음”, “모델을 호스팅하고 싶지 않음”, “이미지·텍스트 생성”', vs: 'JumpStart 는 내 SageMaker 에 직접 배포 → 인프라 관리가 남음', q: [2, 9, 11, 15, 20] },
+  { cat: 'gen', nm: 'Amazon SageMaker JumpStart', ko: '세이지메이커 점프스타트', one: 'SageMaker AI 안의 모델 허브. 사전 훈련된 오픈 소스·공개 모델을 골라 내 계정에 배포하고 미세 조정한다.',
+    pts: ['Llama, Mistral, Falcon 등 오픈 소스 FM 과 솔루션 템플릿', '엔드포인트 인스턴스를 내가 고르고 관리', '요약·분류 같은 용도별 예제 노트북 제공'],
+    kw: '“오픈 소스 FM”, “사전 훈련된 모델을 SageMaker 에서”', vs: 'Bedrock = 관리형 API · Q Business = 완성 앱(모델 선택 불가)', q: [13] },
+  { cat: 'gen', nm: 'Amazon Q Business', ko: '아마존 Q 비즈니스', one: '회사 데이터(S3, SharePoint, 위키 등)에 연결해 질문 답변·요약·문서 작성을 해 주는 완성형 생성형 AI 어시스턴트.',
+    pts: ['사내 데이터 소스 커넥터와 권한 연동', '모델을 고르거나 훈련하지 않음 — 오픈 소스 아님', '개발자용은 Amazon Q Developer (코드 작성·설명)'],
+    kw: '“직원들이 사내 문서에 대해 질문”, “코드 없이 바로 쓰는 어시스턴트”', vs: '“오픈 소스 FM” 이 나오면 Q Business 가 아니라 JumpStart', q: [13] },
+
+  // SageMaker
+  { cat: 'sm', nm: '실시간 추론', ko: 'Real-time inference', one: '항상 켜진 엔드포인트가 요청마다 바로 응답한다. 지연이 가장 짧다(밀리초~초).',
+    pts: ['대화형 앱, 실시간 사기 탐지', '요청이 없어도 인스턴스 비용 발생'],
+    kw: '“즉시 응답”, “낮은 지연 시간”, “지속적 트래픽”', vs: '지연: 실시간 < 비동기 < 배치 변환', q: [6] },
+  { cat: 'sm', nm: '비동기 추론', ko: 'Asynchronous inference', one: '요청을 큐에 넣고 처리가 끝나면 결과를 S3 에 저장하고 알려 준다.',
+    pts: ['큰 입력(최대 1GB), 오래 걸리는 처리(최대 1시간)', '요청이 없으면 인스턴스를 0개로 줄일 수 있음'],
+    kw: '“큰 페이로드”, “처리 시간이 긺”, “거의 실시간이면 충분”', vs: '실시간보다 느리고 배치보다 빠른 중간', q: [6] },
+  { cat: 'sm', nm: '배치 변환', ko: 'Batch Transform', one: '엔드포인트 없이 데이터셋 전체를 한꺼번에 추론하고 끝나면 내려간다. 지연이 가장 크다.',
+    pts: ['야간 일괄 점수 계산, 대량 데이터 전처리', '실시간 응답이 필요 없을 때 가장 저렴'],
+    kw: '“전체 데이터셋”, “정기적으로 한 번에”, “엔드포인트 불필요”', vs: '“오프라인 대량 처리” = 배치 변환', q: [6] },
+  { cat: 'sm', nm: '서버리스 추론', ko: 'Serverless inference', one: '인스턴스를 고르지 않고 요청이 올 때만 자동으로 용량이 붙는 추론. 첫 요청에 콜드 스타트가 있다.',
+    pts: ['트래픽이 간헐적이고 예측하기 어려울 때', '유휴 시간 비용 없음'],
+    kw: '“간헐적 트래픽”, “인프라 관리 최소”', vs: '콜드 스타트 지연을 감수할 수 있어야 함', q: [], extra: true },
+  { cat: 'sm', nm: 'SageMaker Model Cards', ko: '모델 카드', one: '모델의 용도, 위험 등급, 훈련 세부 정보, 평가 결과를 한 곳에 기록하는 모델 설명서.',
+    pts: ['투명성·설명 가능성·감사 대응 (Domain 4.2, 5.2)', '버전별로 변경 불가능한 기록으로 남김'],
+    kw: '“모델 정보를 문서화”, “위험 등급”, “용도 기록”', vs: 'Model Monitor 는 운영 감시, Dashboard 는 전체 조회', q: [19] },
+  { cat: 'sm', nm: 'SageMaker Model Dashboard', ko: '모델 대시보드', one: '계정의 모든 모델·엔드포인트·모니터 상태를 한 화면에서 조회하는 곳.',
+    pts: ['배포·사용·성능 추적 현황 요약', '모델 정보를 새로 기록하는 기능은 아님'],
+    kw: '“모든 모델을 한눈에”, “중앙에서 조회”', vs: '기록(문서화)은 Model Cards', q: [19] },
+  { cat: 'sm', nm: 'SageMaker Model Monitor', ko: '모델 모니터', one: '배포된 모델의 입력·출력을 계속 수집해 훈련 때와 비교하고, 품질 저하나 드리프트를 알린다.',
+    pts: ['데이터 품질, 모델 품질, 편향 드리프트, 특성 기여도 드리프트', 'ML 수명 주기의 “모니터링” 단계 — 변수를 늘리지 않음'],
+    kw: '“운영 중 성능 저하”, “데이터 드리프트 감지”', vs: '훈련 전 단계(특성 엔지니어링)와 혼동 주의 · Q18', q: [18, 19] },
+  { cat: 'sm', nm: 'SageMaker Role Manager', ko: '역할 관리자', one: '데이터 과학자·ML 엔지니어 같은 페르소나별로 필요한 IAM 권한을 빠르게 만들어 준다.',
+    pts: ['최소 권한 원칙을 ML 활동에 적용'],
+    kw: '“ML 사용자 권한 정의”', vs: '모델 정보 기록과는 무관', q: [19] },
+  { cat: 'sm', nm: 'SageMaker Clarify', ko: '클래리파이', one: '데이터·모델의 편향을 측정하고, 예측에 어떤 특성이 영향을 줬는지 설명한다. FM 평가에도 쓴다.',
+    pts: ['훈련 전/후 편향 지표', 'SHAP 기반 특성 중요도 → 설명 가능성'],
+    kw: '“편향 탐지”, “왜 이런 예측을 했는지 설명”', vs: '기록은 Model Cards, 운영 감시는 Model Monitor', q: [], extra: true },
+
+  // 사전 훈련된 AI 서비스
+  { cat: 'ai', nm: 'Amazon Rekognition', ko: '레코그니션', one: '이미지·영상에서 객체, 장면, 얼굴, 텍스트, 부적절 콘텐츠를 찾아내는 분석 서비스. 이미지를 만들지는 않는다.',
+    pts: ['Custom Labels: 레이블 붙인 내 이미지로 나만의 분류 모델 훈련', '콘텐츠 모더레이션'],
+    kw: '“이미지 분류”, “제품 사진을 범주별로”, “얼굴·객체 탐지”', vs: '이미지 생성은 Bedrock · 문서 글자 추출은 Textract', q: [5, 9, 11] },
+  { cat: 'ai', nm: 'Amazon Textract', ko: '텍스트랙트', one: '스캔 문서·PDF·이미지에서 인쇄 글자, 손글씨, 표, 양식 값을 추출한다.',
+    pts: ['인보이스·영수증 분석(AnalyzeExpense), 신분증 분석', '단순 OCR 을 넘어 표·키-값 구조까지'],
+    kw: '“PNG 인보이스”, “손글씨”, “양식에서 값 추출”', vs: 'Comprehend 는 이미 텍스트인 것을 분석', q: [5, 10, 13] },
+  { cat: 'ai', nm: 'Amazon Comprehend', ko: '컴프리헨드', one: '텍스트를 읽고 감정, 핵심 구문, 개체(사람·장소), 언어, 개인정보(PII)를 찾아내는 NLP 서비스.',
+    pts: ['사용자 지정 분류·개체 인식 모델', '입력은 텍스트 — 이미지·음성 불가'],
+    kw: '“고객 리뷰 감정 분석”, “문서에서 개체 추출”', vs: '이미지 속 글자는 먼저 Textract 로 뽑아야 함', q: [5, 9, 10] },
+  { cat: 'ai', nm: 'Amazon Transcribe', ko: '트랜스크라이브', one: '음성을 텍스트로 받아 적는 STT 서비스.',
+    pts: ['사용자 지정 어휘 · 사용자 지정 언어 모델(도메인 텍스트로 학습) → 전문 용어 정확도 향상', '언어 자동 식별, 화자 구분, Call Analytics'],
+    kw: '“콜 센터 녹음”, “도메인 용어 받아쓰기 정확도”', vs: 'Translate 는 번역, Polly 는 반대 방향(TTS) · Q14', q: [14] },
+  { cat: 'ai', nm: 'Amazon Translate', ko: '트랜슬레이트', one: '텍스트를 다른 언어로 번역하는 신경망 기계 번역 서비스.',
+    pts: ['사용자 지정 용어집(브랜드명 고정 번역)', '음성을 다루지 않음'],
+    kw: '“다국어 지원”, “웹사이트 번역”', vs: '받아쓰기 정확도 문제에 Translate 는 오답', q: [14] },
+  { cat: 'ai', nm: 'Amazon Polly', ko: '폴리', one: '텍스트를 자연스러운 음성으로 읽어 주는 TTS 서비스.',
+    pts: ['여러 언어·목소리, SSML 로 발음·속도 조절'],
+    kw: '“음성 안내”, “글을 읽어 주는 기능”', vs: '방향 반대: Transcribe(음성→텍스트)', q: [10] },
+  { cat: 'ai', nm: 'Amazon Lex', ko: '렉스', one: '음성·텍스트 챗봇을 만드는 대화형 인터페이스 서비스(Alexa 와 같은 기술).',
+    pts: ['의도(Intent)와 슬롯으로 대화 흐름 설계', 'Amazon Connect 콜 센터 봇'],
+    kw: '“챗봇”, “주문·예약을 대화로”', vs: '녹음 받아쓰기 정확도 개선 수단이 아님', q: [14] },
+  { cat: 'ai', nm: 'Amazon Kendra', ko: '켄드라', one: '사내 문서를 자연어 질문으로 검색하는 지능형 엔터프라이즈 검색 서비스.',
+    pts: ['의미 기반 검색, 다양한 커넥터', 'RAG 의 검색기(retriever)로도 사용'],
+    kw: '“직원이 사내 문서를 질문으로 검색”', vs: 'FM 을 제공하지 않음 · 문서 글자 추출은 Textract', q: [10, 13] },
+  { cat: 'ai', nm: 'Amazon Personalize', ko: '퍼스널라이즈', one: '사용자 행동(클릭·구매) 데이터로 개인화 추천과 사용자 세그먼트를 만드는 서비스.',
+    pts: ['“이 상품을 본 사람이 본 상품”, 마케팅 대상 고르기'],
+    kw: '“추천”, “개인화”, “프로모션에 반응할 고객”', vs: '콘텐츠(이미지·글) 생성은 하지 않음', q: [9] },
+
+  // 보안
+  { cat: 'sec', nm: 'AWS IAM', ko: 'Identity and Access Management', one: '사용자·역할·정책으로 누가 어떤 리소스에 어떤 작업을 할 수 있는지 정한다.',
+    pts: ['최소 권한 원칙', 'Bedrock 모델 호출 권한도 IAM 정책으로 제어'],
+    kw: '“액세스 보호”, “누가 사용할 수 있는지 제어”', vs: '기록은 CloudTrail, 제어는 IAM', q: [11] },
+  { cat: 'sec', nm: 'Amazon Macie', ko: '메이시', one: 'S3 에 저장된 데이터에서 개인정보 같은 민감 데이터를 자동으로 찾아 분류한다.',
+    pts: ['ML·패턴 매칭으로 PII 탐지', '대상은 S3 데이터'],
+    kw: '“S3 의 민감 데이터·PII 발견”', vs: '서비스 접근 제어는 IAM', q: [11] },
+  { cat: 'sec', nm: 'Amazon Inspector', ko: '인스펙터', one: 'EC2, ECR 컨테이너 이미지, Lambda 를 계속 스캔해 소프트웨어 취약점과 네트워크 노출을 찾고 수정 방법을 권한다.',
+    pts: ['CVE 기반 취약점 점수', '자동·지속 스캔'],
+    kw: '“EC2·ECR 취약점”, “보안 태세 평가 + 수정 권장”', vs: 'API 기록(CloudTrail)이나 구성 변경(Config)과 다름', q: [3, 15] },
+
+  // 거버넌스
+  { cat: 'gov', nm: 'AWS CloudTrail', ko: '클라우드트레일', one: '계정에서 일어난 API 호출을 “누가, 언제, 어디서, 무엇을” 했는지 이벤트로 기록하는 감사 로그.',
+    pts: ['Bedrock API 호출 기록도 남음', '감사·규정 준수·사고 조사'],
+    kw: '“누가 호출했는지”, “호출 시간”, “감사 로그”', vs: 'CloudWatch 는 호출 수·지연 같은 지표 · Q15', q: [3, 15] },
+  { cat: 'gov', nm: 'Amazon CloudWatch', ko: '클라우드워치', one: '리소스와 앱의 지표·로그를 모으고 대시보드와 알람을 만드는 모니터링 서비스.',
+    pts: ['Bedrock 호출 수·지연·토큰 사용량 지표', '임계값 알람 → 알림·자동 조치'],
+    kw: '“성능 모니터링”, “지표”, “알람”', vs: '“어떤 사용자가” 를 묻으면 CloudTrail', q: [15] },
+  { cat: 'gov', nm: 'AWS Config', ko: '컨피그', one: '리소스 구성과 변경 이력을 기록하고, 정한 규칙에 맞는 구성인지 평가한다.',
+    pts: ['“이 S3 버킷이 언제 공개로 바뀌었나”', '구성 규칙 준수 여부'],
+    kw: '“구성 변경 추적”, “구성 기록”', vs: '취약점 스캔(Inspector)·접근 제어(IAM)는 못 함', q: [3, 11] },
+  { cat: 'gov', nm: 'AWS Artifact', ko: '아티팩트', one: 'AWS 의 규정 준수 보고서(SOC, ISO, PCI 등)와 계약서를 필요할 때 내려받는 포털.',
+    pts: ['감사인에게 AWS 인프라의 인증 증빙 제출'],
+    kw: '“규정 준수 보고서”, “인증 문서”', vs: '내 리소스를 점검하지는 않음', q: [3] },
+  { cat: 'gov', nm: 'AWS Trusted Advisor', ko: '트러스티드 어드바이저', one: '비용, 성능, 보안, 내결함성, 서비스 한도를 모범 사례와 비교해 점검하고 개선점을 알려 준다.',
+    pts: ['유휴 리소스, 열린 보안 그룹 등 체크'],
+    kw: '“비용 최적화 권장”, “모범 사례 점검”', vs: 'API 호출 기록은 하지 않음', q: [15] },
+
+  // 인프라
+  { cat: 'inf', nm: 'Amazon EC2', ko: 'Elastic Compute Cloud', one: '필요한 만큼 빌려 쓰는 가상 서버.',
+    pts: ['Inspector 의 스캔 대상'], kw: '“인스턴스”', vs: '', q: [3] },
+  { cat: 'inf', nm: 'Amazon ECR', ko: 'Elastic Container Registry', one: '컨테이너 이미지를 저장·관리하는 레지스트리.',
+    pts: ['Inspector 가 이미지 취약점 스캔'], kw: '“컨테이너 이미지 저장소”', vs: '', q: [3] },
+  { cat: 'inf', nm: 'Amazon S3', ko: 'Simple Storage Service', one: '파일(객체)을 무제한에 가깝게 저장하는 스토리지.',
+    pts: ['Macie 의 검사 대상', '비동기 추론 결과 저장, RAG 문서 원천, 훈련 데이터 보관'], kw: '“데이터 레이크”, “버킷”', vs: '', q: [11] },
+  { cat: 'inf', nm: 'AWS Lambda', ko: '람다', one: '서버 없이 코드를 이벤트에 맞춰 실행하는 서버리스 함수.',
+    pts: ['Inspector 스캔 대상', 'Bedrock 호출을 감싸는 백엔드로 자주 사용'], kw: '“서버리스 함수”', vs: '', q: [15] }
+];
+
+var state = { cat: 'all', q: '', quiz: false };
+var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+
+function card(s) {
+  var c = CATS.filter(function (x) { return x.id === s.cat; })[0];
+  var qs = s.q.length ? s.q.map(function (n) { return '<span>Q' + n + '</span>'; }).join('') : '<span class="extra">함께 알아두기</span>';
+  return '<article class="svc" style="--c:' + c.color + '" data-text="' + esc((s.nm + ' ' + s.ko + ' ' + s.one + ' ' + s.pts.join(' ') + ' ' + s.kw + ' ' + s.vs).toLowerCase()) + '">' +
+    '<div><div class="nm">' + esc(s.nm) + '</div><div class="ko">' + esc(s.ko) + '</div></div>' +
+    '<div class="hint">눌러서 확인 →</div>' +
+    '<div class="body">' +
+      '<div class="one">' + esc(s.one) + '</div>' +
+      '<ul>' + s.pts.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
+      (s.kw ? '<div class="kw">🔑 문제에 이 말이 보이면: ' + esc(s.kw) + '</div>' : '') +
+      (s.vs ? '<div class="vs">⚠️ ' + esc(s.vs) + '</div>' : '') +
+    '</div>' +
+    '<div class="qs">' + qs + '</div>' +
+  '</article>';
+}
+
+function render() {
+  var list = document.getElementById('list'), html = '', shown = 0;
+  CATS.forEach(function (c) {
+    if (state.cat !== 'all' && state.cat !== c.id) return;
+    var items = S.filter(function (s) { return s.cat === c.id; });
+    var cards = items.map(card).join('');
+    html += '<div class="cat" data-cat="' + c.id + '"><h3><i style="background:' + c.color + '"></i>' + esc(c.name) + '</h3><p>' + esc(c.desc) + '</p><div class="grid">' + cards + '</div></div>';
+  });
+  list.innerHTML = html;
+  var q = state.q.trim().toLowerCase();
+  list.querySelectorAll('.cat').forEach(function (cat) {
+    var n = 0;
+    cat.querySelectorAll('.svc').forEach(function (el) {
+      var ok = !q || el.dataset.text.indexOf(q) >= 0;
+      el.style.display = ok ? '' : 'none';
+      if (ok) n++;
+    });
+    cat.style.display = n ? '' : 'none';
+    shown += n;
+  });
+  document.getElementById('count').textContent = shown + '개 표시 중';
+  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+}
+
+(function init() {
+  document.getElementById('total').textContent = S.length;
+  var chips = document.getElementById('chips');
+  var all = [{ id: 'all', name: '전체' }].concat(CATS);
+  chips.innerHTML = all.map(function (c) {
+    var n = c.id === 'all' ? S.length : S.filter(function (s) { return s.cat === c.id; }).length;
+    return '<button class="chip" data-cat="' + c.id + '" aria-pressed="' + (c.id === 'all') + '">' + esc(c.name.split(' (')[0]) + ' ' + n + '</button>';
+  }).join('');
+  chips.addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return;
+    state.cat = b.dataset.cat;
+    chips.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+    render();
+  });
+  document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
+  var qb = document.getElementById('quiz');
+  qb.addEventListener('click', function () {
+    state.quiz = !state.quiz;
+    qb.setAttribute('aria-pressed', state.quiz);
+    document.body.classList.toggle('quiz', state.quiz);
+    document.getElementById('quizNote').hidden = !state.quiz;
+    document.querySelectorAll('.svc.open').forEach(function (el) { el.classList.remove('open'); });
+  });
+  document.getElementById('list').addEventListener('click', function (e) {
+    if (!state.quiz) return;
+    var el = e.target.closest('.svc'); if (el) el.classList.toggle('open');
+  });
+  render();
+})();
+</script>
+</body>
+</html>
