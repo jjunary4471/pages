@@ -164,6 +164,22 @@ window.TROPHY_DATA = {
       "redacted": false,
       "theme": "anthropic",
       "note": "로드맵 첫 번째 전리품. 1주차 계획일에 맞춰 수료"
+    },
+    {
+      "id": "aws-aif-domain1-review",
+      "name": "Domain 1 Review: AWS Certified AI Practitioner (AIF-C01)",
+      "name_ko": "AIF-C01 Domain 1 리뷰 (한국어)",
+      "org": "AWS Training & Certification",
+      "kind": "course",
+      "category": "roadmap",
+      "slot": "aws-skill-builder",
+      "date": "2026-11-22",
+      "verify_note": "AWS Skill Builder 수료 기록 (공개 검증 링크 없음)",
+      "img": "files/aws-aif-domain1-review.jpg",
+      "pdf": "files/aws-aif-domain1-review.pdf",
+      "redacted": false,
+      "theme": "aws",
+      "note": "2주차 · AI/ML 기초(Task 1.1~1.3) 리뷰 수료. 같은 날 공식 연습 문제 20문항 첫 시도 60%"
     }
   ]
 };
